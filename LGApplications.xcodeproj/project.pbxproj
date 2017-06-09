@@ -7,14 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		68EBE1FA105508E5645AACBF /* libPods-LGApplications.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A068290D8756EF054993DE1 /* libPods-LGApplications.a */; };
+		CE008BE31EE7C76000318D98 /* RootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008BE21EE7C76000318D98 /* RootNavigationController.m */; };
+		CE008BEE1EE7C95600318D98 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008BE71EE7C95600318D98 /* NSArray+Log.m */; };
+		CE008BEF1EE7C95600318D98 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008BE91EE7C95600318D98 /* NSString+Extension.m */; };
+		CE008BF01EE7C95600318D98 /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008BEB1EE7C95600318D98 /* UIButton+Extension.m */; };
+		CE008BF11EE7C95600318D98 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008BED1EE7C95600318D98 /* UIView+Extension.m */; };
+		CE008BF51EE7CA3C00318D98 /* NSUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008BF41EE7CA3C00318D98 /* NSUtil.m */; };
+		CE008BFC1EE7CA7500318D98 /* LGActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008BF91EE7CA7500318D98 /* LGActionSheet.m */; };
+		CE008BFD1EE7CA7500318D98 /* LGTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008BFB1EE7CA7500318D98 /* LGTextView.m */; };
+		CE008C011EE7CBD700318D98 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008C001EE7CBD700318D98 /* UIImage+Extension.m */; };
+		CE008C071EE7DA4500318D98 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008C061EE7DA4500318D98 /* MainController.m */; };
+		CE008C0D1EE7ED5A00318D98 /* PickerDemoController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008C0C1EE7ED5A00318D98 /* PickerDemoController.m */; };
+		CE008C101EE7F64A00318D98 /* BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008C0F1EE7F64A00318D98 /* BaseController.m */; };
+		CE008C131EE7FEB200318D98 /* LGPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008C121EE7FEB200318D98 /* LGPickerView.m */; };
+		CE008C151EE800C000318D98 /* district.json in Resources */ = {isa = PBXBuildFile; fileRef = CE008C141EE800C000318D98 /* district.json */; };
+		CE008C181EE80E2300318D98 /* ActionSheetDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008C171EE80E2300318D98 /* ActionSheetDemo.m */; };
+		CE1122781EE9396500C203DF /* SingleChoiceDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1122771EE9396500C203DF /* SingleChoiceDemo.m */; };
 		CE6040D21EE5316E0089C945 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6040D11EE5316E0089C945 /* main.m */; };
 		CE6040D51EE5316E0089C945 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6040D41EE5316E0089C945 /* AppDelegate.m */; };
-		CE6040D81EE5316E0089C945 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6040D71EE5316E0089C945 /* ViewController.m */; };
-		CE6040DB1EE5316E0089C945 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6040D91EE5316E0089C945 /* Main.storyboard */; };
 		CE6040DD1EE5316E0089C945 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6040DC1EE5316E0089C945 /* Assets.xcassets */; };
 		CE6040E01EE5316E0089C945 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6040DE1EE5316E0089C945 /* LaunchScreen.storyboard */; };
 		CE6040EB1EE5316E0089C945 /* LGApplicationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6040EA1EE5316E0089C945 /* LGApplicationsTests.m */; };
 		CE6040F61EE5316E0089C945 /* LGApplicationsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6040F51EE5316E0089C945 /* LGApplicationsUITests.m */; };
+		CEE768721EEA42B80093514F /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = CEE768711EEA42B80093514F /* README.md */; };
+		CEE768751EEA5A670093514F /* GradientAnimationDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE768741EEA5A670093514F /* GradientAnimationDemo.m */; };
+		CEE768781EEA78620093514F /* LGGradientLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE768771EEA78620093514F /* LGGradientLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,13 +53,46 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A068290D8756EF054993DE1 /* libPods-LGApplications.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LGApplications.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A90E3C202A6496187D9C64F4 /* Pods-LGApplications.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LGApplications.release.xcconfig"; path = "Pods/Target Support Files/Pods-LGApplications/Pods-LGApplications.release.xcconfig"; sourceTree = "<group>"; };
+		BE8FEF4ADE114198BFAF7886 /* Pods-LGApplications.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LGApplications.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LGApplications/Pods-LGApplications.debug.xcconfig"; sourceTree = "<group>"; };
+		CE008BE11EE7C76000318D98 /* RootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootNavigationController.h; sourceTree = "<group>"; };
+		CE008BE21EE7C76000318D98 /* RootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootNavigationController.m; sourceTree = "<group>"; };
+		CE008BE61EE7C95600318D98 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
+		CE008BE71EE7C95600318D98 /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
+		CE008BE81EE7C95600318D98 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
+		CE008BE91EE7C95600318D98 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
+		CE008BEA1EE7C95600318D98 /* UIButton+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extension.h"; sourceTree = "<group>"; };
+		CE008BEB1EE7C95600318D98 /* UIButton+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Extension.m"; sourceTree = "<group>"; };
+		CE008BEC1EE7C95600318D98 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		CE008BED1EE7C95600318D98 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		CE008BF31EE7CA3C00318D98 /* NSUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSUtil.h; sourceTree = "<group>"; };
+		CE008BF41EE7CA3C00318D98 /* NSUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSUtil.m; sourceTree = "<group>"; };
+		CE008BF81EE7CA7500318D98 /* LGActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGActionSheet.h; sourceTree = "<group>"; };
+		CE008BF91EE7CA7500318D98 /* LGActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGActionSheet.m; sourceTree = "<group>"; };
+		CE008BFA1EE7CA7500318D98 /* LGTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGTextView.h; sourceTree = "<group>"; };
+		CE008BFB1EE7CA7500318D98 /* LGTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGTextView.m; sourceTree = "<group>"; };
+		CE008BFF1EE7CBD700318D98 /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
+		CE008C001EE7CBD700318D98 /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
+		CE008C031EE7CEB500318D98 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		CE008C041EE7D75700318D98 /* UIDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDefines.h; sourceTree = "<group>"; };
+		CE008C051EE7DA4500318D98 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
+		CE008C061EE7DA4500318D98 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
+		CE008C0B1EE7ED5A00318D98 /* PickerDemoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerDemoController.h; sourceTree = "<group>"; };
+		CE008C0C1EE7ED5A00318D98 /* PickerDemoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerDemoController.m; sourceTree = "<group>"; };
+		CE008C0E1EE7F64A00318D98 /* BaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseController.h; sourceTree = "<group>"; };
+		CE008C0F1EE7F64A00318D98 /* BaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseController.m; sourceTree = "<group>"; };
+		CE008C111EE7FEB200318D98 /* LGPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPickerView.h; sourceTree = "<group>"; };
+		CE008C121EE7FEB200318D98 /* LGPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPickerView.m; sourceTree = "<group>"; };
+		CE008C141EE800C000318D98 /* district.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = district.json; sourceTree = "<group>"; };
+		CE008C161EE80E2300318D98 /* ActionSheetDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetDemo.h; sourceTree = "<group>"; };
+		CE008C171EE80E2300318D98 /* ActionSheetDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetDemo.m; sourceTree = "<group>"; };
+		CE1122761EE9396500C203DF /* SingleChoiceDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleChoiceDemo.h; sourceTree = "<group>"; };
+		CE1122771EE9396500C203DF /* SingleChoiceDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleChoiceDemo.m; sourceTree = "<group>"; };
 		CE6040CD1EE5316E0089C945 /* LGApplications.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LGApplications.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6040D11EE5316E0089C945 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CE6040D31EE5316E0089C945 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CE6040D41EE5316E0089C945 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CE6040D61EE5316E0089C945 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CE6040D71EE5316E0089C945 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		CE6040DA1EE5316E0089C945 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE6040DC1EE5316E0089C945 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE6040DF1EE5316E0089C945 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE6040E11EE5316E0089C945 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +102,11 @@
 		CE6040F11EE5316E0089C945 /* LGApplicationsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LGApplicationsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6040F51EE5316E0089C945 /* LGApplicationsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LGApplicationsUITests.m; sourceTree = "<group>"; };
 		CE6040F71EE5316E0089C945 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEE768711EEA42B80093514F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		CEE768731EEA5A670093514F /* GradientAnimationDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientAnimationDemo.h; sourceTree = "<group>"; };
+		CEE768741EEA5A670093514F /* GradientAnimationDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientAnimationDemo.m; sourceTree = "<group>"; };
+		CEE768761EEA78620093514F /* LGGradientLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGGradientLabel.h; sourceTree = "<group>"; };
+		CEE768771EEA78620093514F /* LGGradientLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGGradientLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68EBE1FA105508E5645AACBF /* libPods-LGApplications.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +135,109 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27F39867980261BF116C7751 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BE8FEF4ADE114198BFAF7886 /* Pods-LGApplications.debug.xcconfig */,
+				A90E3C202A6496187D9C64F4 /* Pods-LGApplications.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CE008BE01EE7C70300318D98 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CE008BE11EE7C76000318D98 /* RootNavigationController.h */,
+				CE008BE21EE7C76000318D98 /* RootNavigationController.m */,
+				CE008C0E1EE7F64A00318D98 /* BaseController.h */,
+				CE008C0F1EE7F64A00318D98 /* BaseController.m */,
+				CE008C051EE7DA4500318D98 /* MainController.h */,
+				CE008C061EE7DA4500318D98 /* MainController.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		CE008BE41EE7C8F200318D98 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				CE008C041EE7D75700318D98 /* UIDefines.h */,
+				CE008BF71EE7CA7500318D98 /* LGViews */,
+				CE008BF21EE7CA1E00318D98 /* LGUtil */,
+				CE008BE51EE7C95600318D98 /* Category */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		CE008BE51EE7C95600318D98 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				CE008BE61EE7C95600318D98 /* NSArray+Log.h */,
+				CE008BE71EE7C95600318D98 /* NSArray+Log.m */,
+				CE008BE81EE7C95600318D98 /* NSString+Extension.h */,
+				CE008BE91EE7C95600318D98 /* NSString+Extension.m */,
+				CE008BEA1EE7C95600318D98 /* UIButton+Extension.h */,
+				CE008BEB1EE7C95600318D98 /* UIButton+Extension.m */,
+				CE008BEC1EE7C95600318D98 /* UIView+Extension.h */,
+				CE008BED1EE7C95600318D98 /* UIView+Extension.m */,
+				CE008BFF1EE7CBD700318D98 /* UIImage+Extension.h */,
+				CE008C001EE7CBD700318D98 /* UIImage+Extension.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		CE008BF21EE7CA1E00318D98 /* LGUtil */ = {
+			isa = PBXGroup;
+			children = (
+				CE008BF31EE7CA3C00318D98 /* NSUtil.h */,
+				CE008BF41EE7CA3C00318D98 /* NSUtil.m */,
+			);
+			path = LGUtil;
+			sourceTree = "<group>";
+		};
+		CE008BF71EE7CA7500318D98 /* LGViews */ = {
+			isa = PBXGroup;
+			children = (
+				CE008C111EE7FEB200318D98 /* LGPickerView.h */,
+				CE008C121EE7FEB200318D98 /* LGPickerView.m */,
+				CE008BF81EE7CA7500318D98 /* LGActionSheet.h */,
+				CE008BF91EE7CA7500318D98 /* LGActionSheet.m */,
+				CE008BFA1EE7CA7500318D98 /* LGTextView.h */,
+				CE008BFB1EE7CA7500318D98 /* LGTextView.m */,
+				CEE768761EEA78620093514F /* LGGradientLabel.h */,
+				CEE768771EEA78620093514F /* LGGradientLabel.m */,
+			);
+			path = LGViews;
+			sourceTree = "<group>";
+		};
+		CE008C081EE7ECC200318D98 /* LGAnimationDemos */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LGAnimationDemos;
+			sourceTree = "<group>";
+		};
+		CE008C091EE7ECC200318D98 /* LGFunctionDemos */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LGFunctionDemos;
+			sourceTree = "<group>";
+		};
+		CE008C0A1EE7ECC200318D98 /* LGViewDemos */ = {
+			isa = PBXGroup;
+			children = (
+				CE008C0B1EE7ED5A00318D98 /* PickerDemoController.h */,
+				CE008C0C1EE7ED5A00318D98 /* PickerDemoController.m */,
+				CE008C161EE80E2300318D98 /* ActionSheetDemo.h */,
+				CE008C171EE80E2300318D98 /* ActionSheetDemo.m */,
+				CE1122761EE9396500C203DF /* SingleChoiceDemo.h */,
+				CE1122771EE9396500C203DF /* SingleChoiceDemo.m */,
+				CEE768731EEA5A670093514F /* GradientAnimationDemo.h */,
+				CEE768741EEA5A670093514F /* GradientAnimationDemo.m */,
+			);
+			path = LGViewDemos;
+			sourceTree = "<group>";
+		};
 		CE6040C41EE5316E0089C945 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +245,8 @@
 				CE6040E91EE5316E0089C945 /* LGApplicationsTests */,
 				CE6040F41EE5316E0089C945 /* LGApplicationsUITests */,
 				CE6040CE1EE5316E0089C945 /* Products */,
+				27F39867980261BF116C7751 /* Pods */,
+				E7A5DA539D53376B8901FEE1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,14 +263,13 @@
 		CE6040CF1EE5316E0089C945 /* LGApplications */ = {
 			isa = PBXGroup;
 			children = (
+				CE008C081EE7ECC200318D98 /* LGAnimationDemos */,
+				CE008C091EE7ECC200318D98 /* LGFunctionDemos */,
+				CE008C0A1EE7ECC200318D98 /* LGViewDemos */,
+				CE008BE01EE7C70300318D98 /* Main */,
 				CE6040D31EE5316E0089C945 /* AppDelegate.h */,
 				CE6040D41EE5316E0089C945 /* AppDelegate.m */,
-				CE6040D61EE5316E0089C945 /* ViewController.h */,
-				CE6040D71EE5316E0089C945 /* ViewController.m */,
-				CE6040D91EE5316E0089C945 /* Main.storyboard */,
-				CE6040DC1EE5316E0089C945 /* Assets.xcassets */,
-				CE6040DE1EE5316E0089C945 /* LaunchScreen.storyboard */,
-				CE6040E11EE5316E0089C945 /* Info.plist */,
+				CE008BE41EE7C8F200318D98 /* Util */,
 				CE6040D01EE5316E0089C945 /* Supporting Files */,
 			);
 			path = LGApplications;
@@ -117,7 +278,13 @@
 		CE6040D01EE5316E0089C945 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CEE768711EEA42B80093514F /* README.md */,
+				CE6040DC1EE5316E0089C945 /* Assets.xcassets */,
+				CE008C141EE800C000318D98 /* district.json */,
+				CE6040DE1EE5316E0089C945 /* LaunchScreen.storyboard */,
+				CE6040E11EE5316E0089C945 /* Info.plist */,
 				CE6040D11EE5316E0089C945 /* main.m */,
+				CE008C031EE7CEB500318D98 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -140,6 +307,14 @@
 			path = LGApplicationsUITests;
 			sourceTree = "<group>";
 		};
+		E7A5DA539D53376B8901FEE1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A068290D8756EF054993DE1 /* libPods-LGApplications.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +322,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE6040FA1EE5316E0089C945 /* Build configuration list for PBXNativeTarget "LGApplications" */;
 			buildPhases = (
+				DFE8B7D6B271358D2364F6C0 /* [CP] Check Pods Manifest.lock */,
 				CE6040C91EE5316E0089C945 /* Sources */,
 				CE6040CA1EE5316E0089C945 /* Frameworks */,
 				CE6040CB1EE5316E0089C945 /* Resources */,
+				2D3B0B242F1350D3B87F5BC3 /* [CP] Embed Pods Frameworks */,
+				DD03C13DA55B959EA754579D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,6 +385,7 @@
 				TargetAttributes = {
 					CE6040CC1EE5316E0089C945 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 7U7283J637;
 						ProvisioningStyle = Automatic;
 					};
 					CE6040E51EE5316E0089C945 = {
@@ -247,8 +426,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE6040E01EE5316E0089C945 /* LaunchScreen.storyboard in Resources */,
+				CE008C151EE800C000318D98 /* district.json in Resources */,
 				CE6040DD1EE5316E0089C945 /* Assets.xcassets in Resources */,
-				CE6040DB1EE5316E0089C945 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,14 +447,79 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2D3B0B242F1350D3B87F5BC3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LGApplications/Pods-LGApplications-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD03C13DA55B959EA754579D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LGApplications/Pods-LGApplications-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFE8B7D6B271358D2364F6C0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CE6040C91EE5316E0089C945 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE6040D81EE5316E0089C945 /* ViewController.m in Sources */,
+				CE008BFD1EE7CA7500318D98 /* LGTextView.m in Sources */,
+				CE008BEF1EE7C95600318D98 /* NSString+Extension.m in Sources */,
+				CE008C0D1EE7ED5A00318D98 /* PickerDemoController.m in Sources */,
+				CE008BF01EE7C95600318D98 /* UIButton+Extension.m in Sources */,
+				CE008BF51EE7CA3C00318D98 /* NSUtil.m in Sources */,
+				CEE768781EEA78620093514F /* LGGradientLabel.m in Sources */,
+				CE008C071EE7DA4500318D98 /* MainController.m in Sources */,
+				CEE768721EEA42B80093514F /* README.md in Sources */,
 				CE6040D51EE5316E0089C945 /* AppDelegate.m in Sources */,
+				CE008BFC1EE7CA7500318D98 /* LGActionSheet.m in Sources */,
+				CE008C181EE80E2300318D98 /* ActionSheetDemo.m in Sources */,
+				CE008C101EE7F64A00318D98 /* BaseController.m in Sources */,
+				CE008BF11EE7C95600318D98 /* UIView+Extension.m in Sources */,
+				CE1122781EE9396500C203DF /* SingleChoiceDemo.m in Sources */,
+				CE008BEE1EE7C95600318D98 /* NSArray+Log.m in Sources */,
+				CE008BE31EE7C76000318D98 /* RootNavigationController.m in Sources */,
+				CE008C011EE7CBD700318D98 /* UIImage+Extension.m in Sources */,
 				CE6040D21EE5316E0089C945 /* main.m in Sources */,
+				CE008C131EE7FEB200318D98 /* LGPickerView.m in Sources */,
+				CEE768751EEA5A670093514F /* GradientAnimationDemo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,14 +555,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CE6040D91EE5316E0089C945 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CE6040DA1EE5316E0089C945 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CE6040DE1EE5316E0089C945 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -422,22 +658,34 @@
 		};
 		CE6040FB1EE5316E0089C945 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE8FEF4ADE114198BFAF7886 /* Pods-LGApplications.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7U7283J637;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/ligang/Desktop/LGApplications/LGApplications/PrefixHeader.pch;
 				INFOPLIST_FILE = LGApplications/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Mr.Lee.LGApplications;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yunding.app011;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		CE6040FC1EE5316E0089C945 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A90E3C202A6496187D9C64F4 /* Pods-LGApplications.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7U7283J637;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/ligang/Desktop/LGApplications/LGApplications/PrefixHeader.pch;
 				INFOPLIST_FILE = LGApplications/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Mr.Lee.LGApplications;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yunding.app011;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -507,6 +755,7 @@
 				CE6040FC1EE5316E0089C945 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE6040FD1EE5316E0089C945 /* Build configuration list for PBXNativeTarget "LGApplicationsTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +764,7 @@
 				CE6040FF1EE5316E0089C945 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE6041001EE5316E0089C945 /* Build configuration list for PBXNativeTarget "LGApplicationsUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +773,7 @@
 				CE6041021EE5316E0089C945 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
