@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "20B0A14A3C93DE77AEAFDC8A852EEF85D5306DCA",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "20B0A14A3C93DE77AEAFDC8A852EEF85D5306DCA" : 9223372036854775807,
+    "9E4208FF7D5F254ED127A4C70B08EF1A227F1080" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "F57799A9-87F2-4164-9CDD-748F2B69E806",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "20B0A14A3C93DE77AEAFDC8A852EEF85D5306DCA" : "LGApplications\/",
+    "9E4208FF7D5F254ED127A4C70B08EF1A227F1080" : "LGApplications\/LGApplications\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "LGApplications",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "LGApplications.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/MrLee767201403\/LGApplications.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "20B0A14A3C93DE77AEAFDC8A852EEF85D5306DCA"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/MrLee767201403\/LGApplications.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9E4208FF7D5F254ED127A4C70B08EF1A227F1080"
+    }
+  ]
+}

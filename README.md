@@ -22,3 +22,5 @@ LGApplications/Util/UIDefines.h :   常用的宏
 3.SingleChoiceTableView         :   用tableView实现多个题目的单项选择,只提供一个思路,毕竟具体项目需要不同
 
 4.LGTextView                    :   带placeholder的textView
+
+5.LGGradientLabel               :   渐变文字Label
