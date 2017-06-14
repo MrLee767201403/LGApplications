@@ -1,6 +1,8 @@
 # LGApplications
 个人demo集合 未完待续
 
+下载后找不到PCH文件的,可以在 Build Settings里搜索prefix header, 然后 设置 Precompile Prefix Header 为YES; 再设置 Prefix Header 路径, 双击后,直接把左侧的PrefixHeader.pch拉进弹框里,回车就OK了. 不明白的参考http://blog.csdn.net/lg767201403/article/details/72910696 这篇博客
+
 将自己自定义的一些控件,写成demo,有需要的朋友可以拿来参考
 
 LGApplications/Util/LGViews     :   自定义View
