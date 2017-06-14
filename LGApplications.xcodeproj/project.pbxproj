@@ -30,7 +30,8 @@
 		CE6040E01EE5316E0089C945 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6040DE1EE5316E0089C945 /* LaunchScreen.storyboard */; };
 		CE6040EB1EE5316E0089C945 /* LGApplicationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6040EA1EE5316E0089C945 /* LGApplicationsTests.m */; };
 		CE6040F61EE5316E0089C945 /* LGApplicationsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6040F51EE5316E0089C945 /* LGApplicationsUITests.m */; };
-		CEE768721EEA42B80093514F /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = CEE768711EEA42B80093514F /* README.md */; };
+		CEDC592D1EF1214900804ADF /* ChildController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDC592A1EF1214900804ADF /* ChildController.m */; };
+		CEDC592E1EF1214900804ADF /* SwitchController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDC592C1EF1214900804ADF /* SwitchController.m */; };
 		CEE768751EEA5A670093514F /* GradientAnimationDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE768741EEA5A670093514F /* GradientAnimationDemo.m */; };
 		CEE768781EEA78620093514F /* LGGradientLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE768771EEA78620093514F /* LGGradientLabel.m */; };
 /* End PBXBuildFile section */
@@ -102,7 +103,10 @@
 		CE6040F11EE5316E0089C945 /* LGApplicationsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LGApplicationsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6040F51EE5316E0089C945 /* LGApplicationsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LGApplicationsUITests.m; sourceTree = "<group>"; };
 		CE6040F71EE5316E0089C945 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CEE768711EEA42B80093514F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		CEDC59291EF1214900804ADF /* ChildController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildController.h; sourceTree = "<group>"; };
+		CEDC592A1EF1214900804ADF /* ChildController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildController.m; sourceTree = "<group>"; };
+		CEDC592B1EF1214900804ADF /* SwitchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchController.h; sourceTree = "<group>"; };
+		CEDC592C1EF1214900804ADF /* SwitchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchController.m; sourceTree = "<group>"; };
 		CEE768731EEA5A670093514F /* GradientAnimationDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientAnimationDemo.h; sourceTree = "<group>"; };
 		CEE768741EEA5A670093514F /* GradientAnimationDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientAnimationDemo.m; sourceTree = "<group>"; };
 		CEE768761EEA78620093514F /* LGGradientLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGGradientLabel.h; sourceTree = "<group>"; };
@@ -219,6 +223,7 @@
 		CE008C091EE7ECC200318D98 /* LGFunctionDemos */ = {
 			isa = PBXGroup;
 			children = (
+				CEDC59281EF1214900804ADF /* ScrollViewNestDemo */,
 			);
 			path = LGFunctionDemos;
 			sourceTree = "<group>";
@@ -278,7 +283,6 @@
 		CE6040D01EE5316E0089C945 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CEE768711EEA42B80093514F /* README.md */,
 				CE6040DC1EE5316E0089C945 /* Assets.xcassets */,
 				CE008C141EE800C000318D98 /* district.json */,
 				CE6040DE1EE5316E0089C945 /* LaunchScreen.storyboard */,
@@ -305,6 +309,17 @@
 				CE6040F71EE5316E0089C945 /* Info.plist */,
 			);
 			path = LGApplicationsUITests;
+			sourceTree = "<group>";
+		};
+		CEDC59281EF1214900804ADF /* ScrollViewNestDemo */ = {
+			isa = PBXGroup;
+			children = (
+				CEDC59291EF1214900804ADF /* ChildController.h */,
+				CEDC592A1EF1214900804ADF /* ChildController.m */,
+				CEDC592B1EF1214900804ADF /* SwitchController.h */,
+				CEDC592C1EF1214900804ADF /* SwitchController.m */,
+			);
+			path = ScrollViewNestDemo;
 			sourceTree = "<group>";
 		};
 		E7A5DA539D53376B8901FEE1 /* Frameworks */ = {
@@ -507,12 +522,13 @@
 				CE008BF51EE7CA3C00318D98 /* NSUtil.m in Sources */,
 				CEE768781EEA78620093514F /* LGGradientLabel.m in Sources */,
 				CE008C071EE7DA4500318D98 /* MainController.m in Sources */,
-				CEE768721EEA42B80093514F /* README.md in Sources */,
 				CE6040D51EE5316E0089C945 /* AppDelegate.m in Sources */,
 				CE008BFC1EE7CA7500318D98 /* LGActionSheet.m in Sources */,
 				CE008C181EE80E2300318D98 /* ActionSheetDemo.m in Sources */,
+				CEDC592E1EF1214900804ADF /* SwitchController.m in Sources */,
 				CE008C101EE7F64A00318D98 /* BaseController.m in Sources */,
 				CE008BF11EE7C95600318D98 /* UIView+Extension.m in Sources */,
+				CEDC592D1EF1214900804ADF /* ChildController.m in Sources */,
 				CE1122781EE9396500C203DF /* SingleChoiceDemo.m in Sources */,
 				CE008BEE1EE7C95600318D98 /* NSArray+Log.m in Sources */,
 				CE008BE31EE7C76000318D98 /* RootNavigationController.m in Sources */,

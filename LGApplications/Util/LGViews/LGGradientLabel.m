@@ -18,10 +18,15 @@
 
 - (void)drawRect:(CGRect)rect
 {
+    
+    NSLog(@"%@",NSStringFromCGRect(rect));
+    
     // 拿到文字Rect
     CGSize textSize = [self.text sizeWithAttributes:@{NSFontAttributeName : self.font}];
     CGRect textRect = (CGRect){0, 0, textSize};
     
+    NSLog(@"textRect:%@",NSStringFromCGRect(rect));
+
     // 画文字
     CGContextRef context = UIGraphicsGetCurrentContext();
     [self.textColor set];
