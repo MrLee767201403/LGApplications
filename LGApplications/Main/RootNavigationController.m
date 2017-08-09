@@ -29,20 +29,38 @@
     
     self.interactivePopGestureRecognizer.delegate = self;
     self.delegate = self;
-    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
     
-    viewController.hidesBottomBarWhenPushed = YES;
+    if (self.childViewControllers.count) {
+        
+        viewController.hidesBottomBarWhenPushed = YES;
+        // 自定义返回按钮
+        UIButton *btn = [[UIButton alloc] init];
+        [btn setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+        [btn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+        [btn sizeToFit];
+        viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+        // 如果自定义返回按钮后, 滑动返回可能失效, 需要添加下面的代码
+        __weak typeof(viewController)Weakself = viewController;
+        self.interactivePopGestureRecognizer.delegate = (id)Weakself;
+    }
+ 
     [super pushViewController:viewController animated:animated];
-    viewController.hidesBottomBarWhenPushed = NO;
 }
+
+- (void)back
+{
+    // 判断两种情况: push 和 present
+    if ((self.presentedViewController || self.presentingViewController) && self.childViewControllers.count == 1) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }else
+        [self popViewControllerAnimated:YES];
+}
+
 
 - (void)dealloc
 {
@@ -59,5 +77,8 @@
         navigationController.interactivePopGestureRecognizer.enabled = YES;
     }
 }
+
+
+
 
 @end

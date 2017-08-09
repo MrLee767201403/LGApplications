@@ -21,7 +21,7 @@
 #import "UIView+Extension.h"
 #import "UIImage+Extension.h"
 #import "NSString+Extension.h"
-#import "NSArray+Log.h"
+#import "NSDictionary+Extension.h"
 
 // 第三方
 #import "Masonry.h"

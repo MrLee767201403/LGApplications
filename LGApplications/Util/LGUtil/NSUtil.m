@@ -315,12 +315,22 @@
     
     
     NSDate * currtentDate = [NSDate date];
-
-    // 比较日历
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSCalendarUnit unit = NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
-    NSDateComponents *components =[calendar components:unit fromDate:date toDate:currtentDate options:0];
-
+    
+//    // 比较日历
+//    NSCalendar *calendar = [NSCalendar currentCalendar];
+//    NSCalendarUnit unit = NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
+//    // 这个返回的是相差多久
+//    // 比如差12个小时, 无论在不在同一天 day都是0
+//    // NSDateComponents *components = [calendar components:unit fromDate:date toDate:currtentDate options:0];
+//    NSDateComponents *currentCalendar =[calendar components:unit fromDate:currtentDate];
+//    NSDateComponents *targetCalendar =[calendar components:unit fromDate:date];
+//    
+//    BOOL isYear = currentCalendar.year == targetCalendar.year;
+//    BOOL isMonth = currentCalendar.month == targetCalendar.month;
+//    BOOL isDay = currentCalendar.day == targetCalendar.day;
+    
+    NSDateComponents *components = [NSUtil compareCalendar:date];
+    
     // 比较时间
     NSTimeInterval t = [currtentDate timeIntervalSinceDate:date];
     
@@ -333,25 +343,31 @@
         return [NSString stringWithFormat:@"%ld分钟前", (long)(t/60)];
     }
     // 今天
-    else if ([[format stringFromDate:date] isEqualToString:[format stringFromDate:currtentDate]] ||  components.hour< 12) {
-        return [NSString stringWithFormat:@"%zd小时前", components.hour];
+    else if (components.year == 0 && components.month == 0 && components.day == 0) {
+        if (t/3600 > 3) {
+            format.dateFormat = @"HH:mm";
+            return [format stringFromDate:date];
+        }
+        return [NSString stringWithFormat:@"%zd小时前", (int)t/3600];
     }
     // 昨天
-    else if(components.year == 0 && components.month == 0 && components.day == 1){
-        return @"昨天";
+    else if (components.year == 0 && components.month == 0 && components.day == 1) {
+        format.dateFormat = @"昨天 HH:mm";
+        return [format stringFromDate:date];
     }
     // 前天
-    else if(components.year == 0 && components.month == 0 && components.day == 2){
-       return @"前天";
+    else if (components.year == 0 && components.month == 0 && components.day == 2) {
+        return @"前天";
     }
     // 今年
     else if (components.year == 0) {
         format.dateFormat = @"MM-dd";
-        [format stringFromDate:date];
+        return [format stringFromDate:date];
     }
     // 今年以前
     return [format stringFromDate:date];;
 }
+
 
 /**  根据日期返回字符串*/
 + (NSString *)stringWithDate:(NSDate *)date format:(NSString *)format {
@@ -366,4 +382,68 @@
     [inputFormatter setDateFormat:format];    
     return [inputFormatter dateFromString:string];;
 }
+
+
+
+/**  比较两个日期,年月日, 时分秒 各相差多久
+ *   先判断年 若year>0   则相差这么多年,后面忽略
+ *   再判断月 若month>0  则相差这么多月,后面忽略
+ *   再判断日 若day>0    则相差这么多天,后面忽略(0是今天,1是昨天,2是前天)
+ *          若day=0    则是今天 返回相差的总时长
+ */
++ (NSDateComponents *)compareCalendar:(NSDate *)date{
+    
+    NSDate * currtentDate = [NSDate date];
+    
+    // 比较日历
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSCalendarUnit unit = NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
+    // 这个返回的是相差多久
+    // 比如差12个小时, 无论在不在同一天 day都是0
+    // NSDateComponents *components = [calendar components:unit fromDate:date toDate:currtentDate options:0];
+    NSDateComponents *currentCalendar =[calendar components:unit fromDate:currtentDate];
+    NSDateComponents *targetCalendar =[calendar components:unit fromDate:date];
+    
+    BOOL isYear = currentCalendar.year == targetCalendar.year;
+    BOOL isMonth = currentCalendar.month == targetCalendar.month;
+    BOOL isDay = currentCalendar.day == targetCalendar.day;
+    
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    
+    if (isYear) {
+        if (isMonth) {
+            if (isDay) {
+                // 时分秒
+                components = [calendar components:unit fromDate:date toDate:currtentDate options:0];
+            }
+            [components setValue:(currentCalendar.day - targetCalendar.day) forComponent:NSCalendarUnitDay];
+        }
+        [components setValue:(currentCalendar.month - targetCalendar.month) forComponent:NSCalendarUnitMonth];
+    }
+    [components setValue:(currentCalendar.year - targetCalendar.year) forComponent:NSCalendarUnitYear];
+    return components;
+}
+
+
+
+
+// 划线
+- (void)drawLine:(CGContextRef)context startPoint:(CGPoint)startPoint endPoint:(CGPoint)endPoint lineColor:(UIColor *)lineColor lineWidth:(CGFloat)width {
+    
+    // [super drawRect:rect];
+    // CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSetShouldAntialias(context, YES ); //抗锯齿
+    CGColorSpaceRef Linecolorspace1 = CGColorSpaceCreateDeviceRGB();
+    CGContextSetStrokeColorSpace(context, Linecolorspace1);
+    CGContextSetLineWidth(context, width);
+    CGContextSetStrokeColorWithColor(context, lineColor.CGColor);
+    CGContextMoveToPoint(context, startPoint.x, startPoint.y);
+    CGContextAddLineToPoint(context, endPoint.x, endPoint.y);
+    CGContextStrokePath(context);
+    CGColorSpaceRelease(Linecolorspace1);
+}
+
+
+
 @end

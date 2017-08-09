@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		68EBE1FA105508E5645AACBF /* libPods-LGApplications.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A068290D8756EF054993DE1 /* libPods-LGApplications.a */; };
 		CE008BE31EE7C76000318D98 /* RootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008BE21EE7C76000318D98 /* RootNavigationController.m */; };
-		CE008BEE1EE7C95600318D98 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008BE71EE7C95600318D98 /* NSArray+Log.m */; };
 		CE008BEF1EE7C95600318D98 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008BE91EE7C95600318D98 /* NSString+Extension.m */; };
 		CE008BF01EE7C95600318D98 /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008BEB1EE7C95600318D98 /* UIButton+Extension.m */; };
 		CE008BF11EE7C95600318D98 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008BED1EE7C95600318D98 /* UIView+Extension.m */; };
@@ -30,6 +29,8 @@
 		CE6040E01EE5316E0089C945 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6040DE1EE5316E0089C945 /* LaunchScreen.storyboard */; };
 		CE6040EB1EE5316E0089C945 /* LGApplicationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6040EA1EE5316E0089C945 /* LGApplicationsTests.m */; };
 		CE6040F61EE5316E0089C945 /* LGApplicationsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6040F51EE5316E0089C945 /* LGApplicationsUITests.m */; };
+		CE9266221F22F6520063724B /* NSDictionary+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9266211F22F6520063724B /* NSDictionary+Extension.m */; };
+		CE9266281F22F9100063724B /* LGAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9266271F22F9100063724B /* LGAlertView.m */; };
 		CEDC592D1EF1214900804ADF /* ChildController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDC592A1EF1214900804ADF /* ChildController.m */; };
 		CEDC592E1EF1214900804ADF /* SwitchController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDC592C1EF1214900804ADF /* SwitchController.m */; };
 		CEE768751EEA5A670093514F /* GradientAnimationDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE768741EEA5A670093514F /* GradientAnimationDemo.m */; };
@@ -59,8 +60,6 @@
 		BE8FEF4ADE114198BFAF7886 /* Pods-LGApplications.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LGApplications.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LGApplications/Pods-LGApplications.debug.xcconfig"; sourceTree = "<group>"; };
 		CE008BE11EE7C76000318D98 /* RootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootNavigationController.h; sourceTree = "<group>"; };
 		CE008BE21EE7C76000318D98 /* RootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootNavigationController.m; sourceTree = "<group>"; };
-		CE008BE61EE7C95600318D98 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
-		CE008BE71EE7C95600318D98 /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
 		CE008BE81EE7C95600318D98 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
 		CE008BE91EE7C95600318D98 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
 		CE008BEA1EE7C95600318D98 /* UIButton+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extension.h"; sourceTree = "<group>"; };
@@ -103,6 +102,10 @@
 		CE6040F11EE5316E0089C945 /* LGApplicationsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LGApplicationsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6040F51EE5316E0089C945 /* LGApplicationsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LGApplicationsUITests.m; sourceTree = "<group>"; };
 		CE6040F71EE5316E0089C945 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE9266201F22F6520063724B /* NSDictionary+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Extension.h"; sourceTree = "<group>"; };
+		CE9266211F22F6520063724B /* NSDictionary+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Extension.m"; sourceTree = "<group>"; };
+		CE9266261F22F9100063724B /* LGAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGAlertView.h; sourceTree = "<group>"; };
+		CE9266271F22F9100063724B /* LGAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGAlertView.m; sourceTree = "<group>"; };
 		CEDC59291EF1214900804ADF /* ChildController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildController.h; sourceTree = "<group>"; };
 		CEDC592A1EF1214900804ADF /* ChildController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildController.m; sourceTree = "<group>"; };
 		CEDC592B1EF1214900804ADF /* SwitchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchController.h; sourceTree = "<group>"; };
@@ -175,8 +178,8 @@
 		CE008BE51EE7C95600318D98 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				CE008BE61EE7C95600318D98 /* NSArray+Log.h */,
-				CE008BE71EE7C95600318D98 /* NSArray+Log.m */,
+				CE9266201F22F6520063724B /* NSDictionary+Extension.h */,
+				CE9266211F22F6520063724B /* NSDictionary+Extension.m */,
 				CE008BE81EE7C95600318D98 /* NSString+Extension.h */,
 				CE008BE91EE7C95600318D98 /* NSString+Extension.m */,
 				CE008BEA1EE7C95600318D98 /* UIButton+Extension.h */,
@@ -201,6 +204,8 @@
 		CE008BF71EE7CA7500318D98 /* LGViews */ = {
 			isa = PBXGroup;
 			children = (
+				CE9266261F22F9100063724B /* LGAlertView.h */,
+				CE9266271F22F9100063724B /* LGAlertView.m */,
 				CE008C111EE7FEB200318D98 /* LGPickerView.h */,
 				CE008C121EE7FEB200318D98 /* LGPickerView.m */,
 				CE008BF81EE7CA7500318D98 /* LGActionSheet.h */,
@@ -526,11 +531,12 @@
 				CE008BFC1EE7CA7500318D98 /* LGActionSheet.m in Sources */,
 				CE008C181EE80E2300318D98 /* ActionSheetDemo.m in Sources */,
 				CEDC592E1EF1214900804ADF /* SwitchController.m in Sources */,
+				CE9266221F22F6520063724B /* NSDictionary+Extension.m in Sources */,
+				CE9266281F22F9100063724B /* LGAlertView.m in Sources */,
 				CE008C101EE7F64A00318D98 /* BaseController.m in Sources */,
 				CE008BF11EE7C95600318D98 /* UIView+Extension.m in Sources */,
 				CEDC592D1EF1214900804ADF /* ChildController.m in Sources */,
 				CE1122781EE9396500C203DF /* SingleChoiceDemo.m in Sources */,
-				CE008BEE1EE7C95600318D98 /* NSArray+Log.m in Sources */,
 				CE008BE31EE7C76000318D98 /* RootNavigationController.m in Sources */,
 				CE008C011EE7CBD700318D98 /* UIImage+Extension.m in Sources */,
 				CE6040D21EE5316E0089C945 /* main.m in Sources */,

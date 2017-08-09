@@ -45,7 +45,6 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"Cell"];
     }
-    
     cell.textLabel.text = @"只是测试数据而已,何必在意内容";
     
     return cell;
@@ -56,21 +55,32 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
-    // tableView不参与滑动
-    if (self.tableView.contentOffset.y< 0) {
+    // tableView不参与滑动 让rootScrollView
+    // 整个头部滑上去后,再下滑时,由于惯性,tableView顶部的弹性
+    if (self.tableView.contentOffset.y< 0 && self.rootScrollView.contentOffset.y > 0) {
         
-        self.rootScrollView.contentOffset = CGPointMake(0, self.rootScrollView.contentOffset.y +scrollView.contentOffset.y);
-        [self.tableView setContentOffset:CGPointZero];
+        // 让底部的rootScrollView回弹
+        if (self.rootScrollView.contentOffset.y < 0){
+            [self.rootScrollView setContentOffset:CGPointZero animated:YES];
+        }
+        else{
+           
+            self.rootScrollView.contentOffset = CGPointMake(0, self.rootScrollView.contentOffset.y +scrollView.contentOffset.y);
+             [self.tableView setContentOffset:CGPointZero];
+        }
         
         if (self.rootScrollView.contentOffset.y<0 && scrollView.isDragging == NO) {
             [self.rootScrollView setContentOffset:CGPointZero animated:YES];
         }
+        
+        
     }
     // 只有当self.rootScrollView 偏移大于scrollEnabledPoint  tableView参与滑动
     else{
         
         // 小于 scrollEnabledPoint
         if (self.rootScrollView.contentOffset.y < self.scrollEnabledPoint ) {
+            // 将tableView的偏移设置给rootScrollView
             CGFloat offset = self.rootScrollView.contentOffset.y +scrollView.contentOffset.y;
             offset = offset > self.scrollEnabledPoint ? self.scrollEnabledPoint : offset ;
             [self.rootScrollView setContentOffset:CGPointMake(0, offset)];

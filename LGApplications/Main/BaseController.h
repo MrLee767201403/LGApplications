@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface BaseController : UIViewController
+@property (nonatomic, assign) BOOL showBack;    // 默认YES 
+
 - (void)back;
 @end
