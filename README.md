@@ -28,3 +28,11 @@ LGApplications/Util/UIDefines.h :   常用的宏
 5.LGGradientLabel               :   渐变文字Label
 
 6.ScorllView嵌套                 :   底部纵向ScrollView,上面有横向的ScrollView,横向的上面还有纵向的tableView
+
+7.LGAlertView                   :   自定义的一个AlertView,默认有一个取消按钮,可以单独添加事件,传入确定按钮的title后会有两个按钮
+
+LGAlertView *alert = [[LGAlertView alloc] initWithTitle:nil content:@"你开心就好" confirmTitle:nil];
+
+alert.cancelTitle = @"确定";
+
+[alert show];
