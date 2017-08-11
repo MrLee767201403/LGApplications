@@ -7,8 +7,6 @@
 //
 
 #import "GradientAnimationDemo.h"
-#import "LGGradientLabel.h"
-
 
 /* 思路: 1.titleView上面盖一个完全一样的View,
         2.对上面盖的这个View进行裁剪,只留下滑块那部分
@@ -50,7 +48,6 @@
     
     UIView *view1 = [[UIView alloc] initWithFrame:self.view.bounds];
     view1.backgroundColor = kColorBackground;
-    [view1 addSubview:[self gradientLabel]];
     
     UIView *view2 = [[UIView alloc] initWithFrame:CGRectMake(kScreenWidth, 0, kScreenWidth, self.view.height)];
     view2.backgroundColor = kColorWithFloat(0xF6833C);
@@ -137,22 +134,5 @@
 }
 
 
-
-
-
-
-#pragma mark   -----------------        分割线         ---------------------
-
-// 上面是滑动渐变
-// 下面是渐变色Label(文字颜色由左到右渐变)
-
-- (LGGradientLabel *)gradientLabel{
-    
-    LGGradientLabel *label = [[LGGradientLabel alloc] initWithFrame:CGRectMake(15, 180, kScreenWidth-30, 30)];
-    label.colors = @[(id)[UIColor greenColor].CGColor,(id)[UIColor redColor].CGColor];
-    label.text = @"这是渐变效果";
-    label.textAlignment = NSTextAlignmentCenter;
-    return label;
-}
 
 @end

@@ -195,6 +195,7 @@
     if (_viewArray == nil) {
         _viewArray = @[@{@"ClassName":@"ActionSheetDemo",@"title":@"ActionSheet"},
                        @{@"ClassName":@"PickerDemoController",@"title":@"PickerView"},
+                       @{@"ClassName":@"InputViewDemo",@"title":@"InputView"},
                        @{@"ClassName":@"SingleChoiceDemo",@"title":@"SingleChoiceTableView"}];
     }
     

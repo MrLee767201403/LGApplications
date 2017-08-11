@@ -35,6 +35,8 @@
 		CEDC592E1EF1214900804ADF /* SwitchController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDC592C1EF1214900804ADF /* SwitchController.m */; };
 		CEE768751EEA5A670093514F /* GradientAnimationDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE768741EEA5A670093514F /* GradientAnimationDemo.m */; };
 		CEE768781EEA78620093514F /* LGGradientLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE768771EEA78620093514F /* LGGradientLabel.m */; };
+		CEF78A9E1F3D565400EF0507 /* LGInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF78A9D1F3D565400EF0507 /* LGInputView.m */; };
+		CEF78AA11F3DBCCC00EF0507 /* InputViewDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF78AA01F3DBCCC00EF0507 /* InputViewDemo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +116,10 @@
 		CEE768741EEA5A670093514F /* GradientAnimationDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientAnimationDemo.m; sourceTree = "<group>"; };
 		CEE768761EEA78620093514F /* LGGradientLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGGradientLabel.h; sourceTree = "<group>"; };
 		CEE768771EEA78620093514F /* LGGradientLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGGradientLabel.m; sourceTree = "<group>"; };
+		CEF78A9C1F3D565400EF0507 /* LGInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGInputView.h; sourceTree = "<group>"; };
+		CEF78A9D1F3D565400EF0507 /* LGInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGInputView.m; sourceTree = "<group>"; };
+		CEF78A9F1F3DBCCC00EF0507 /* InputViewDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputViewDemo.h; sourceTree = "<group>"; };
+		CEF78AA01F3DBCCC00EF0507 /* InputViewDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputViewDemo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +220,8 @@
 				CE008BFB1EE7CA7500318D98 /* LGTextView.m */,
 				CEE768761EEA78620093514F /* LGGradientLabel.h */,
 				CEE768771EEA78620093514F /* LGGradientLabel.m */,
+				CEF78A9C1F3D565400EF0507 /* LGInputView.h */,
+				CEF78A9D1F3D565400EF0507 /* LGInputView.m */,
 			);
 			path = LGViews;
 			sourceTree = "<group>";
@@ -240,6 +248,8 @@
 				CE008C0C1EE7ED5A00318D98 /* PickerDemoController.m */,
 				CE008C161EE80E2300318D98 /* ActionSheetDemo.h */,
 				CE008C171EE80E2300318D98 /* ActionSheetDemo.m */,
+				CEF78A9F1F3DBCCC00EF0507 /* InputViewDemo.h */,
+				CEF78AA01F3DBCCC00EF0507 /* InputViewDemo.m */,
 				CE1122761EE9396500C203DF /* SingleChoiceDemo.h */,
 				CE1122771EE9396500C203DF /* SingleChoiceDemo.m */,
 				CEE768731EEA5A670093514F /* GradientAnimationDemo.h */,
@@ -535,8 +545,10 @@
 				CE9266281F22F9100063724B /* LGAlertView.m in Sources */,
 				CE008C101EE7F64A00318D98 /* BaseController.m in Sources */,
 				CE008BF11EE7C95600318D98 /* UIView+Extension.m in Sources */,
+				CEF78A9E1F3D565400EF0507 /* LGInputView.m in Sources */,
 				CEDC592D1EF1214900804ADF /* ChildController.m in Sources */,
 				CE1122781EE9396500C203DF /* SingleChoiceDemo.m in Sources */,
+				CEF78AA11F3DBCCC00EF0507 /* InputViewDemo.m in Sources */,
 				CE008BE31EE7C76000318D98 /* RootNavigationController.m in Sources */,
 				CE008C011EE7CBD700318D98 /* UIImage+Extension.m in Sources */,
 				CE6040D21EE5316E0089C945 /* main.m in Sources */,
