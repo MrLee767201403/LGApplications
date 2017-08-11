@@ -36,3 +36,5 @@ LGAlertView *alert = [[LGAlertView alloc] initWithTitle:nil content:@"你开心�
 alert.cancelTitle = @"确定";
 
 [alert show];
+
+8.LGInputView                   :   自定义输入框,可根据文字多少自动调整高度,设置最大高度,达到最大高度后内容可滚动,自动跟随键盘,用最简单的方法实现的,比较low,但也蛮好用的,可以自行添加所需的按妞
