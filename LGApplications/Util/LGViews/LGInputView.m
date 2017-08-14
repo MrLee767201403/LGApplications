@@ -50,7 +50,6 @@
     _placeholderLabel.text = _placeholder;
     _placeholderLabel.textColor = _placeholderColor;
     _placeholderLabel.numberOfLines = 0;
-    _placeholderLabel.hidden = YES;
     
     _textView = [[UITextView alloc] initWithFrame:CGRectMake(15, 5, kScreenWidth-80.f, kBaseLineHeight)];
     _textView.delegate = self;
