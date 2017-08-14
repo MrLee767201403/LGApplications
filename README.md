@@ -29,6 +29,8 @@ LGApplications/Util/UIDefines.h :   常用的宏
 
 6.ScorllView嵌套                 :   底部纵向ScrollView,上面有横向的ScrollView,横向的上面还有纵向的tableView
 
+![image](https://github.com/MrLee767201403/LGApplications/blob/master/Gif/ScrollView嵌套效果.gif)
+
 7.LGAlertView                   :   自定义的一个AlertView,默认有一个取消按钮,可以单独添加事件,传入确定按钮的title后会有两个按钮
 
 LGAlertView *alert = [[LGAlertView alloc] initWithTitle:nil content:@"你开心就好" confirmTitle:nil];
@@ -38,3 +40,7 @@ alert.cancelTitle = @"确定";
 [alert show];
 
 8.LGInputView                   :   自定义输入框,可根据文字多少自动调整高度,设置最大高度,达到最大高度后内容可滚动,自动跟随键盘,用最简单的方法实现的,比较low,但也蛮好用的,可以自行添加所需的按妞
+
+![image](https://github.com/MrLee767201403/LGApplications/blob/master/Gif/inputView.gif)
+
+
