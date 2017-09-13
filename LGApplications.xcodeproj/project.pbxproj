@@ -31,6 +31,7 @@
 		CE6040F61EE5316E0089C945 /* LGApplicationsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6040F51EE5316E0089C945 /* LGApplicationsUITests.m */; };
 		CE9266221F22F6520063724B /* NSDictionary+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9266211F22F6520063724B /* NSDictionary+Extension.m */; };
 		CE9266281F22F9100063724B /* LGAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9266271F22F9100063724B /* LGAlertView.m */; };
+		CED040FE1F63C99000C8B441 /* LGRollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CED040FD1F63C99000C8B441 /* LGRollView.m */; };
 		CEDC592D1EF1214900804ADF /* ChildController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDC592A1EF1214900804ADF /* ChildController.m */; };
 		CEDC592E1EF1214900804ADF /* SwitchController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDC592C1EF1214900804ADF /* SwitchController.m */; };
 		CEE768751EEA5A670093514F /* GradientAnimationDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE768741EEA5A670093514F /* GradientAnimationDemo.m */; };
@@ -108,6 +109,8 @@
 		CE9266211F22F6520063724B /* NSDictionary+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Extension.m"; sourceTree = "<group>"; };
 		CE9266261F22F9100063724B /* LGAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGAlertView.h; sourceTree = "<group>"; };
 		CE9266271F22F9100063724B /* LGAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGAlertView.m; sourceTree = "<group>"; };
+		CED040FC1F63C99000C8B441 /* LGRollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGRollView.h; sourceTree = "<group>"; };
+		CED040FD1F63C99000C8B441 /* LGRollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGRollView.m; sourceTree = "<group>"; };
 		CEDC59291EF1214900804ADF /* ChildController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildController.h; sourceTree = "<group>"; };
 		CEDC592A1EF1214900804ADF /* ChildController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildController.m; sourceTree = "<group>"; };
 		CEDC592B1EF1214900804ADF /* SwitchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchController.h; sourceTree = "<group>"; };
@@ -222,6 +225,8 @@
 				CEE768771EEA78620093514F /* LGGradientLabel.m */,
 				CEF78A9C1F3D565400EF0507 /* LGInputView.h */,
 				CEF78A9D1F3D565400EF0507 /* LGInputView.m */,
+				CED040FC1F63C99000C8B441 /* LGRollView.h */,
+				CED040FD1F63C99000C8B441 /* LGRollView.m */,
 			);
 			path = LGViews;
 			sourceTree = "<group>";
@@ -533,6 +538,7 @@
 				CE008BFD1EE7CA7500318D98 /* LGTextView.m in Sources */,
 				CE008BEF1EE7C95600318D98 /* NSString+Extension.m in Sources */,
 				CE008C0D1EE7ED5A00318D98 /* PickerDemoController.m in Sources */,
+				CED040FE1F63C99000C8B441 /* LGRollView.m in Sources */,
 				CE008BF01EE7C95600318D98 /* UIButton+Extension.m in Sources */,
 				CE008BF51EE7CA3C00318D98 /* NSUtil.m in Sources */,
 				CEE768781EEA78620093514F /* LGGradientLabel.m in Sources */,

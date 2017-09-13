@@ -106,4 +106,15 @@ typedef NS_ENUM(NSInteger, NetWorkType) {
 
 /**  根据字符串返回日期*/
 + (NSDate *)dateWithString:(NSString *)string format:(NSString *)format;
+
+
+#pragma mark   -  图片
+/**  压缩图片*/
++ (UIImage *)imageWithOriginalImage:(UIImage *)image;
+
+/**  压缩图片 压缩质量 0 -- 1*/
++ (UIImage *)imageWithOriginalImage:(UIImage *)image quality:(CGFloat)quality;
+
+/**  压缩图片成Data*/
++ (NSData *)dataWithOriginalImage:(UIImage *)image;
 @end
