@@ -43,4 +43,6 @@ alert.cancelTitle = @"确定";
 
 ![image](https://github.com/MrLee767201403/LGApplications/blob/master/Gif/inputView.gif)
 
+9.LGRollView                    :   自动循环滚动的广告条
+
 

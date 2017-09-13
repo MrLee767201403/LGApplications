@@ -20,6 +20,8 @@ typedef NS_ENUM(NSInteger,Direction) {
 @property (nonatomic, assign)Direction direction; // 滚动方向
 @property (nonatomic, weak)UIButton *button;
 @property (nonatomic, assign, readonly) NSInteger index;
+@property (nonatomic, strong) NSArray *titles;
+
 
 /**  titles  second:每次滚动的间隔*/
 -(void)setTitles:(NSArray *)array duration:(CGFloat)second;

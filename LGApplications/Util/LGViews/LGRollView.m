@@ -11,8 +11,7 @@
 @implementation LGRollView
 
 {
-    UIButton *label;
-    NSArray *infoArray;
+    UIButton *_label;
 }
 //if not create with nib this will be called
 -(instancetype)initWithFrame:(CGRect)frame{
@@ -20,15 +19,15 @@
     if (self) {
         //do something
         self.layer.masksToBounds = YES;
-        label = [UIButton buttonWithType:UIButtonTypeCustom];
-        label.frame = frame;
-        label.hidden = YES;
-        [label setTitleColor:kColorWithFloat(0x131117) forState:UIControlStateNormal];
-        label.titleLabel.font = kFontSmall;
-        label.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+        _label = [UIButton buttonWithType:UIButtonTypeCustom];
+        _label.frame = frame;
+        _label.hidden = YES;
+        [_label setTitleColor:kColorWithFloat(0x131117) forState:UIControlStateNormal];
+        _label.titleLabel.font = kFontSmall;
+        _label.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         
-        self.button = label;
-        [self addSubview:label];
+        self.button = _label;
+        [self addSubview:_label];
     }
     return self;
 }
@@ -36,35 +35,40 @@
 -(void)setTitles:(NSArray *)array duration:(CGFloat)second{
     
     if (array.count!=0) {
-        infoArray = array;
+        _titles = array;
         
-        label.hidden = NO;
-        [label setTitle:array[0] forState:UIControlStateNormal];
-        label.frame = self.bounds;
+        _label.hidden = NO;
+        [_label setTitle:array[0] forState:UIControlStateNormal];
+        _label.frame = self.bounds;
         
         _index = 0;
         [self startScroll:second];
     }else{
-        [label setTitle:@"默认信息..." forState:UIControlStateNormal];
+        [_label setTitle:@"默认信息..." forState:UIControlStateNormal];
     }
+}
+
+- (void)setTitles:(NSArray *)titles{
+    _titles = titles;
+    _index = 0;
 }
 
 - (CGFloat)widthWithString:(NSString *)string
 {
-    UIFont *font= label.titleLabel.font;
+    UIFont *font= _label.titleLabel.font;
     CGSize size = [string boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, self.frame.size.height) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName : font} context:nil].size;
     return size.width+20.0;
 }
 
 - (void)startScroll:(NSInteger)seconds
 {
-    [self fadeLayer:label.layer];
+    [self fadeLayer:_label.layer];
     _index++;
-    if (_index == infoArray.count) {
+    if (_index == _titles.count) {
         _index = 0;
     }
-    NSString *tempStr = infoArray[_index];
-    [label setTitle:tempStr forState:UIControlStateNormal];
+    NSString *tempStr = _titles[_index];
+    [_label setTitle:tempStr forState:UIControlStateNormal];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(seconds * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self startScroll:seconds];;
