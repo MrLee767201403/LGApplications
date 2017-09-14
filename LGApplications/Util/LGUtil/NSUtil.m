@@ -466,7 +466,7 @@
         // 宽大于高 取较小值(高)等于1280，较大值等比例压缩
         if (ratio>1) {
             targetH = 1280;
-            targetW = targetH / ratio;
+            targetW = targetH * ratio;
         }
         // 高大于宽 取较小值(宽)等于1280，较大值等比例压缩
         else{
@@ -513,6 +513,7 @@
     [sourceImage drawInRect:CGRectMake(0,0,targetWidth, targetHeight)];
     UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
+
     return newImage;
 }
 
