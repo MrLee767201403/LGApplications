@@ -23,7 +23,8 @@
     // Do any additional setup after loading the view.
     
     self.title = @"我的项目";
-    
+    NSLog(@"%@", NSStringFromCGRect([UIScreen mainScreen].bounds));
+
     // 让self.view从导航栏下开始显示
     self.navigationController.navigationBar.translucent = NO;
     
