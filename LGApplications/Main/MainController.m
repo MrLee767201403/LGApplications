@@ -218,11 +218,11 @@
 
 - (NSArray *)functionArray{
     if (_functionArray == nil) {
-        _functionArray = @[@{@"ClassName":@"SwitchController",@"title":@"scorllView嵌套"},
+//        _functionArray = @[@{@"ClassName":@"SwitchController",@"title":@"scorllView嵌套"},
 //                           @{@"ClassName":@"",@"title":@"文件下载"},
 //                           @{@"ClassName":@"",@"title":@"网络视频播放"},
 //                           @{@"ClassName":@"",@"title":@"大图预览"}
-                           ];
+//                           ];
 
     }
     return _functionArray;
