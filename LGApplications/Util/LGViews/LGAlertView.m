@@ -19,7 +19,6 @@
     UIButton *_closeButton;
     UIButton *_confirmButton;
     NSString *_confirmTitle;    // 如果有Title 就显示两个按钮, 没有显示一个
-    UIView *_line;
     
     LGAlertBlack _cancelHandle;
     LGAlertBlack _confirmHandle;
@@ -40,7 +39,7 @@
 
 - (void)setUpSubViews{
     
-    CGFloat height = [_content boundingRectWithSize:CGSizeMake(260, MAXFLOAT) options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:kFontLagre} context:nil].size.height+1;
+    CGFloat height = [_content boundingRectWithSize:CGSizeMake(kScreenWidth-160, MAXFLOAT) options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:kFontLagre} context:nil].size.height+1;
     
     self.frame = [UIScreen mainScreen].bounds;
     self.backgroundColor = [UIColor colorWithWhite:0 alpha:0.3];
@@ -54,55 +53,56 @@
     _contentView.transform = CGAffineTransformMakeScale(0.05, 0.05);
     
     _titleLabel = [[UILabel alloc] init];
-    _titleLabel.font = kFontMiddle;
-    _titleLabel.textColor = kColorWithFloat(0xbebcc5);
+    _titleLabel.font = kFontSmall;
+    _titleLabel.text = _title;
+    _titleLabel.textColor = kColorText;
     _titleLabel.textAlignment = NSTextAlignmentCenter;
     
     _contentLabel = [[UILabel alloc] init];
     _contentLabel.font = kFontLagre;
-    _contentLabel.textColor = kColorWithFloat(0x8d8c92);
+    _contentLabel.textColor = kColorText;
     _contentLabel.textAlignment = NSTextAlignmentCenter;
     _contentLabel.numberOfLines = 0;
     
-    UIView *line = [[UIView alloc] init];
-    line.backgroundColor = kColorSeparator;
     
     _closeButton = [[UIButton alloc] init];
-    _closeButton.titleLabel.font = kFontLagre;
-    [_closeButton setTitle:NSLocalizedString(@"Cancel", nil) forState:UIControlStateNormal];
-    [_closeButton setTitleColor:kColorMainTheme forState:UIControlStateNormal];
-    [_closeButton setBackgroundColor:[UIColor clearColor] forState:UIControlStateNormal];
+    _closeButton.titleLabel.font = kFontMiddle;
+    _closeButton.layer.cornerRadius = 5;
+    _closeButton.layer.masksToBounds = YES;
+    [_closeButton setTitle:@"取消" forState:UIControlStateNormal];
+    [_closeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_closeButton setBackgroundColor:kColorDisable forState:UIControlStateNormal];
     [_closeButton addTarget:self action:@selector(colseButtonClick) forControlEvents:UIControlEventTouchUpInside];
     
     [self addSubview:_contentView];
     [_contentView addSubview:_titleLabel];
     [_contentView addSubview:_contentLabel];
-    [_contentView addSubview:line];
     [_contentView addSubview:_closeButton];
     
     // 确认按钮
     if (_confirmTitle) {
         
-        _line = [[UIView alloc] init];
-        _line.backgroundColor = kColorSeparator;
-        
         _confirmButton = [[UIButton alloc] init];
-        _confirmButton.titleLabel.font = kFontLagre;
+        _confirmButton.titleLabel.font = kFontMiddle;
+        _confirmButton.layer.cornerRadius = 5;
+        _confirmButton.layer.masksToBounds = YES;
         [_confirmButton setTitle:_confirmTitle forState:UIControlStateNormal];
-        [_closeButton setTitleColor:kColorMainTheme forState:UIControlStateNormal];
-        [_confirmButton setBackgroundColor:[UIColor clearColor] forState:UIControlStateNormal];
+        [_closeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_confirmButton setBackgroundColor:kColorMainTheme forState:UIControlStateNormal];
+        [_confirmButton setBackgroundColor:kColorButtonHL forState:UIControlStateHighlighted];
+        
         [_confirmButton addTarget:self
                            action:@selector(confirmButtonClick)
                  forControlEvents:UIControlEventTouchUpInside];
-       
-        [_contentView addSubview:_line];
+        
         [_contentView addSubview:_confirmButton];
     }
     
     
     [_contentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(self);
-        make.size.mas_equalTo(CGSizeMake(280, height + 100.f));
+        make.width.mas_equalTo(kScreenWidth-110);
+        make.height.mas_greaterThanOrEqualTo(height + 110.f);
     }];
     
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -111,50 +111,43 @@
     }];
     
     [_contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_titleLabel.mas_bottom).offset(15);
+        make.top.equalTo(_titleLabel.mas_bottom).offset(10);
         make.height.mas_equalTo(height);
-        make.width.mas_equalTo(260);
+        make.width.mas_equalTo(kScreenWidth-160);
         make.centerX.equalTo(_contentView);
     }];
     
-    [line mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_contentLabel.mas_bottom).offset(15);
-        make.left.equalTo(_contentView).offset(18);
-        make.right.equalTo(_contentView).offset(-18);
-        make.height.mas_equalTo(1.0);
-    }];
-    
     if (_confirmButton) {
-        [_closeButton mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(line.mas_bottom);
-            make.bottom.equalTo(_contentView);
-            make.left.equalTo(_contentView);
-            make.width.mas_equalTo(140);
-        }];
-        
         [_confirmButton mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(line.mas_bottom);
-            make.bottom.equalTo(_contentView);
-            make.left.equalTo(_closeButton.mas_right);
-            make.width.mas_equalTo(140);
+            make.top.equalTo(_contentLabel.mas_bottom).offset(30);
+            make.bottom.equalTo(_contentView).offset(-18);
+            make.left.equalTo(_contentLabel);
+            make.right.equalTo(_contentView.mas_centerX).offset(-8);
+            make.height.mas_equalTo(35);
         }];
         
-        [_line mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(_closeButton.mas_right);
-            make.width.mas_equalTo(1);
-            make.centerY.equalTo(_closeButton);
-            make.height.mas_equalTo(20);
+        [_closeButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(_confirmButton);
+            make.bottom.equalTo(_confirmButton);
+            make.left.equalTo(_contentView.mas_centerX).offset(8);
+            make.right.equalTo(_contentLabel);
+            make.height.mas_equalTo(35);
         }];
+        
     }
     else{
         [_closeButton mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(line.mas_bottom);
-            make.bottom.equalTo(_contentView);
-            make.centerX.equalTo(_contentView);
+            make.top.equalTo(_contentLabel.mas_bottom).offset(30);
+            make.bottom.equalTo(_contentView).offset(-18);
+            make.left.right.equalTo(_contentLabel);
+            make.height.mas_equalTo(35);
         }];
+        
+        [_closeButton setBackgroundColor:kColorMainTheme forState:UIControlStateNormal];
+        [_closeButton setBackgroundColor:kColorButtonHL forState:UIControlStateHighlighted];
+        
     }
     
-    _titleLabel.text = _title;
     _contentLabel.text = _content;
 }
 
@@ -192,10 +185,10 @@
     }];
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [super touchesBegan:touches withEvent:event];
-    [self disMiss];
-}
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+//    [super touchesBegan:touches withEvent:event];
+//    [self disMiss];
+//}
 
 - (void)setCancelBlack:(LGAlertBlack)handle{
     _cancelHandle = handle;
@@ -210,6 +203,5 @@
     _cancelTitle = cancelTitle;
     [_closeButton setTitle:cancelTitle forState:UIControlStateNormal];
 }
-
 
 @end

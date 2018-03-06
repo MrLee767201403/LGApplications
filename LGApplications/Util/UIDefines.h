@@ -8,46 +8,63 @@
 
 #ifndef UIDefines_h
 #define UIDefines_h
+static NSString *kFontNameDINAlternateBold = @"DINAlternate-Bold";
+static NSString *kFontNameDINCondMedium = @"DINCond-Medium";
+static NSString *kFontNamePingFangSCRegular = @"PingFangSC-Regular";
+static NSString *kFontNamePingFangSCSemibold = @"PingFangSC-Semibold";
+static NSString *kFontNamePingFangSCMedium = @"PingFangSC-Medium";
+static NSString *kFontNamePingFangSCLight = @"PingFangSC-Light";
+
+#define kBoldFontWithName(Name,F)    [NSUtil fontWithName:Name size:F bold:YES]
+#define kFontWithName(Name,F)        [NSUtil fontWithName:Name size:F bold:NO]
+#define kBoldFont(size)              [UIFont boldSystemFontOfSize:size]
+
 
 // 字体字号
-#define kFontSmallMost          [UIFont systemFontOfSize:9]
-#define kFontSmallMore          [UIFont systemFontOfSize:11]
-#define kFontSmall              [UIFont systemFontOfSize:12]
-#define kFontMiddle             [UIFont systemFontOfSize:13]
-#define kFontLagre              [UIFont systemFontOfSize:15]
-#define kFontLagreMore          [UIFont systemFontOfSize:16]
-#define kFontLagreMost          [UIFont systemFontOfSize:18]
+#define kFontSmallMost          kFontWithSize(9)
+#define kFontSmallMore          kFontWithSize(11)
+#define kFontSmall              kFontWithSize(12)
+#define kFontMiddle             kFontWithSize(13)
+#define kFontNormal             kFontWithSize(14)
+#define kFontLagre              kFontWithSize(15)
+#define kFontLagreMore          kFontWithSize(16)
+#define kFontLagreVery          kFontWithSize(18)
+#define kFontLagreMost          kFontWithSize(20)
 
-#define kFontNavigation         [UIFont fontWithName:@"Helvetica" size:16]
+#define kFontWithSize(F)        kFontWithName(kFontNamePingFangSCRegular, (F))
+#define kFontNavigation         kFontWithName(kFontNamePingFangSCMedium, 18)
 
 
-
+#define Image(name)             [UIImage imageNamed:name]
 
 // 版本信息
 #define kSystemVersion  [UIDevice.currentDevice.systemVersion floatValue]
-#define iOS7Later       (kSystemVersion >= 7.0f)
-#define iOS8Later       (kSystemVersion >= 8.0f)
 #define iOS9Later       (kSystemVersion >= 9.0f)
 #define iOS10Later      (kSystemVersion >= 10.0f)
+#define iOS11Later      (kSystemVersion >= 11.0f)
 
 
 // 获得屏幕宽高
 #define kScreenWidth            [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight           [UIScreen mainScreen].bounds.size.height
+#define kNavigationHeight       (iphoneX ? 88 : 64)
+#define kContentHeight          (kScreenHeight - kNavigationHeight)
 
+#define kScale                  kScreenWidth/375
+#define kScaling(f)             kScale * f
+#define kScales(f)              (iphonePlus_5_5 ?  1.1:1) * f  //   只针对Plus做缩放
 
-// 屏幕frame,bounds,size,Application
-#define kScreenFrame            [UIScreen mainScreen].bounds
-#define kScreenBounds           [UIScreen mainScreen].bounds
-#define kScreenSize             [UIScreen mainScreen].bounds.size
-#define Application             [UIApplication sharedApplication]
+// UIApplication
+#define kApplication            [UIApplication sharedApplication]
+#define kAppDelegate            [UIApplication sharedApplication].delegate
 
 
 // 手机型号
 #define iphone4_3_5     ([UIScreen mainScreen].bounds.size.height<500.0f)
 #define iphone5_4_0     ([UIScreen mainScreen].bounds.size.height==568.0f)
 #define iphone6_4_7     ([UIScreen mainScreen].bounds.size.height==667.0f)
-#define iphonePlus_5_5  ([UIScreen mainScreen].bounds.size.height==736.0f || [UIScreen mainScreen].bounds.size.height==414.0f)
+#define iphonePlus_5_5  ([UIScreen mainScreen].bounds.size.height>700.0f)
+#define iphoneX         ([UIScreen mainScreen].bounds.size.height>800.0f)
 
 
 // 获得RGB颜色
@@ -60,11 +77,18 @@ blue:((float)(rgbValue & 0xFF)) / 255.0 alpha:1.0]
 
 
 // 主要颜色
-#define kColorSeparator             (kColorWithFloat(0xeeeeee))   // 分割线
-#define kColorHighlighted           (kColorWithFloat(0xf2f2f2))
-#define kColorBackground            (kColorWithFloat(0xf3f3f3))   // 界面背景色
-//#define kColorMainTheme             (kColorWithFloat(0xfc3050))   // 界面背景色
-#define kColorMainTheme             (kColorWithFloat(0x00a79a))   // 界面背景色
+#define kColorSeparator             (kColorWithFloat(0xCCCCCC))   // 分割线
+#define kColorHighlighted           (kColorWithFloat(0xf2f2f2))   // Cell高亮
+#define kColorDisable               (kColorWithFloat(0xCCCCCC))
+#define kColorBackground            (kColorWithFloat(0xeeeeee))   // 界面背景色
+#define kColorMainTheme             (kColorWithFloat(0x5CD5A9))   // 主题色
+#define kColorButtonHL              (kColorWithFloat(0x70c8a7))   // 主题高亮
+
+#define kColorRed                   (kColorWithFloat(0xf0735d))   // 淡红
+#define kColorDark                  (kColorWithFloat(0x333333))   // 暗黑
+#define kColorText                  (kColorWithFloat(0x666666))   // 深灰
+#define kColorGray                  (kColorWithFloat(0x999999))   // 中灰
+#define kColorLightGray             (kColorWithFloat(0xb3b3b3))   // 浅灰
 
 
 // 自定义Log

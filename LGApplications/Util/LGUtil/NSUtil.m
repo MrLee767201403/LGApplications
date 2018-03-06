@@ -7,6 +7,7 @@
 //
 
 #import "NSUtil.h"
+#import <AdSupport/AdSupport.h>
 
 @implementation NSUtil
 
@@ -58,44 +59,44 @@
 /**  获取网络类型*/
 + (NetWorkType)getNetWorkType{
     
-        UIApplication *application = [UIApplication sharedApplication];
-        NSArray *subviews = [[[application valueForKey:@"statusBar"] valueForKey:@"foregroundView"] subviews];
-        
-        NSNumber *dataNetWorkItemView = nil;
-        
-        for (id subView in subviews) {
-            if ([subView isKindOfClass:[NSClassFromString(@"UIStatusBarDataNetworkItemView") class]]) {
-                dataNetWorkItemView = subView;
-                break;
-            }
+    UIApplication *application = [UIApplication sharedApplication];
+    NSArray *subviews = [[[application valueForKey:@"statusBar"] valueForKey:@"foregroundView"] subviews];
+    
+    NSNumber *dataNetWorkItemView = nil;
+    
+    for (id subView in subviews) {
+        if ([subView isKindOfClass:[NSClassFromString(@"UIStatusBarDataNetworkItemView") class]]) {
+            dataNetWorkItemView = subView;
+            break;
         }
-        
-        switch ([[dataNetWorkItemView valueForKey:@"dataNetworkType"]integerValue]) {
-            case 0:
-            {
-                return NetWorkTypeNotReachable;
-            }
-                break;
-            case 1:
-            {
-                return NetWorkTypeReachableVia2G;
-            }
-                break;
-            case 2:
-            {
-                return NetWorkTypeReachableVia3G;
-            }
-                break;
-            case 3:
-            {
-                return NetWorkTypeReachableVia4G;
-            }
-            default:
-            {
-                return NetWorkTypeReachableViaWiFi;
-            }
-                break;
+    }
+    
+    switch ([[dataNetWorkItemView valueForKey:@"dataNetworkType"]integerValue]) {
+        case 0:
+        {
+            return NetWorkTypeNotReachable;
         }
+            break;
+        case 1:
+        {
+            return NetWorkTypeReachableVia2G;
+        }
+            break;
+        case 2:
+        {
+            return NetWorkTypeReachableVia3G;
+        }
+            break;
+        case 3:
+        {
+            return NetWorkTypeReachableVia4G;
+        }
+        default:
+        {
+            return NetWorkTypeReachableViaWiFi;
+        }
+            break;
+    }
 }
 
 
@@ -110,10 +111,7 @@
 
 /**  获取UUID*/
 + (NSString *)getUUID{
-    CFUUIDRef uuid = CFUUIDCreate(NULL);
-    NSString *string = (__bridge_transfer NSString *)CFUUIDCreateString(NULL, uuid);
-    CFRelease(uuid);
-    return string;
+    return [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
 }
 
 
@@ -140,10 +138,22 @@
     return [[NSFileManager defaultManager] removeItemAtPath:path error:nil];
 }
 
++ (NSString *)getDocumentPath{
+    
+    NSString *document = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    return [document stringByAppendingPathComponent:@"AppDocument"];;
+}
+
 /**  Document下文件路径*/
 + (NSString *)getDocumentFilePath:(NSString *)file{
-    NSString *document = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    return [document stringByAppendingPathComponent:file];
+    
+    NSString *dir = [self getDocumentPath];
+    if ([self isExistDirectory:dir] == NO)
+    {
+        [[NSFileManager defaultManager] createDirectoryAtPath:dir withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+    return [dir stringByAppendingPathComponent:file];
+    
 }
 
 /**  缓存路径*/
@@ -222,7 +232,7 @@
      * 电信：133,1349,153,180,189
      */
     
-    NSString *mobileNumberRegEx = @"^1[358]\\d{9}$";
+    NSString *mobileNumberRegEx = @"^1[34578]\\d{9}$";
     
     NSPredicate *regextestmobile = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", mobileNumberRegEx];
     return ([regextestmobile evaluateWithObject:phoneNumber]);
@@ -259,7 +269,7 @@
         return NO;
     }
     return YES;
-
+    
 }
 
 #pragma mark   -  时间/日期
@@ -316,18 +326,18 @@
     
     NSDate * currtentDate = [NSDate date];
     
-//    // 比较日历
-//    NSCalendar *calendar = [NSCalendar currentCalendar];
-//    NSCalendarUnit unit = NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
-//    // 这个返回的是相差多久
-//    // 比如差12个小时, 无论在不在同一天 day都是0
-//    // NSDateComponents *components = [calendar components:unit fromDate:date toDate:currtentDate options:0];
-//    NSDateComponents *currentCalendar =[calendar components:unit fromDate:currtentDate];
-//    NSDateComponents *targetCalendar =[calendar components:unit fromDate:date];
-//    
-//    BOOL isYear = currentCalendar.year == targetCalendar.year;
-//    BOOL isMonth = currentCalendar.month == targetCalendar.month;
-//    BOOL isDay = currentCalendar.day == targetCalendar.day;
+    //    // 比较日历
+    //    NSCalendar *calendar = [NSCalendar currentCalendar];
+    //    NSCalendarUnit unit = NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
+    //    // 这个返回的是相差多久
+    //    // 比如差12个小时, 无论在不在同一天 day都是0
+    //    // NSDateComponents *components = [calendar components:unit fromDate:date toDate:currtentDate options:0];
+    //    NSDateComponents *currentCalendar =[calendar components:unit fromDate:currtentDate];
+    //    NSDateComponents *targetCalendar =[calendar components:unit fromDate:date];
+    //
+    //    BOOL isYear = currentCalendar.year == targetCalendar.year;
+    //    BOOL isMonth = currentCalendar.month == targetCalendar.month;
+    //    BOOL isDay = currentCalendar.day == targetCalendar.day;
     
     NSDateComponents *components = [NSUtil compareCalendar:date];
     
@@ -379,7 +389,7 @@
 /**  根据字符串返回日期*/
 + (NSDate *)dateWithString:(NSString *)string format:(NSString *)format {
     NSDateFormatter *inputFormatter = [[NSDateFormatter alloc] init];
-    [inputFormatter setDateFormat:format];    
+    [inputFormatter setDateFormat:format];
     return [inputFormatter dateFromString:string];;
 }
 
@@ -422,26 +432,6 @@
     }
     [components setValue:(currentCalendar.year - targetCalendar.year) forComponent:NSCalendarUnitYear];
     return components;
-}
-
-
-
-
-// 划线
-- (void)drawLine:(CGContextRef)context startPoint:(CGPoint)startPoint endPoint:(CGPoint)endPoint lineColor:(UIColor *)lineColor lineWidth:(CGFloat)width {
-    
-    // [super drawRect:rect];
-    // CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    CGContextSetShouldAntialias(context, YES ); //抗锯齿
-    CGColorSpaceRef Linecolorspace1 = CGColorSpaceCreateDeviceRGB();
-    CGContextSetStrokeColorSpace(context, Linecolorspace1);
-    CGContextSetLineWidth(context, width);
-    CGContextSetStrokeColorWithColor(context, lineColor.CGColor);
-    CGContextMoveToPoint(context, startPoint.x, startPoint.y);
-    CGContextAddLineToPoint(context, endPoint.x, endPoint.y);
-    CGContextStrokePath(context);
-    CGColorSpaceRelease(Linecolorspace1);
 }
 
 
@@ -513,7 +503,6 @@
     [sourceImage drawInRect:CGRectMake(0,0,targetWidth, targetHeight)];
     UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-
     return newImage;
 }
 
@@ -529,6 +518,28 @@
 + (NSData *)dataWithOriginalImage:(UIImage *)image{
     return UIImageJPEGRepresentation([self imageWithOriginalImage:image], 1);
 }
+
+#pragma mark   -  Font
++ (UIFont *)fontWithName:(NSString *)name size:(CGFloat)size bold:(BOOL)bold{
+    UIFont *font = [UIFont fontWithName:name size:size];
+    // 如果没有 就用系统字体
+    if (font == nil || name == nil) {
+        font = bold ? [UIFont boldSystemFontOfSize:size] : [UIFont systemFontOfSize:size];
+    }
+    return font;
+}
++ (UIFont *)fontWithFamily:(NSString *)family name:(NSString *)name size:(CGFloat)size{
+    
+    UIFontDescriptor *attributeFontDescriptor = [UIFontDescriptor fontDescriptorWithFontAttributes:
+                                                 @{UIFontDescriptorFamilyAttribute:family,
+                                                   UIFontDescriptorNameAttribute:name,
+                                                   UIFontDescriptorSizeAttribute:@(size)}];
+    UIFont * font = [UIFont fontWithDescriptor:attributeFontDescriptor size:size];
+    if (font == nil) font = [UIFont systemFontOfSize:size];
+    return font;
+}
+
+
 
 
 

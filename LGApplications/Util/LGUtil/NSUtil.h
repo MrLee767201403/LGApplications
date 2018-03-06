@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+typedef void(^StringBlock)(NSString *name);
+
+
 typedef NS_ENUM(NSInteger, NetWorkStatus) {
     NetWorkStatusUnknown          = -1,     // 未知
     NetWorkStatusNotReachable     = 0,      // 无网络
@@ -56,10 +59,10 @@ typedef NS_ENUM(NSInteger, NetWorkType) {
 /**  移除某目录下的文件*/
 + (BOOL)removePath:(NSString *)path;
 
-/**  Document下文件路径*/
+/**  Document下文件路径 没有时会创建一个*/
 + (NSString *)getDocumentFilePath:(NSString *)file;
 
-/**  Cache下文件路径*/
+/**  Cache下文件路径 没有时会创建一个*/
 + (NSString *)getCacheFilePath:(NSString *)file;
 
 /**  缓存大小*/
@@ -117,4 +120,10 @@ typedef NS_ENUM(NSInteger, NetWorkType) {
 
 /**  压缩图片成Data*/
 + (NSData *)dataWithOriginalImage:(UIImage *)image;
+
+#pragma mark   -  Font
+/**  bold为YES: 在指定的字体名没有对应字体的时 使用系统粗体*/
++ (UIFont *)fontWithName:(NSString *)name size:(CGFloat)size bold:(BOOL)bold;
++ (UIFont *)fontWithFamily:(NSString *)family name:(NSString *)name size:(CGFloat)size;
 @end
+
