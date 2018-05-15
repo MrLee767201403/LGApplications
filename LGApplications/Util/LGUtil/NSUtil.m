@@ -226,14 +226,7 @@
 /**  判断是否为国内手机号码*/
 + (BOOL)isPhoneNumberInChina:(NSString *)phoneNumber{
     
-    /**
-     * 移动：134[0-8],135,136,137,138,139,150,151,157,158,159,182,187,188
-     * 联通：130,131,132,152,155,156,185,186
-     * 电信：133,1349,153,180,189
-     */
-    
-    NSString *mobileNumberRegEx = @"^1[34578]\\d{9}$";
-    
+    NSString *mobileNumberRegEx = @"^1[3456789]\\d{9}$";
     NSPredicate *regextestmobile = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", mobileNumberRegEx];
     return ([regextestmobile evaluateWithObject:phoneNumber]);
 }

@@ -22,17 +22,20 @@
 + (UIImage *)imageWithGradientColors:(NSArray *)colors rect:(CGRect)rect direction:(ColorDirection)direction;
 
 
-/**
- *  生成圆角的图片
- *
- *  @param originImage 原始图片
- *  @param borderColor 边框原色
- *  @param borderWidth 边框宽度
- *
- *  @return 圆形图片
- */
-+ (UIImage *)circleImage:(UIImage *)originImage borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth;
+/**  生成圆角图片*/
+- (UIImage *)imageWithCornerRadius:(CGFloat)radius;
 
+/**  生成带边框的圆角图片*/
+- (UIImage *)imageWithCornerRadius:(CGFloat)radius
+                       borderWidth:(CGFloat)borderWidth
+                       borderColor:(UIColor *)borderColor;
+
+/**  生成带边框的圆角图片*/
+- (UIImage *)imageWithCornerRadius:(CGFloat)radius
+                           corners:(UIRectCorner)corners
+                       borderWidth:(CGFloat)borderWidth
+                       borderColor:(UIColor *)borderColor
+                    borderLineJoin:(CGLineJoin)borderLineJoin;
 
 /**
  *  生成一张高斯模糊的图片
@@ -53,6 +56,6 @@
  *
  *  @return 原始图片
  */
-+ (UIImage *)ImageByRenderingModeAlwaysOriginal:(UIImage *)image;
++ (UIImage *)imageByRenderingModeAlwaysOriginal:(UIImage *)image;
 
 @end
