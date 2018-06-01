@@ -44,3 +44,14 @@ alert.cancelTitle = @"确定";
 9.ScrollView/TableView嵌套
 
 ![image](https://github.com/MrLee767201403/LGApplications/blob/master/Gif/scrollViews.gif)
+
+10.CommonCell
+
+![image](https://github.com/MrLee767201403/LGApplications/blob/master/Gif/CommonCell.png)
+
+11.TextViewCell
+
+![image](https://github.com/MrLee767201403/LGApplications/blob/master/Gif/TextCell未输入.png)
+
+输入多行文字后
+![image](https://github.com/MrLee767201403/LGApplications/blob/master/Gif/TextCell输入多行文字.png)
