@@ -54,4 +54,5 @@ alert.cancelTitle = @"确定";
 ![image](https://github.com/MrLee767201403/LGApplications/blob/master/Gif/TextCell未输入.png)
 
 输入多行文字后
+
 ![image](https://github.com/MrLee767201403/LGApplications/blob/master/Gif/TextCell输入多行文字.png)
