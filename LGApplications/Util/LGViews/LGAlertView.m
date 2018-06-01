@@ -185,10 +185,18 @@
     }];
 }
 
-//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-//    [super touchesBegan:touches withEvent:event];
-//    [self disMiss];
-//}
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [super touchesBegan:touches withEvent:event];
+    // 拿到触摸点
+    UITouch *touch = [touches anyObject];
+    CGPoint point = [touch locationInView:self];
+    // 触摸点相对于内容部分的位置
+    point = [_contentView.layer convertPoint:point fromLayer:self.layer];
+    // 如果触摸点不在内容部分 则让弹窗消失
+    if (![_contentView.layer containsPoint:point]) {
+        [self disMiss];
+    }
+}
 
 - (void)setCancelBlack:(LGAlertBlack)handle{
     _cancelHandle = handle;
