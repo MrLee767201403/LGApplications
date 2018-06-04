@@ -8,6 +8,7 @@
 
 #import "NSUtil.h"
 #import <AdSupport/AdSupport.h>
+#import "KeyChainStore.h"
 
 @implementation NSUtil
 
@@ -114,6 +115,31 @@
     return [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
 }
 
+/**  获取UUID*/
++ (NSString *)getUUIDByKeyChain{
+    NSString*strUUID = (NSString*)[KeyChainStore load:@"com.cloudshixi.trainee.usernamepassword"];
+    
+    //首次执行该方法时，uuid为空
+    if([strUUID isEqualToString:@""]|| !strUUID)
+    {
+        
+        // 获取UUID
+        strUUID = [self getUUID];
+        
+        if(strUUID.length ==0 || [strUUID isEqualToString:@"00000000-0000-0000-0000-000000000000"])
+        {
+            //生成一个uuid的方法
+            CFUUIDRef uuidRef= CFUUIDCreate(kCFAllocatorDefault);
+            strUUID = (NSString*)CFBridgingRelease(CFUUIDCreateString(kCFAllocatorDefault,uuidRef));
+            CFRelease(uuidRef);
+        }
+        
+        //将该uuid保存到keychain
+        [KeyChainStore save:@"com.cloudshixi.trainee.usernamepassword" data:strUUID];
+        
+    }
+    return strUUID;
+}
 
 #pragma mark   -  文件管理(缓存) FileManager
 /**  路径是否存在*/

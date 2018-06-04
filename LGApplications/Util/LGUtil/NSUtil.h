@@ -45,6 +45,9 @@ typedef NS_ENUM(NSInteger, NetWorkType) {
 /**  获取UUID*/
 + (NSString *)getUUID;
 
+/**  获取UUID*/
++ (NSString *)getUUIDByKeyChain;
+
 
 #pragma mark   -  文件管理(缓存) FileManager
 /**  路径是否存在*/

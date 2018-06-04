@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^LGAlertBlack)(UIButton *button);
+typedef void(^LGAlertBlock)(UIButton *button);
 
 @interface LGAlertView : UIView
 
@@ -19,9 +19,9 @@ typedef void(^LGAlertBlack)(UIButton *button);
 - (instancetype)initWithTitle:(NSString *)title content:(NSString *)content confirmTitle:(NSString *)title;
 
 /**  取消按钮回调*/
-- (void)setCancelBlack:(LGAlertBlack)handle;
+- (void)setCancelBlock:(LGAlertBlock)handle;
 /**  确认按钮回调*/
-- (void)setConfirmBlack:(LGAlertBlack)handle;
+- (void)setConfirmBlock:(LGAlertBlock)handle;
 - (void)show;
 - (void)disMiss;
 @end

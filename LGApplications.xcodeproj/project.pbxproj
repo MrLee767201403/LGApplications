@@ -25,6 +25,7 @@
 		CE0F0C6920AD349200D4C8AF /* TextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0F0C6620AD349200D4C8AF /* TextViewCell.m */; };
 		CE0F0C6A20AD349200D4C8AF /* CommonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0F0C6820AD349200D4C8AF /* CommonCell.m */; };
 		CE1122781EE9396500C203DF /* SingleChoiceDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1122771EE9396500C203DF /* SingleChoiceDemo.m */; };
+		CE45DF0E20C5382000F33D4D /* KeyChainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = CE45DF0C20C5382000F33D4D /* KeyChainStore.m */; };
 		CE6040D21EE5316E0089C945 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6040D11EE5316E0089C945 /* main.m */; };
 		CE6040D51EE5316E0089C945 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6040D41EE5316E0089C945 /* AppDelegate.m */; };
 		CE6040DD1EE5316E0089C945 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6040DC1EE5316E0089C945 /* Assets.xcassets */; };
@@ -98,6 +99,8 @@
 		CE0F0C6820AD349200D4C8AF /* CommonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonCell.m; sourceTree = "<group>"; };
 		CE1122761EE9396500C203DF /* SingleChoiceDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleChoiceDemo.h; sourceTree = "<group>"; };
 		CE1122771EE9396500C203DF /* SingleChoiceDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleChoiceDemo.m; sourceTree = "<group>"; };
+		CE45DF0C20C5382000F33D4D /* KeyChainStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyChainStore.m; sourceTree = "<group>"; };
+		CE45DF0D20C5382000F33D4D /* KeyChainStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyChainStore.h; sourceTree = "<group>"; };
 		CE6040CD1EE5316E0089C945 /* LGApplications.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LGApplications.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6040D11EE5316E0089C945 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CE6040D31EE5316E0089C945 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -210,6 +213,8 @@
 		CE008BF21EE7CA1E00318D98 /* LGUtil */ = {
 			isa = PBXGroup;
 			children = (
+				CE45DF0D20C5382000F33D4D /* KeyChainStore.h */,
+				CE45DF0C20C5382000F33D4D /* KeyChainStore.m */,
 				CE008BF31EE7CA3C00318D98 /* NSUtil.h */,
 				CE008BF41EE7CA3C00318D98 /* NSUtil.m */,
 			);
@@ -572,6 +577,7 @@
 				CE008C131EE7FEB200318D98 /* LGPickerView.m in Sources */,
 				CEE768751EEA5A670093514F /* GradientAnimationDemo.m in Sources */,
 				CE0F0C6920AD349200D4C8AF /* TextViewCell.m in Sources */,
+				CE45DF0E20C5382000F33D4D /* KeyChainStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

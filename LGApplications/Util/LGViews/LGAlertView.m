@@ -20,8 +20,8 @@
     UIButton *_confirmButton;
     NSString *_confirmTitle;    // 如果有Title 就显示两个按钮, 没有显示一个
     
-    LGAlertBlack _cancelHandle;
-    LGAlertBlack _confirmHandle;
+    LGAlertBlock _cancelHandle;
+    LGAlertBlock _confirmHandle;
 }
 
 - (instancetype)initWithTitle:(NSString *)title content:(NSString *)content confirmTitle:(NSString *)confirmTitle;
@@ -198,11 +198,11 @@
     }
 }
 
-- (void)setCancelBlack:(LGAlertBlack)handle{
+- (void)setCancelBlock:(LGAlertBlock)handle{
     _cancelHandle = handle;
 }
 
-- (void)setConfirmBlack:(LGAlertBlack)handle{
+- (void)setConfirmBlock:(LGAlertBlock)handle{
     _confirmHandle = handle;
 }
 
