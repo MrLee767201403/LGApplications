@@ -8,20 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^LGAlertBlock)(UIButton *button);
 
 @interface LGAlertView : UIView
 
-/**  取消按钮的标题*/
-@property (nonatomic, copy) NSString *cancelTitle;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *noTitle;
+@property (nonatomic, copy) NSString *yesTitle;
+@property (nonatomic, assign) BOOL singleButton;
 
+@property (nonatomic, assign) NSTextAlignment alignment;
 
-- (instancetype)initWithTitle:(NSString *)title content:(NSString *)content confirmTitle:(NSString *)title;
+@property (nonatomic, copy) CompleteBlock yesHandle;
+@property (nonatomic, copy) CompleteBlock noHandle;
 
-/**  取消按钮回调*/
-- (void)setCancelBlock:(LGAlertBlock)handle;
-/**  确认按钮回调*/
-- (void)setConfirmBlock:(LGAlertBlock)handle;
+- (instancetype)initWithContent:(NSString *)content;
 - (void)show;
 - (void)disMiss;
 @end

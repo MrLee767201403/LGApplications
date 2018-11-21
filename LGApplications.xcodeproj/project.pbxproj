@@ -22,8 +22,6 @@
 		CE008C131EE7FEB200318D98 /* LGPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008C121EE7FEB200318D98 /* LGPickerView.m */; };
 		CE008C151EE800C000318D98 /* district.json in Resources */ = {isa = PBXBuildFile; fileRef = CE008C141EE800C000318D98 /* district.json */; };
 		CE008C181EE80E2300318D98 /* ActionSheetDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008C171EE80E2300318D98 /* ActionSheetDemo.m */; };
-		CE0F0C6920AD349200D4C8AF /* TextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0F0C6620AD349200D4C8AF /* TextViewCell.m */; };
-		CE0F0C6A20AD349200D4C8AF /* CommonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0F0C6820AD349200D4C8AF /* CommonCell.m */; };
 		CE1122781EE9396500C203DF /* SingleChoiceDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1122771EE9396500C203DF /* SingleChoiceDemo.m */; };
 		CE45DF0E20C5382000F33D4D /* KeyChainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = CE45DF0C20C5382000F33D4D /* KeyChainStore.m */; };
 		CE6040D21EE5316E0089C945 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6040D11EE5316E0089C945 /* main.m */; };
@@ -37,6 +35,7 @@
 		CEBFE427204E743900AEE96D /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBFE423204E743900AEE96D /* HomeController.m */; };
 		CEBFE428204E743900AEE96D /* ListController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBFE424204E743900AEE96D /* ListController.m */; };
 		CED040FE1F63C99000C8B441 /* LGRollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CED040FD1F63C99000C8B441 /* LGRollView.m */; };
+		CEDFD7F021A502A9000C0D4F /* IndexSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDFD7EF21A502A9000C0D4F /* IndexSectionView.m */; };
 		CEE768751EEA5A670093514F /* GradientAnimationDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE768741EEA5A670093514F /* GradientAnimationDemo.m */; };
 		CEE768781EEA78620093514F /* LGGradientLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE768771EEA78620093514F /* LGGradientLabel.m */; };
 		CEF78A9E1F3D565400EF0507 /* LGInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF78A9D1F3D565400EF0507 /* LGInputView.m */; };
@@ -93,10 +92,6 @@
 		CE008C141EE800C000318D98 /* district.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = district.json; sourceTree = "<group>"; };
 		CE008C161EE80E2300318D98 /* ActionSheetDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetDemo.h; sourceTree = "<group>"; };
 		CE008C171EE80E2300318D98 /* ActionSheetDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetDemo.m; sourceTree = "<group>"; };
-		CE0F0C6520AD349100D4C8AF /* CommonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonCell.h; sourceTree = "<group>"; };
-		CE0F0C6620AD349200D4C8AF /* TextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewCell.m; sourceTree = "<group>"; };
-		CE0F0C6720AD349200D4C8AF /* TextViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewCell.h; sourceTree = "<group>"; };
-		CE0F0C6820AD349200D4C8AF /* CommonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonCell.m; sourceTree = "<group>"; };
 		CE1122761EE9396500C203DF /* SingleChoiceDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleChoiceDemo.h; sourceTree = "<group>"; };
 		CE1122771EE9396500C203DF /* SingleChoiceDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleChoiceDemo.m; sourceTree = "<group>"; };
 		CE45DF0C20C5382000F33D4D /* KeyChainStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyChainStore.m; sourceTree = "<group>"; };
@@ -124,6 +119,8 @@
 		CEBFE426204E743900AEE96D /* ListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListController.h; sourceTree = "<group>"; };
 		CED040FC1F63C99000C8B441 /* LGRollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGRollView.h; sourceTree = "<group>"; };
 		CED040FD1F63C99000C8B441 /* LGRollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGRollView.m; sourceTree = "<group>"; };
+		CEDFD7EE21A502A9000C0D4F /* IndexSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexSectionView.h; sourceTree = "<group>"; };
+		CEDFD7EF21A502A9000C0D4F /* IndexSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexSectionView.m; sourceTree = "<group>"; };
 		CEE768731EEA5A670093514F /* GradientAnimationDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientAnimationDemo.h; sourceTree = "<group>"; };
 		CEE768741EEA5A670093514F /* GradientAnimationDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientAnimationDemo.m; sourceTree = "<group>"; };
 		CEE768761EEA78620093514F /* LGGradientLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGGradientLabel.h; sourceTree = "<group>"; };
@@ -224,10 +221,8 @@
 		CE008BF71EE7CA7500318D98 /* LGViews */ = {
 			isa = PBXGroup;
 			children = (
-				CE0F0C6520AD349100D4C8AF /* CommonCell.h */,
-				CE0F0C6820AD349200D4C8AF /* CommonCell.m */,
-				CE0F0C6720AD349200D4C8AF /* TextViewCell.h */,
-				CE0F0C6620AD349200D4C8AF /* TextViewCell.m */,
+				CEDFD7EE21A502A9000C0D4F /* IndexSectionView.h */,
+				CEDFD7EF21A502A9000C0D4F /* IndexSectionView.m */,
 				CE9266261F22F9100063724B /* LGAlertView.h */,
 				CE9266271F22F9100063724B /* LGAlertView.m */,
 				CE008C111EE7FEB200318D98 /* LGPickerView.h */,
@@ -554,6 +549,7 @@
 				CE008BEF1EE7C95600318D98 /* NSString+Extension.m in Sources */,
 				CEBFE428204E743900AEE96D /* ListController.m in Sources */,
 				CE008C0D1EE7ED5A00318D98 /* PickerDemoController.m in Sources */,
+				CEDFD7F021A502A9000C0D4F /* IndexSectionView.m in Sources */,
 				CED040FE1F63C99000C8B441 /* LGRollView.m in Sources */,
 				CE008BF01EE7C95600318D98 /* UIButton+Extension.m in Sources */,
 				CE008BF51EE7CA3C00318D98 /* NSUtil.m in Sources */,
@@ -566,7 +562,6 @@
 				CE9266281F22F9100063724B /* LGAlertView.m in Sources */,
 				CE008C101EE7F64A00318D98 /* BaseController.m in Sources */,
 				CE008BF11EE7C95600318D98 /* UIView+Extension.m in Sources */,
-				CE0F0C6A20AD349200D4C8AF /* CommonCell.m in Sources */,
 				CEF78A9E1F3D565400EF0507 /* LGInputView.m in Sources */,
 				CEBFE427204E743900AEE96D /* HomeController.m in Sources */,
 				CE1122781EE9396500C203DF /* SingleChoiceDemo.m in Sources */,
@@ -576,7 +571,6 @@
 				CE6040D21EE5316E0089C945 /* main.m in Sources */,
 				CE008C131EE7FEB200318D98 /* LGPickerView.m in Sources */,
 				CEE768751EEA5A670093514F /* GradientAnimationDemo.m in Sources */,
-				CE0F0C6920AD349200D4C8AF /* TextViewCell.m in Sources */,
 				CE45DF0E20C5382000F33D4D /* KeyChainStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,6 +8,7 @@
 
 #import "NSUtil.h"
 #import <AdSupport/AdSupport.h>
+#import <objc/runtime.h>
 #import "KeyChainStore.h"
 
 @implementation NSUtil
@@ -18,16 +19,16 @@
 {
     UIApplication *application = [UIApplication sharedApplication];
     NSArray *subviews = [[[application valueForKey:@"statusBar"] valueForKey:@"foregroundView"] subviews];
-    
+
     NSNumber *dataNetWorkItemView = nil;
-    
+
     for (id subView in subviews) {
         if ([subView isKindOfClass:[NSClassFromString(@"UIStatusBarDataNetworkItemView") class]]) {
             dataNetWorkItemView = subView;
             break;
         }
     }
-    
+
     switch ([[dataNetWorkItemView valueForKey:@"dataNetworkType"]integerValue]) {
         case 0:
         {
@@ -54,24 +55,24 @@
         }
             break;
     }
-    
+
 }
 
 /**  获取网络类型*/
 + (NetWorkType)getNetWorkType{
-    
+
     UIApplication *application = [UIApplication sharedApplication];
     NSArray *subviews = [[[application valueForKey:@"statusBar"] valueForKey:@"foregroundView"] subviews];
-    
+
     NSNumber *dataNetWorkItemView = nil;
-    
+
     for (id subView in subviews) {
         if ([subView isKindOfClass:[NSClassFromString(@"UIStatusBarDataNetworkItemView") class]]) {
             dataNetWorkItemView = subView;
             break;
         }
     }
-    
+
     switch ([[dataNetWorkItemView valueForKey:@"dataNetworkType"]integerValue]) {
         case 0:
         {
@@ -106,7 +107,7 @@
 {
     NSString *key = @"CFBundleShortVersionString";
     NSString *version = [NSBundle mainBundle].infoDictionary[key];
-    
+
     return version;
 }
 
@@ -118,14 +119,14 @@
 /**  获取UUID*/
 + (NSString *)getUUIDByKeyChain{
     NSString*strUUID = (NSString*)[KeyChainStore load:@"com.cloudshixi.trainee.usernamepassword"];
-    
+
     //首次执行该方法时，uuid为空
     if([strUUID isEqualToString:@""]|| !strUUID)
     {
-        
+
         // 获取UUID
         strUUID = [self getUUID];
-        
+
         if(strUUID.length ==0 || [strUUID isEqualToString:@"00000000-0000-0000-0000-000000000000"])
         {
             //生成一个uuid的方法
@@ -133,12 +134,90 @@
             strUUID = (NSString*)CFBridgingRelease(CFUUIDCreateString(kCFAllocatorDefault,uuidRef));
             CFRelease(uuidRef);
         }
-        
+
         //将该uuid保存到keychain
         [KeyChainStore save:@"com.cloudshixi.trainee.usernamepassword" data:strUUID];
-        
+
     }
     return strUUID;
+}
+
+#pragma mark   -  在主线程执行某操作
++ (void)performBlockOnMainThread:(CompleteBlock)block{
+    if ([[NSThread currentThread] isMainThread]) {
+        block();
+    }else{
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            block();
+        });
+    }
+}
+
+#pragma mark   - 返回当前类的所有属性
++ (instancetype)getProperties:(Class)className{
+
+    // 获取当前类的所有属性
+    unsigned int count;// 记录属性个数
+    objc_property_t *properties = class_copyPropertyList(className, &count);
+    // 遍历
+    NSMutableArray *mArray = [NSMutableArray array];
+    for (int i = 0; i < count; i++) {
+
+        // An opaque type that represents an Objective-C declared property.
+        // objc_property_t 属性类型
+        objc_property_t property = properties[i];
+        // 获取属性的名称 C语言字符串
+        const char *cName = property_getName(property);
+        // 转换为Objective C 字符串
+        NSString *name = [NSString stringWithCString:cName encoding:NSUTF8StringEncoding];
+        [mArray addObject:name];
+    }
+
+    return mArray.copy;
+}
+
+#pragma mark   -  获取启动图
++ (UIImage *)getLaunchImage{
+
+    CGSize viewSize = [UIScreen mainScreen].bounds.size;
+    NSString *launchImage = nil;
+
+    NSArray* imagesDict = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"UILaunchImages"];
+    for (NSDictionary* dict in imagesDict)
+    {
+        CGSize imageSize = CGSizeFromString(dict[@"UILaunchImageSize"]);
+
+        // 横屏改成 @"Landscape"
+        if (CGSizeEqualToSize(imageSize, viewSize) && [@"Portrait" isEqualToString:dict[@"UILaunchImageOrientation"]])
+        {
+            launchImage = dict[@"UILaunchImageName"];
+        }
+    }
+    return [UIImage imageNamed:launchImage];
+}
+
+#pragma mark   -  设置
+// 设置导航栏底部黑线
++ (void)setNavigationBarLine:(UIView *)view hidden:(BOOL)hidden
+{
+    if ([view isKindOfClass:UIImageView.class] && view.bounds.size.height <= 1.0)
+    {
+        view.hidden = hidden;
+        return;
+    }
+    for (UIView *subview in view.subviews) {
+        [self setNavigationBarLine:subview hidden:hidden];
+    }
+    return ;
+}
+
+#pragma mark   -  NSUserDefaults
++ (void)saveValue:(id)value forKey:(NSString *)key{
+    [[NSUserDefaults standardUserDefaults] setValue:value forKey:key];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
++ (id)getValueForKey:(NSString *)key{
+    return [[NSUserDefaults standardUserDefaults] valueForKey:key];
 }
 
 #pragma mark   -  文件管理(缓存) FileManager
@@ -165,21 +244,21 @@
 }
 
 + (NSString *)getDocumentPath{
-    
+
     NSString *document = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     return [document stringByAppendingPathComponent:@"AppDocument"];;
 }
 
 /**  Document下文件路径*/
 + (NSString *)getDocumentFilePath:(NSString *)file{
-    
+
     NSString *dir = [self getDocumentPath];
     if ([self isExistDirectory:dir] == NO)
     {
         [[NSFileManager defaultManager] createDirectoryAtPath:dir withIntermediateDirectories:YES attributes:nil error:nil];
     }
     return [dir stringByAppendingPathComponent:file];
-    
+
 }
 
 /**  缓存路径*/
@@ -190,7 +269,7 @@
 
 /**  Cache下文件路径*/
 + (NSString *)getCacheFilePath:(NSString *)file{
-    
+
     NSString *dir = [self getCachePath];
     if ([self isExistDirectory:dir] == NO)
     {
@@ -199,11 +278,25 @@
     return [dir stringByAppendingPathComponent:file];
 }
 
+/**  Cache下文件夹 没有时会创建一个*/
++ (NSString *)getCacheDirectory:(NSString *)directory{
+    NSString *dir = [self getCachePath];
+    if ([self isExistDirectory:dir] == NO)
+    {
+        [[NSFileManager defaultManager] createDirectoryAtPath:dir withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+    dir = [dir stringByAppendingPathComponent:directory];
+    if ([self isExistDirectory:dir] == NO)
+    {
+        [[NSFileManager defaultManager] createDirectoryAtPath:dir withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+    return dir;
+}
 
 /**  缓存大小*/
 + (unsigned long long)getCacheSize{
     NSString *dir = [self getCachePath];
-    
+
     //
     unsigned long long size = 0;
     NSArray *files = [[NSFileManager defaultManager] subpathsAtPath:dir];
@@ -213,7 +306,7 @@
         NSDictionary *dict = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:nil];
         size += [dict fileSize];
     }
-    
+
     return size;
 }
 
@@ -224,10 +317,10 @@
 
 /**  自动清除缓存*/
 + (void)autoClearCache{
-    
+
     // 默认七天
     NSTimeInterval defaultSec = 7*24*3600;
-    
+
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSString *dir = [self getCachePath];
         NSArray *files = [[NSFileManager defaultManager] subpathsAtPath:dir];
@@ -239,7 +332,7 @@
             }
             NSString *path = [dir stringByAppendingPathComponent:file];
             NSDictionary *dict = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:nil];
-            
+
             NSTimeInterval sec = [now timeIntervalSinceDate:[dict fileCreationDate]];
             if (sec >= defaultSec) {
                 [[NSFileManager defaultManager] removeItemAtPath:path error:nil];
@@ -251,11 +344,29 @@
 
 /**  判断是否为国内手机号码*/
 + (BOOL)isPhoneNumberInChina:(NSString *)phoneNumber{
-    
-    NSString *mobileNumberRegEx = @"^1[3456789]\\d{9}$";
+
+
+    NSString *mobileNumberRegEx = @"^1\\d{10}$|^0\\d{9,11}$";
+
     NSPredicate *regextestmobile = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", mobileNumberRegEx];
     return ([regextestmobile evaluateWithObject:phoneNumber]);
 }
+
+
+/**  密码校验
+ *  密码长度最少6位
+ *  大写字母，小写字母，数字，特殊符号四选二
+ */
++ (BOOL)checkPassword:(NSString *)password{
+
+    // 大写字母，小写字母，数字，特殊符号四选二
+    NSString *passwordRegEx = @"^(?![A-Z]+$)(?![a-z]+$)(?!\\d+$)(?![\\W_]+$)\\S{6,16}$";
+    // 大写字母，小写字母，数字，特殊符号四选二
+    //NSString *passwordRegEx = @"^(?![a-zA-Z]+$)(?![A-Z0-9]+$)(?![A-Z\\W_]+$)(?![a-z0-9]+$)(?![a-z\\W_]+$)(?![0-9\\W_]+$)[a-zA-Z0-9\\W_]{6,16}$";
+    NSPredicate *regExPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", passwordRegEx];
+    return ([regExPredicate evaluateWithObject:password]);
+}
+
 
 /**  判断是否是邮箱地址*/
 + (BOOL)isEmailAddress:(NSString *)email{
@@ -267,7 +378,7 @@
     @"]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-"
     @"9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21"
     @"-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])";
-    
+
     NSPredicate *regExPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegEx];
     return [regExPredicate evaluateWithObject:[email lowercaseString]];
 }
@@ -288,13 +399,13 @@
         return NO;
     }
     return YES;
-    
+
 }
 
 #pragma mark   -  时间/日期
 /**  是不是今天*/
 + (BOOL)isToday:(NSDate *)date{
-    
+
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"yyyy-MM-dd";
     NSString *nowString = [formatter stringFromDate:[NSDate date]];
@@ -335,16 +446,16 @@
 /**  最近的日期*/
 + (NSString *)relativeDate:(NSDate *)date
 {
-    
-    
+
+
     // 日期格式化类
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     // 设置日期格式(y:年,M:月,d:日,H:时,m:分,s:秒)
     format.dateFormat = @"yyyy-MM-dd";
-    
-    
+
+
     NSDate * currtentDate = [NSDate date];
-    
+
     //    // 比较日历
     //    NSCalendar *calendar = [NSCalendar currentCalendar];
     //    NSCalendarUnit unit = NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
@@ -357,12 +468,12 @@
     //    BOOL isYear = currentCalendar.year == targetCalendar.year;
     //    BOOL isMonth = currentCalendar.month == targetCalendar.month;
     //    BOOL isDay = currentCalendar.day == targetCalendar.day;
-    
+
     NSDateComponents *components = [NSUtil compareCalendar:date];
-    
+
     // 比较时间
     NSTimeInterval t = [currtentDate timeIntervalSinceDate:date];
-    
+
     // 一分钟内
     if (t < 60) {
         return @"刚刚";
@@ -377,7 +488,7 @@
             format.dateFormat = @"HH:mm";
             return [format stringFromDate:date];
         }
-        return [NSString stringWithFormat:@"%zd小时前", (int)t/3600];
+        return [NSString stringWithFormat:@"%d小时前", (int)t/3600];
     }
     // 昨天
     else if (components.year == 0 && components.month == 0 && components.day == 1) {
@@ -421,9 +532,9 @@
  *          若day=0    则是今天 返回相差的总时长
  */
 + (NSDateComponents *)compareCalendar:(NSDate *)date{
-    
+
     NSDate * currtentDate = [NSDate date];
-    
+
     // 比较日历
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSCalendarUnit unit = NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
@@ -432,13 +543,13 @@
     // NSDateComponents *components = [calendar components:unit fromDate:date toDate:currtentDate options:0];
     NSDateComponents *currentCalendar =[calendar components:unit fromDate:currtentDate];
     NSDateComponents *targetCalendar =[calendar components:unit fromDate:date];
-    
+
     BOOL isYear = currentCalendar.year == targetCalendar.year;
     BOOL isMonth = currentCalendar.month == targetCalendar.month;
     BOOL isDay = currentCalendar.day == targetCalendar.day;
-    
+
     NSDateComponents *components = [[NSDateComponents alloc] init];
-    
+
     if (isYear) {
         if (isMonth) {
             if (isDay) {
@@ -454,24 +565,23 @@
 }
 
 
-
 #pragma mark   -  图片
 /**  压缩图片*/
 + (UIImage *)imageWithOriginalImage:(UIImage *)image{
     // 宽高比
     CGFloat ratio = image.size.width/image.size.height;
-    
+
     // 目标大小
     CGFloat targetW = 1280;
     CGFloat targetH = 1280;
-    
+
     // 宽高均 <= 1280，图片尺寸大小保持不变
     if (image.size.width<1280 && image.size.height<1280) {
         return image;
     }
     // 宽高均 > 1280 && 宽高比 > 2，
     else if (image.size.width>1280 && image.size.height>1280){
-        
+
         // 宽大于高 取较小值(高)等于1280，较大值等比例压缩
         if (ratio>1) {
             targetH = 1280;
@@ -482,7 +592,7 @@
             targetW = 1280;
             targetH = targetW / ratio;
         }
-        
+
     }
     // 宽或高 > 1280
     else{
@@ -507,10 +617,10 @@
             targetW = 1280 * ratio;
         }
     }
-    
+
     image = [[NSUtil alloc] imageCompressWithImage:image targetHeight:targetH targetWidth:targetW];
-    
-    
+
+
     return image;
 }
 
@@ -527,7 +637,7 @@
 
 /**  压缩图片 压缩质量 0 -- 1*/
 + (UIImage *)imageWithOriginalImage:(UIImage *)image quality:(CGFloat)quality{
-    
+
     UIImage *newImage = [self imageWithOriginalImage:image];
     NSData *imageData = UIImageJPEGRepresentation(newImage, quality);
     return [UIImage imageWithData:imageData];
@@ -548,7 +658,7 @@
     return font;
 }
 + (UIFont *)fontWithFamily:(NSString *)family name:(NSString *)name size:(CGFloat)size{
-    
+
     UIFontDescriptor *attributeFontDescriptor = [UIFontDescriptor fontDescriptorWithFontAttributes:
                                                  @{UIFontDescriptorFamilyAttribute:family,
                                                    UIFontDescriptorNameAttribute:name,
@@ -557,9 +667,4 @@
     if (font == nil) font = [UIFont systemFontOfSize:size];
     return font;
 }
-
-
-
-
-
 @end

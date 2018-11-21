@@ -9,7 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-typedef void(^StringBlock)(NSString *name);
+
+typedef void(^ResultBlock)(NSDictionary *result);
+typedef void(^StringBlock)(NSString *text);
+typedef void(^CompleteBlock)(void);
 
 
 typedef NS_ENUM(NSInteger, NetWorkStatus) {
@@ -48,6 +51,22 @@ typedef NS_ENUM(NSInteger, NetWorkType) {
 /**  获取UUID*/
 + (NSString *)getUUIDByKeyChain;
 
+#pragma mark   -  在主线程执行某操作
++ (void)performBlockOnMainThread:(CompleteBlock)block;
+
+#pragma mark   - 返回当前类的所有属性
++ (instancetype)getProperties:(Class)className;
+
+#pragma mark   -  获取启动图
++ (UIImage *)getLaunchImage;
+
+#pragma mark   -  设置
+/**  设置导航栏黑线*/
++ (void)setNavigationBarLine:(UIView *)view hidden:(BOOL)hidden;
+
+#pragma mark   -  NSUserDefaults
++ (void)saveValue:(id)value forKey:(NSString *)key;
++ (id)getValueForKey:(NSString *)key;
 
 #pragma mark   -  文件管理(缓存) FileManager
 /**  路径是否存在*/
@@ -65,8 +84,11 @@ typedef NS_ENUM(NSInteger, NetWorkType) {
 /**  Document下文件路径 没有时会创建一个*/
 + (NSString *)getDocumentFilePath:(NSString *)file;
 
-/**  Cache下文件路径 没有时会创建一个*/
+/**  Cache下文件路径(比如.plist) 没有时会创建一个*/
 + (NSString *)getCacheFilePath:(NSString *)file;
+
+/**  Cache下文件夹 没有时会创建一个*/
++ (NSString *)getCacheDirectory:(NSString *)directory;
 
 /**  缓存大小*/
 + (unsigned long long)getCacheSize;
@@ -81,6 +103,12 @@ typedef NS_ENUM(NSInteger, NetWorkType) {
 
 /**  判断是否为国内手机号码*/
 + (BOOL)isPhoneNumberInChina:(NSString *)phoneNumber;
+
+/**  密码校验
+ *  密码长度最少6位
+ *  大写字母，小写字母，数字，特殊符号四选二
+ */
++ (BOOL)checkPassword:(NSString *)password;
 
 /**  判断是否是邮箱地址*/
 + (BOOL)isEmailAddress:(NSString *)email;
@@ -124,9 +152,10 @@ typedef NS_ENUM(NSInteger, NetWorkType) {
 /**  压缩图片成Data*/
 + (NSData *)dataWithOriginalImage:(UIImage *)image;
 
+
 #pragma mark   -  Font
 /**  bold为YES: 在指定的字体名没有对应字体的时 使用系统粗体*/
 + (UIFont *)fontWithName:(NSString *)name size:(CGFloat)size bold:(BOOL)bold;
 + (UIFont *)fontWithFamily:(NSString *)family name:(NSString *)name size:(CGFloat)size;
-@end
 
+@end

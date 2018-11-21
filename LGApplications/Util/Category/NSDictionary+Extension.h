@@ -10,7 +10,8 @@
 #import <Foundation/Foundation.h>
 
 @interface NSDictionary (Extension)
-
+- (NSString*)stringForKey:(NSString*)key;
+- (NSDictionary *)removeNull;
 @end
 
 
