@@ -34,8 +34,12 @@
 		CE9266281F22F9100063724B /* LGAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9266271F22F9100063724B /* LGAlertView.m */; };
 		CEBFE427204E743900AEE96D /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBFE423204E743900AEE96D /* HomeController.m */; };
 		CEBFE428204E743900AEE96D /* ListController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBFE424204E743900AEE96D /* ListController.m */; };
+		CECFE8E321A659DC003775A3 /* TextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFE8DF21A659DB003775A3 /* TextViewCell.m */; };
+		CECFE8E421A659DC003775A3 /* CommonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFE8E121A659DB003775A3 /* CommonCell.m */; };
+		CECFE8E721A65BAF003775A3 /* LGToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFE8E621A65BAF003775A3 /* LGToastView.m */; };
 		CED040FE1F63C99000C8B441 /* LGRollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CED040FD1F63C99000C8B441 /* LGRollView.m */; };
 		CEDFD7F021A502A9000C0D4F /* IndexSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDFD7EF21A502A9000C0D4F /* IndexSectionView.m */; };
+		CEDFD7FA21A50F6C000C0D4F /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDFD7F921A50F6C000C0D4F /* LocationManager.m */; };
 		CEE768751EEA5A670093514F /* GradientAnimationDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE768741EEA5A670093514F /* GradientAnimationDemo.m */; };
 		CEE768781EEA78620093514F /* LGGradientLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE768771EEA78620093514F /* LGGradientLabel.m */; };
 		CEF78A9E1F3D565400EF0507 /* LGInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF78A9D1F3D565400EF0507 /* LGInputView.m */; };
@@ -117,10 +121,18 @@
 		CEBFE424204E743900AEE96D /* ListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListController.m; sourceTree = "<group>"; };
 		CEBFE425204E743900AEE96D /* HomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
 		CEBFE426204E743900AEE96D /* ListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListController.h; sourceTree = "<group>"; };
+		CECFE8DF21A659DB003775A3 /* TextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewCell.m; sourceTree = "<group>"; };
+		CECFE8E021A659DB003775A3 /* CommonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonCell.h; sourceTree = "<group>"; };
+		CECFE8E121A659DB003775A3 /* CommonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonCell.m; sourceTree = "<group>"; };
+		CECFE8E221A659DC003775A3 /* TextViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewCell.h; sourceTree = "<group>"; };
+		CECFE8E521A65BAF003775A3 /* LGToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGToastView.h; sourceTree = "<group>"; };
+		CECFE8E621A65BAF003775A3 /* LGToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGToastView.m; sourceTree = "<group>"; };
 		CED040FC1F63C99000C8B441 /* LGRollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGRollView.h; sourceTree = "<group>"; };
 		CED040FD1F63C99000C8B441 /* LGRollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGRollView.m; sourceTree = "<group>"; };
 		CEDFD7EE21A502A9000C0D4F /* IndexSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexSectionView.h; sourceTree = "<group>"; };
 		CEDFD7EF21A502A9000C0D4F /* IndexSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexSectionView.m; sourceTree = "<group>"; };
+		CEDFD7F821A50F6C000C0D4F /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
+		CEDFD7F921A50F6C000C0D4F /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
 		CEE768731EEA5A670093514F /* GradientAnimationDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientAnimationDemo.h; sourceTree = "<group>"; };
 		CEE768741EEA5A670093514F /* GradientAnimationDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientAnimationDemo.m; sourceTree = "<group>"; };
 		CEE768761EEA78620093514F /* LGGradientLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGGradientLabel.h; sourceTree = "<group>"; };
@@ -214,6 +226,8 @@
 				CE45DF0C20C5382000F33D4D /* KeyChainStore.m */,
 				CE008BF31EE7CA3C00318D98 /* NSUtil.h */,
 				CE008BF41EE7CA3C00318D98 /* NSUtil.m */,
+				CEDFD7F821A50F6C000C0D4F /* LocationManager.h */,
+				CEDFD7F921A50F6C000C0D4F /* LocationManager.m */,
 			);
 			path = LGUtil;
 			sourceTree = "<group>";
@@ -221,8 +235,14 @@
 		CE008BF71EE7CA7500318D98 /* LGViews */ = {
 			isa = PBXGroup;
 			children = (
+				CECFE8E021A659DB003775A3 /* CommonCell.h */,
+				CECFE8E121A659DB003775A3 /* CommonCell.m */,
+				CECFE8E221A659DC003775A3 /* TextViewCell.h */,
+				CECFE8DF21A659DB003775A3 /* TextViewCell.m */,
 				CEDFD7EE21A502A9000C0D4F /* IndexSectionView.h */,
 				CEDFD7EF21A502A9000C0D4F /* IndexSectionView.m */,
+				CECFE8E521A65BAF003775A3 /* LGToastView.h */,
+				CECFE8E621A65BAF003775A3 /* LGToastView.m */,
 				CE9266261F22F9100063724B /* LGAlertView.h */,
 				CE9266271F22F9100063724B /* LGAlertView.m */,
 				CE008C111EE7FEB200318D98 /* LGPickerView.h */,
@@ -553,6 +573,7 @@
 				CED040FE1F63C99000C8B441 /* LGRollView.m in Sources */,
 				CE008BF01EE7C95600318D98 /* UIButton+Extension.m in Sources */,
 				CE008BF51EE7CA3C00318D98 /* NSUtil.m in Sources */,
+				CEDFD7FA21A50F6C000C0D4F /* LocationManager.m in Sources */,
 				CEE768781EEA78620093514F /* LGGradientLabel.m in Sources */,
 				CE008C071EE7DA4500318D98 /* MainController.m in Sources */,
 				CE6040D51EE5316E0089C945 /* AppDelegate.m in Sources */,
@@ -563,14 +584,17 @@
 				CE008C101EE7F64A00318D98 /* BaseController.m in Sources */,
 				CE008BF11EE7C95600318D98 /* UIView+Extension.m in Sources */,
 				CEF78A9E1F3D565400EF0507 /* LGInputView.m in Sources */,
+				CECFE8E321A659DC003775A3 /* TextViewCell.m in Sources */,
 				CEBFE427204E743900AEE96D /* HomeController.m in Sources */,
 				CE1122781EE9396500C203DF /* SingleChoiceDemo.m in Sources */,
 				CEF78AA11F3DBCCC00EF0507 /* InputViewDemo.m in Sources */,
 				CE008BE31EE7C76000318D98 /* RootNavigationController.m in Sources */,
 				CE008C011EE7CBD700318D98 /* UIImage+Extension.m in Sources */,
+				CECFE8E721A65BAF003775A3 /* LGToastView.m in Sources */,
 				CE6040D21EE5316E0089C945 /* main.m in Sources */,
 				CE008C131EE7FEB200318D98 /* LGPickerView.m in Sources */,
 				CEE768751EEA5A670093514F /* GradientAnimationDemo.m in Sources */,
+				CECFE8E421A659DC003775A3 /* CommonCell.m in Sources */,
 				CE45DF0E20C5382000F33D4D /* KeyChainStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -17,6 +17,8 @@
 #import "UIDefines.h"
 #import "NSUtil.h"
 
+#import "LGToastView.h"
+
 // 类扩展
 #import "UIButton+Extension.h"
 #import "UIView+Extension.h"

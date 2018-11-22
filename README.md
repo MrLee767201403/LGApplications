@@ -56,3 +56,15 @@ alert.cancelTitle = @"确定";
 输入多行文字后
 
 ![image](https://github.com/MrLee767201403/LGApplications/blob/master/Gif/TextCell输入多行文字.png)
+
+12.LocationManager
+
+获取当前位置并解析出地址
+
+13.IndexSectionView
+
+自定义tableView 右侧索引 
+
+14.LGToastView
+
+类似MBProgressHUD消息弹窗 2秒后自动消失

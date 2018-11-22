@@ -257,6 +257,19 @@
 //    }
 //}
 
+- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component{
+
+    if (_type == PickerTypeDistrict) {
+        return (kScreenWidth-30)/3.0;
+    }else{
+        return (kScreenWidth-30)/([pickerView numberOfComponents]*1.0);
+    }
+}
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{
+    return 55;
+}
+
+
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
     
     UILabel *titleLabel = [[UILabel alloc] init];
