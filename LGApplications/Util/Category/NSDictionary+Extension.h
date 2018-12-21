@@ -11,6 +11,9 @@
 
 @interface NSDictionary (Extension)
 - (NSString*)stringForKey:(NSString*)key;
+- (int)intForKey:(NSString*)key;
+- (float)floatForKey:(NSString*)key;
+- (double)doubleForKey:(NSString*)key;
 - (NSDictionary *)removeNull;
 @end
 

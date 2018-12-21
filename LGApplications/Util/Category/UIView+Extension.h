@@ -45,7 +45,7 @@ typedef enum {
 /**  设置渐变色*/
 - (void)setGradientColors:(NSArray *)colors direction:(ColorDirection)direction;
 
-/**  移除所以子控件*/
+/**  移除所有子控件*/
 - (void)removeAllSubviews;
 
 @end

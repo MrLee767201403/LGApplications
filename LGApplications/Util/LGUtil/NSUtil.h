@@ -14,32 +14,7 @@ typedef void(^ResultBlock)(NSDictionary *result);
 typedef void(^StringBlock)(NSString *text);
 typedef void(^CompleteBlock)(void);
 
-
-typedef NS_ENUM(NSInteger, NetWorkStatus) {
-    NetWorkStatusUnknown          = -1,     // 未知
-    NetWorkStatusNotReachable     = 0,      // 无网络
-    NetWorkStatusReachableViaWWAN = 1,      // GPRS
-    NetWorkStatusReachableViaWiFi = 2,      // WiFi
-};
-
-
-typedef NS_ENUM(NSInteger, NetWorkType) {
-    NetWorkTypeUnknown          = -1,     // 未知
-    NetWorkTypeNotReachable     = 0,      // 无网络
-    NetWorkTypeReachableViaWiFi = 1,      // WiFi
-    NetWorkTypeReachableVia2G   = 2,      // 2G
-    NetWorkTypeReachableVia3G   = 3,      // 3G
-    NetWorkTypeReachableVia4G   = 4,      // 4G
-};
-
 @interface NSUtil : NSObject
-
-#pragma mark   -  网络
-/**  获取网络状态*/
-+ (NetWorkStatus)getNetWorkStatus;
-
-/**  获取网络类型*/
-+ (NetWorkType)getNetWorkType;
 
 #pragma mark   -  设备
 /**  获取版本号*/
@@ -63,6 +38,8 @@ typedef NS_ENUM(NSInteger, NetWorkType) {
 #pragma mark   -  设置
 /**  设置导航栏黑线*/
 + (void)setNavigationBarLine:(UIView *)view hidden:(BOOL)hidden;
+
++ (UIViewController *)currentController;
 
 #pragma mark   -  NSUserDefaults
 + (void)saveValue:(id)value forKey:(NSString *)key;
@@ -158,4 +135,8 @@ typedef NS_ENUM(NSInteger, NetWorkType) {
 + (UIFont *)fontWithName:(NSString *)name size:(CGFloat)size bold:(BOOL)bold;
 + (UIFont *)fontWithFamily:(NSString *)family name:(NSString *)name size:(CGFloat)size;
 
+
+#pragma mark   -  HTML to String
++ (NSAttributedString *)htmlToAttribute:(NSString *)html;
++ (NSString *)attributeToHtml:(NSAttributedString *)attributeString;
 @end

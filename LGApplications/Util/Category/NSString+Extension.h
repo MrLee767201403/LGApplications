@@ -20,6 +20,9 @@
  */
 @property (nonatomic,copy,readonly) NSString *sha1;
 
+/**  对应的URL*/
+@property (nonatomic,copy,readonly) NSURL *url;
+
 /**  是不是空字符串*/
 - (BOOL)isEmptyString;
 

@@ -84,6 +84,7 @@ blue:((float)(rgbValue & 0xFF)) / 255.0 alpha:1.0]
 #define kColorMainTheme             (kColorWithFloat(0x5CD5A9))   // 主题色
 #define kColorButtonHL              (kColorWithFloat(0x70c8a7))   // 主题高亮
 
+#define kColorWhite                 (kColorWithFloat(0xFFFFFF))   // 白色
 #define kColorRed                   (kColorWithFloat(0xf0735d))   // 淡红
 #define kColorDark                  (kColorWithFloat(0x333333))   // 暗黑
 #define kColorText                  (kColorWithFloat(0x666666))   // 深灰

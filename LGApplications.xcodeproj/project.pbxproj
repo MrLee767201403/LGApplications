@@ -38,6 +38,7 @@
 		CECFE8E421A659DC003775A3 /* CommonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFE8E121A659DB003775A3 /* CommonCell.m */; };
 		CECFE8E721A65BAF003775A3 /* LGToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFE8E621A65BAF003775A3 /* LGToastView.m */; };
 		CED040FE1F63C99000C8B441 /* LGRollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CED040FD1F63C99000C8B441 /* LGRollView.m */; };
+		CED1541221CCB8D80059A9D7 /* LGImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CED1541121CCB8D80059A9D7 /* LGImageManager.m */; };
 		CEDFD7F021A502A9000C0D4F /* IndexSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDFD7EF21A502A9000C0D4F /* IndexSectionView.m */; };
 		CEDFD7FA21A50F6C000C0D4F /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDFD7F921A50F6C000C0D4F /* LocationManager.m */; };
 		CEE768751EEA5A670093514F /* GradientAnimationDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE768741EEA5A670093514F /* GradientAnimationDemo.m */; };
@@ -129,6 +130,8 @@
 		CECFE8E621A65BAF003775A3 /* LGToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGToastView.m; sourceTree = "<group>"; };
 		CED040FC1F63C99000C8B441 /* LGRollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGRollView.h; sourceTree = "<group>"; };
 		CED040FD1F63C99000C8B441 /* LGRollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGRollView.m; sourceTree = "<group>"; };
+		CED1541021CCB8D80059A9D7 /* LGImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGImageManager.h; sourceTree = "<group>"; };
+		CED1541121CCB8D80059A9D7 /* LGImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGImageManager.m; sourceTree = "<group>"; };
 		CEDFD7EE21A502A9000C0D4F /* IndexSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexSectionView.h; sourceTree = "<group>"; };
 		CEDFD7EF21A502A9000C0D4F /* IndexSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexSectionView.m; sourceTree = "<group>"; };
 		CEDFD7F821A50F6C000C0D4F /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
@@ -226,6 +229,8 @@
 				CE45DF0C20C5382000F33D4D /* KeyChainStore.m */,
 				CE008BF31EE7CA3C00318D98 /* NSUtil.h */,
 				CE008BF41EE7CA3C00318D98 /* NSUtil.m */,
+				CED1541021CCB8D80059A9D7 /* LGImageManager.h */,
+				CED1541121CCB8D80059A9D7 /* LGImageManager.m */,
 				CEDFD7F821A50F6C000C0D4F /* LocationManager.h */,
 				CEDFD7F921A50F6C000C0D4F /* LocationManager.m */,
 			);
@@ -593,6 +598,7 @@
 				CECFE8E721A65BAF003775A3 /* LGToastView.m in Sources */,
 				CE6040D21EE5316E0089C945 /* main.m in Sources */,
 				CE008C131EE7FEB200318D98 /* LGPickerView.m in Sources */,
+				CED1541221CCB8D80059A9D7 /* LGImageManager.m in Sources */,
 				CEE768751EEA5A670093514F /* GradientAnimationDemo.m in Sources */,
 				CECFE8E421A659DC003775A3 /* CommonCell.m in Sources */,
 				CE45DF0E20C5382000F33D4D /* KeyChainStore.m in Sources */,

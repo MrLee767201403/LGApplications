@@ -29,6 +29,15 @@
     return retObj;
 }
 
+- (int)intForKey:(NSString*)key{
+    return [self stringForKey:key].intValue;
+}
+- (float)floatForKey:(NSString*)key{
+    return [self stringForKey:key].floatValue;
+}
+- (double)doubleForKey:(NSString*)key{
+    return [self stringForKey:key].doubleValue;
+}
 
 
 - (NSDictionary *)removeNull{

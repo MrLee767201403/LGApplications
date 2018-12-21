@@ -53,6 +53,9 @@
     return [result copy];
 }
 
+- (NSURL *)url{
+    return [NSURL URLWithString:self];
+}
 
 /**  是不是空字符串*/
 - (BOOL)isEmptyString{

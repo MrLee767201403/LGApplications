@@ -13,95 +13,6 @@
 
 @implementation NSUtil
 
-
-/**  获取网络状态*/
-+ (NetWorkStatus)getNetWorkStatus;
-{
-    UIApplication *application = [UIApplication sharedApplication];
-    NSArray *subviews = [[[application valueForKey:@"statusBar"] valueForKey:@"foregroundView"] subviews];
-
-    NSNumber *dataNetWorkItemView = nil;
-
-    for (id subView in subviews) {
-        if ([subView isKindOfClass:[NSClassFromString(@"UIStatusBarDataNetworkItemView") class]]) {
-            dataNetWorkItemView = subView;
-            break;
-        }
-    }
-
-    switch ([[dataNetWorkItemView valueForKey:@"dataNetworkType"]integerValue]) {
-        case 0:
-        {
-            return NetWorkStatusNotReachable;
-        }
-            break;
-        case 1:
-        {
-            return NetWorkStatusReachableViaWWAN;
-        }
-            break;
-        case 2:
-        {
-            return NetWorkStatusReachableViaWWAN;
-        }
-            break;
-        case 3:
-        {
-            return NetWorkStatusReachableViaWWAN;
-        }
-        default:
-        {
-            return NetWorkStatusReachableViaWiFi;
-        }
-            break;
-    }
-
-}
-
-/**  获取网络类型*/
-+ (NetWorkType)getNetWorkType{
-
-    UIApplication *application = [UIApplication sharedApplication];
-    NSArray *subviews = [[[application valueForKey:@"statusBar"] valueForKey:@"foregroundView"] subviews];
-
-    NSNumber *dataNetWorkItemView = nil;
-
-    for (id subView in subviews) {
-        if ([subView isKindOfClass:[NSClassFromString(@"UIStatusBarDataNetworkItemView") class]]) {
-            dataNetWorkItemView = subView;
-            break;
-        }
-    }
-
-    switch ([[dataNetWorkItemView valueForKey:@"dataNetworkType"]integerValue]) {
-        case 0:
-        {
-            return NetWorkTypeNotReachable;
-        }
-            break;
-        case 1:
-        {
-            return NetWorkTypeReachableVia2G;
-        }
-            break;
-        case 2:
-        {
-            return NetWorkTypeReachableVia3G;
-        }
-            break;
-        case 3:
-        {
-            return NetWorkTypeReachableVia4G;
-        }
-        default:
-        {
-            return NetWorkTypeReachableViaWiFi;
-        }
-            break;
-    }
-}
-
-
 /**  获取版本号*/
 + (NSString *)getAppVersion;
 {
@@ -176,6 +87,55 @@
     return mArray.copy;
 }
 
++ (UIViewController *)currentController{
+
+    if ([kAppDelegate.window.rootViewController isKindOfClass:UINavigationController.class] || [kAppDelegate.window.rootViewController isKindOfClass:UITabBarController.class]) {
+        return [self getVisibleViewControllerWithRootVC:kAppDelegate.window.rootViewController];
+    }else{
+        UIViewController *VC = kAppDelegate.window.rootViewController;
+        if (VC.presentedViewController) {
+            if ([VC.presentedViewController isKindOfClass:UINavigationController.class]||
+                [VC.presentedViewController isKindOfClass:UITabBarController.class]) {
+                return [self getVisibleViewControllerWithRootVC:VC.presentedViewController];
+            }else{
+                return VC.presentedViewController;
+            }
+        }
+        else{
+            return VC;
+        }
+    }
+}
+
+/**
+ * 私有方法
+ * rootVC必须是UINavigationController 或 UITabBarController 及其子类
+ */
++ (UIViewController *)getVisibleViewControllerWithRootVC:(UIViewController *)rootVC{
+
+    if ([rootVC isKindOfClass:UINavigationController.class]) {
+        UINavigationController *nav = (UINavigationController *)rootVC;
+        // Return modal navigation controller's top view controller
+        if ([nav.visibleViewController isKindOfClass:UINavigationController.class]) {
+            UINavigationController *presentdNav = (UINavigationController *)nav.visibleViewController;
+            return presentdNav.visibleViewController;
+        }
+        else if ([nav.visibleViewController isKindOfClass:UITabBarController.class]){
+            return [self getVisibleViewControllerWithRootVC:nav.visibleViewController];
+        }
+        // Return modal view controller if it exists. Otherwise the top view controller.
+        else{
+            return nav.visibleViewController;
+        }
+    }
+    else if([rootVC isKindOfClass:UITabBarController.class]){
+        UITabBarController *tabVC = (UITabBarController *)rootVC;
+        UINavigationController *nav = (UINavigationController *)tabVC.selectedViewController;
+        return [self getVisibleViewControllerWithRootVC:nav];
+    }else{
+        return rootVC;
+    }
+}
 #pragma mark   -  获取启动图
 + (UIImage *)getLaunchImage{
 
@@ -446,29 +406,12 @@
 /**  最近的日期*/
 + (NSString *)relativeDate:(NSDate *)date
 {
-
-
     // 日期格式化类
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     // 设置日期格式(y:年,M:月,d:日,H:时,m:分,s:秒)
     format.dateFormat = @"yyyy-MM-dd";
 
-
     NSDate * currtentDate = [NSDate date];
-
-    //    // 比较日历
-    //    NSCalendar *calendar = [NSCalendar currentCalendar];
-    //    NSCalendarUnit unit = NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
-    //    // 这个返回的是相差多久
-    //    // 比如差12个小时, 无论在不在同一天 day都是0
-    //    // NSDateComponents *components = [calendar components:unit fromDate:date toDate:currtentDate options:0];
-    //    NSDateComponents *currentCalendar =[calendar components:unit fromDate:currtentDate];
-    //    NSDateComponents *targetCalendar =[calendar components:unit fromDate:date];
-    //
-    //    BOOL isYear = currentCalendar.year == targetCalendar.year;
-    //    BOOL isMonth = currentCalendar.month == targetCalendar.month;
-    //    BOOL isDay = currentCalendar.day == targetCalendar.day;
-
     NSDateComponents *components = [NSUtil compareCalendar:date];
 
     // 比较时间
@@ -666,5 +609,30 @@
     UIFont * font = [UIFont fontWithDescriptor:attributeFontDescriptor size:size];
     if (font == nil) font = [UIFont systemFontOfSize:size];
     return font;
+}
+
+
+#pragma mark   -  HTML to String
++ (NSAttributedString *)htmlToAttribute:(NSString *)html
+{
+    NSData *data = [html dataUsingEncoding:NSUnicodeStringEncoding];
+    NSDictionary *options = @{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType};
+    NSAttributedString *attribute = [[NSAttributedString alloc]initWithData:data
+                                                                    options:options
+                                                         documentAttributes:nil
+                                                                      error:nil];
+    return attribute;
+}
+
+// 将 attr 转 html
++ (NSString *)attributeToHtml:(NSAttributedString *)attributeString
+{
+    NSString *htmlString;
+    NSDictionary *exportParams = @{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,NSCharacterEncodingDocumentAttribute:[NSNumber numberWithInt:NSUTF8StringEncoding]};
+
+    NSData *htmlData = [attributeString dataFromRange:NSMakeRange(0, attributeString.length) documentAttributes:exportParams error:nil];
+
+    htmlString = [[NSString alloc] initWithData:htmlData encoding: NSUTF8StringEncoding];
+    return htmlString;
 }
 @end
