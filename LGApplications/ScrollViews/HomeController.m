@@ -23,10 +23,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationController.navigationBar.hidden = YES;
     [self setUpSubviews];
 }
 
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+}
 
 - (void)setUpSubviews{
     
@@ -231,13 +235,23 @@
 
 - (UIButton *)navigationBar{
     if (_navigationBar == nil) {
-        _navigationBar = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 64)];
+        _navigationBar = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kNavBarHeight)];
         _navigationBar.alpha = 0;
         [_navigationBar setBackgroundColor:kColorMainTheme forState:UIControlStateNormal];
         [_navigationBar setTitle:@"你好啊" forState:UIControlStateNormal];
         [_navigationBar setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        
+
+        UIButton *back = [[UIButton alloc] initWithFrame:CGRectMake(15, kNavBarHeight-44, 30, 44)];
+        back.titleLabel.font = kFontNormal;
+        [back setTitle:@"返回" forState:UIControlStateNormal];
+        [back setTitleColor:kColorWhite forState:UIControlStateNormal];
+        [back addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+        [_navigationBar addSubview:back];
     }
     return _navigationBar;
+}
+
+- (void)back{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end

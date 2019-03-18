@@ -17,10 +17,12 @@ typedef void(^LocationBlock)(CLLocation *location,NSString *address);
 
 + (LocationManager *)shareManager;
 
+#pragma mark   - 由于是单利，为避免旧的bBlock被覆盖，每次传入的Block回调成功后会被置nil，所以位置不会持续更新
 /**  如果以前有位置直接返回旧的*/
 - (void)getLocation:(LocationBlock)handle;
 /**  重新定位更新位置*/
 - (void)updateLocation:(LocationBlock)handle;
+- (void)updateCity:(LocationBlock)handle;
 /**  反地理编码，解析地址*/
 - (void )reverseGeocodeLocation:(CLLocation *)location complete:(LocationBlock)handle;
 @end

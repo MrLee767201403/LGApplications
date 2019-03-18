@@ -26,7 +26,7 @@
     NSLog(@"%@", NSStringFromCGRect([UIScreen mainScreen].bounds));
 
     // 让self.view从导航栏下开始显示
-    self.navigationController.navigationBar.translucent = NO;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     
     // 添加tableView
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
@@ -35,7 +35,11 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = kColorBackground;
     [self.view addSubview:self.tableView];
+}
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -195,8 +199,8 @@
     
     if (_viewArray == nil) {
         _viewArray = @[@{@"ClassName":@"ActionSheetDemo",@"title":@"ActionSheet"},
+                       @{@"ClassName":@"AlertViewDemo",@"title":@"LGAlertView"},
                        @{@"ClassName":@"PickerDemoController",@"title":@"PickerView"},
-                       @{@"ClassName":@"InputViewDemo",@"title":@"InputView"},
                        @{@"ClassName":@"SingleChoiceDemo",@"title":@"SingleChoiceTableView"}];
     }
     
@@ -207,8 +211,6 @@
     
     if (_animationArray == nil) {
         _animationArray = @[@{@"ClassName":@"GradientAnimationDemo",@"title":@"文字渐变动画"},
-//                           @{@"ClassName":@"",@"title":@"帧动画"},
-//                           @{@"ClassName":@"",@"title":@"缩放"}
                             ];
 
     }
@@ -218,11 +220,7 @@
 
 - (NSArray *)functionArray{
     if (_functionArray == nil) {
-        _functionArray = @[@{@"ClassName":@"HomeController",@"title":@"scorllView嵌套"},
-//                           @{@"ClassName":@"",@"title":@"文件下载"},
-//                           @{@"ClassName":@"",@"title":@"网络视频播放"},
-//                           @{@"ClassName":@"",@"title":@"大图预览"}
-                           ];
+        _functionArray = @[@{@"ClassName":@"HomeController",@"title":@"scorllView嵌套"},];
 
     }
     return _functionArray;

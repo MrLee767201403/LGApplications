@@ -14,7 +14,7 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *noTitle;
 @property (nonatomic, copy) NSString *yesTitle;
-@property (nonatomic, assign) BOOL singleButton;
+@property (nonatomic, assign) BOOL singleButton;  // 此时只显示 确定按钮
 
 @property (nonatomic, assign) NSTextAlignment alignment;
 

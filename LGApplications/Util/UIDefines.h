@@ -47,12 +47,14 @@ static NSString *kFontNamePingFangSCLight = @"PingFangSC-Light";
 // 获得屏幕宽高
 #define kScreenWidth            [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight           [UIScreen mainScreen].bounds.size.height
-#define kNavigationHeight       (iphoneX ? 88 : 64)
-#define kContentHeight          (kScreenHeight - kNavigationHeight)
+#define kNavBarHeight           (iphoneX ? 88 : 64)
+#define kBottomBarHeight        (iphoneX ? 34 : 0)
+#define kViewHeight             (kScreenHeight - kNavBarHeight)
+#define kContentHeight          (kScreenHeight - kNavBarHeight - kBottomBarHeight)
 
-#define kScale                  kScreenWidth/375
-#define kScaling(f)             kScale * f
-#define kScales(f)              (iphonePlus_5_5 ?  1.1:1) * f  //   只针对Plus做缩放
+#define kScale                  (kScreenWidth/375.0)
+#define kScaling(f)             (kScale * f)
+#define kScales(f)              ((iphonePlus_5_5 ?  1.1:1) * f)  //   只针对Plus做缩放
 
 // UIApplication
 #define kApplication            [UIApplication sharedApplication]

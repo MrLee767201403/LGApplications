@@ -12,6 +12,7 @@ static LocationManager *_shareLocationManager;
 @implementation LocationManager
 
 {
+    LocationBlock _cityBlock;
     LocationBlock _block;
     LocationBlock _geocodeBlock;
     NSString *_address;
@@ -34,7 +35,7 @@ static LocationManager *_shareLocationManager;
     self = [super init];
     if (self) {
         _location = nil;
-        
+
         if ([NSThread currentThread] == [NSThread mainThread]) {
             [self initManager];
         } else {
@@ -43,7 +44,7 @@ static LocationManager *_shareLocationManager;
             });
         }
     }
-    
+
     return self;
 }
 
@@ -61,12 +62,12 @@ static LocationManager *_shareLocationManager;
 
 - (void)getLocation:(LocationBlock)handle{
     _block = handle;
-    
+
     if (_location.coordinate.latitude && _address.length) {
         handle(_location,_address);
         return;
     }
-    
+
     if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
         [_manager requestWhenInUseAuthorization];
     }
@@ -75,7 +76,15 @@ static LocationManager *_shareLocationManager;
 
 - (void)updateLocation:(LocationBlock)handle{
     _block = handle;
-    
+
+    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
+        [_manager requestWhenInUseAuthorization];
+    }
+    [_manager startUpdatingLocation];
+}
+
+- (void)updateCity:(LocationBlock)handle{
+    _cityBlock = handle;
     if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
         [_manager requestWhenInUseAuthorization];
     }
@@ -116,16 +125,14 @@ static LocationManager *_shareLocationManager;
     }
     else if (status == kCLAuthorizationStatusDenied){
         NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
-        NSDictionary *info = [NSBundle mainBundle].infoDictionary;
-        NSString *message = [NSString stringWithFormat:@"您已关闭定位服务,这将直接影响到某些功能的使用,请您前往\"设置-隐私-定位服务-%@\"打开定位服务",info[@"CFBundleDisplayName"]];
-        UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:message preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"您已关闭定位服务,这将直接影响到某些功能的使用,请您前往\"设置-隐私-定位服务-云实习\"打开定位服务" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"好" style:UIAlertActionStyleCancel handler:nil];
         UIAlertAction *gotoSetting = [UIAlertAction actionWithTitle:@"去设置" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             [kApplication openURL:url];
         }];
         [alertVC addAction:cancel];
         [alertVC addAction:gotoSetting];
-//        [[NSUtil currentViewController] presentViewController:alertVC animated:YES completion:nil];
+        [[NSUtil currentController] presentViewController:alertVC animated:YES completion:nil];
     }
     else if (status == kCLAuthorizationStatusRestricted){
         [LGToastView showToastWithError:@"无法获取您的位置信息, 请检查网络"];
@@ -140,52 +147,44 @@ static LocationManager *_shareLocationManager;
 
 
 - (void )getDetailAddressWithLocation:(CLLocation *)location{
-    
+
     // 反地理编码
     //    CLLocation * loc1 = [[CLLocation alloc] initWithLatitude:39.8 longitude:116.7];
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error)
      {
-         
+
          if (placemarks.count)
          {
              CLPlacemark *placemark = placemarks.firstObject;
-             
-             NSString *address  = [placemark.addressDictionary[@"FormattedAddressLines"] firstObject];
-             
-             // 如果是中国 去掉国家信息
-             if ([address hasPrefix:@"中国"]) {
-                 address = [address substringFromIndex:2];
+
+             if (_cityBlock) {
+                 NSString *city = placemark.country;
+                 if (placemark.administrativeArea) {
+                     city = [city stringByAppendingString:placemark.administrativeArea];
+                 }
+                 if (placemark.locality) {
+                     city = [city stringByAppendingString:placemark.locality];
+                 }
+                 _cityBlock(location,city);
+                 _cityBlock = nil;
              }
-             
-             // 去掉楼层信息
-             NSString *lastChar = [address substringFromIndex:address.length-1];
-             
-             if ([lastChar isEqualToString:@"层"]) {
-                 // 层
-                 address = [address substringToIndex:address.length-1];
-                 lastChar = [address substringFromIndex:address.length-1];
-                 NSString *regex = @"\\d$|-";
-                 NSPredicate *regExPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
-                 
-                 // 如果最后一个字符是数字
-                 while ((![lastChar isEqualToString:@"楼"]) && address.length > 1 && [regExPredicate evaluateWithObject:lastChar])
-                 {
-                     address = [address substringToIndex:address.length-1];
-                     lastChar = [address substringFromIndex:address.length-1];
+             else {
+                 NSString *address  = [placemark.addressDictionary[@"FormattedAddressLines"] firstObject];
+                 address = [self formatAddress:address];
+                 address = [address trimming].length?address : @"获取位置信息失败，请稍后再试";
+                 _address = [address copy];
+
+                 if (_block) {
+                     _block(location,address);
+                     _block = nil;
+                 }
+                 if (_geocodeBlock) {
+                     _geocodeBlock(location,address);
+                     _geocodeBlock = nil;
                  }
              }
-             address = [address trimming].length?address : @"获取位置信息失败，请稍后再试";
-             _address = [address copy];
-             if (_block) {
-                 _block(location,address);
-             }
 
-             if (_geocodeBlock) {
-                 _geocodeBlock(location,address);
-             }
-             
-             
              // 10分钟后自动清除位置信息
              dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(600 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                  _address = nil;
@@ -193,6 +192,30 @@ static LocationManager *_shareLocationManager;
              });
          }
      }];
+}
+
+
+- (NSString *)formatAddress:(NSString *)address{
+
+    // 去掉楼层信息
+    NSString *lastChar = [address substringFromIndex:address.length-1];
+
+    if ([lastChar isEqualToString:@"层"]) {  //B1层
+        // 层
+        address = [address substringToIndex:address.length-1];
+        lastChar = [address substringFromIndex:address.length-1];
+
+        NSString *regex = @"\\d$|-|B";
+        NSPredicate *regExPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+
+        // 如果最后一个字符是数字
+        while ((![lastChar isEqualToString:@"楼"]) && address.length > 1 && [regExPredicate evaluateWithObject:lastChar])
+        {
+            address = [address substringToIndex:address.length-1];
+            lastChar = [address substringFromIndex:address.length-1];
+        }
+    }
+    return address;
 }
 
 @end
@@ -214,11 +237,11 @@ static LocationManager *_shareLocationManager;
     self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
     if (self) {
 
-        // 在大头针旁边加一个label
+        //        在大头针旁边加一个label
         _titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, -15, 50, 20)];
         _titleLabel.font = kFontWithName(kFontNamePingFangSCMedium, 14);
         _titleLabel.textColor = kColorDark;
-        _titleLabel.shadowColor = [UIColor whiteColor];
+        _titleLabel.shadowColor = kColorWhite;
         _titleLabel.shadowOffset = CGSizeMake(-1, -1);
         _titleLabel.textAlignment = NSTextAlignmentCenter;
         _titleLabel.numberOfLines = 0;
@@ -234,6 +257,8 @@ static LocationManager *_shareLocationManager;
     return self;
 
 }
+
+
 
 - (void)setTitle:(NSString *)title{
     _title = title;

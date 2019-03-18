@@ -17,12 +17,7 @@
 		CE008BFD1EE7CA7500318D98 /* LGTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008BFB1EE7CA7500318D98 /* LGTextView.m */; };
 		CE008C011EE7CBD700318D98 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008C001EE7CBD700318D98 /* UIImage+Extension.m */; };
 		CE008C071EE7DA4500318D98 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008C061EE7DA4500318D98 /* MainController.m */; };
-		CE008C0D1EE7ED5A00318D98 /* PickerDemoController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008C0C1EE7ED5A00318D98 /* PickerDemoController.m */; };
 		CE008C101EE7F64A00318D98 /* BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008C0F1EE7F64A00318D98 /* BaseController.m */; };
-		CE008C131EE7FEB200318D98 /* LGPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008C121EE7FEB200318D98 /* LGPickerView.m */; };
-		CE008C151EE800C000318D98 /* district.json in Resources */ = {isa = PBXBuildFile; fileRef = CE008C141EE800C000318D98 /* district.json */; };
-		CE008C181EE80E2300318D98 /* ActionSheetDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008C171EE80E2300318D98 /* ActionSheetDemo.m */; };
-		CE1122781EE9396500C203DF /* SingleChoiceDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1122771EE9396500C203DF /* SingleChoiceDemo.m */; };
 		CE45DF0E20C5382000F33D4D /* KeyChainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = CE45DF0C20C5382000F33D4D /* KeyChainStore.m */; };
 		CE6040D21EE5316E0089C945 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6040D11EE5316E0089C945 /* main.m */; };
 		CE6040D51EE5316E0089C945 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6040D41EE5316E0089C945 /* AppDelegate.m */; };
@@ -32,6 +27,12 @@
 		CE6040F61EE5316E0089C945 /* LGApplicationsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6040F51EE5316E0089C945 /* LGApplicationsUITests.m */; };
 		CE9266221F22F6520063724B /* NSDictionary+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9266211F22F6520063724B /* NSDictionary+Extension.m */; };
 		CE9266281F22F9100063724B /* LGAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9266271F22F9100063724B /* LGAlertView.m */; };
+		CEAA75E9223F38910028E86B /* LGNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAA75E8223F38910028E86B /* LGNotificationManager.m */; };
+		CEAA75F5223F3D950028E86B /* ActionSheetDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAA75EB223F3D950028E86B /* ActionSheetDemo.m */; };
+		CEAA75F6223F3D950028E86B /* GradientAnimationDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAA75EC223F3D950028E86B /* GradientAnimationDemo.m */; };
+		CEAA75F8223F3D950028E86B /* PickerDemoController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAA75F1223F3D950028E86B /* PickerDemoController.m */; };
+		CEAA75F9223F3D950028E86B /* SingleChoiceDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAA75F4223F3D950028E86B /* SingleChoiceDemo.m */; };
+		CEAA75FC223F3E9F0028E86B /* LGPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAA75FB223F3E9F0028E86B /* LGPickerView.m */; };
 		CEBFE427204E743900AEE96D /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBFE423204E743900AEE96D /* HomeController.m */; };
 		CEBFE428204E743900AEE96D /* ListController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBFE424204E743900AEE96D /* ListController.m */; };
 		CECFE8E321A659DC003775A3 /* TextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFE8DF21A659DB003775A3 /* TextViewCell.m */; };
@@ -41,10 +42,9 @@
 		CED1541221CCB8D80059A9D7 /* LGImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CED1541121CCB8D80059A9D7 /* LGImageManager.m */; };
 		CEDFD7F021A502A9000C0D4F /* IndexSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDFD7EF21A502A9000C0D4F /* IndexSectionView.m */; };
 		CEDFD7FA21A50F6C000C0D4F /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDFD7F921A50F6C000C0D4F /* LocationManager.m */; };
-		CEE768751EEA5A670093514F /* GradientAnimationDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE768741EEA5A670093514F /* GradientAnimationDemo.m */; };
 		CEE768781EEA78620093514F /* LGGradientLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE768771EEA78620093514F /* LGGradientLabel.m */; };
-		CEF78A9E1F3D565400EF0507 /* LGInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF78A9D1F3D565400EF0507 /* LGInputView.m */; };
-		CEF78AA11F3DBCCC00EF0507 /* InputViewDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF78AA01F3DBCCC00EF0507 /* InputViewDemo.m */; };
+		CEED1022223F471300F9AE24 /* region.json in Resources */ = {isa = PBXBuildFile; fileRef = CEED1021223F471300F9AE24 /* region.json */; };
+		CEED1025223F4C4000F9AE24 /* AlertViewDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = CEED1024223F4C4000F9AE24 /* AlertViewDemo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,17 +88,8 @@
 		CE008C041EE7D75700318D98 /* UIDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDefines.h; sourceTree = "<group>"; };
 		CE008C051EE7DA4500318D98 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
 		CE008C061EE7DA4500318D98 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
-		CE008C0B1EE7ED5A00318D98 /* PickerDemoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerDemoController.h; sourceTree = "<group>"; };
-		CE008C0C1EE7ED5A00318D98 /* PickerDemoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerDemoController.m; sourceTree = "<group>"; };
 		CE008C0E1EE7F64A00318D98 /* BaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseController.h; sourceTree = "<group>"; };
 		CE008C0F1EE7F64A00318D98 /* BaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseController.m; sourceTree = "<group>"; };
-		CE008C111EE7FEB200318D98 /* LGPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPickerView.h; sourceTree = "<group>"; };
-		CE008C121EE7FEB200318D98 /* LGPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPickerView.m; sourceTree = "<group>"; };
-		CE008C141EE800C000318D98 /* district.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = district.json; sourceTree = "<group>"; };
-		CE008C161EE80E2300318D98 /* ActionSheetDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetDemo.h; sourceTree = "<group>"; };
-		CE008C171EE80E2300318D98 /* ActionSheetDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetDemo.m; sourceTree = "<group>"; };
-		CE1122761EE9396500C203DF /* SingleChoiceDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleChoiceDemo.h; sourceTree = "<group>"; };
-		CE1122771EE9396500C203DF /* SingleChoiceDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleChoiceDemo.m; sourceTree = "<group>"; };
 		CE45DF0C20C5382000F33D4D /* KeyChainStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyChainStore.m; sourceTree = "<group>"; };
 		CE45DF0D20C5382000F33D4D /* KeyChainStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyChainStore.h; sourceTree = "<group>"; };
 		CE6040CD1EE5316E0089C945 /* LGApplications.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LGApplications.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +109,18 @@
 		CE9266211F22F6520063724B /* NSDictionary+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Extension.m"; sourceTree = "<group>"; };
 		CE9266261F22F9100063724B /* LGAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGAlertView.h; sourceTree = "<group>"; };
 		CE9266271F22F9100063724B /* LGAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGAlertView.m; sourceTree = "<group>"; };
+		CEAA75E7223F38910028E86B /* LGNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGNotificationManager.h; sourceTree = "<group>"; };
+		CEAA75E8223F38910028E86B /* LGNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGNotificationManager.m; sourceTree = "<group>"; };
+		CEAA75EB223F3D950028E86B /* ActionSheetDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetDemo.m; sourceTree = "<group>"; };
+		CEAA75EC223F3D950028E86B /* GradientAnimationDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientAnimationDemo.m; sourceTree = "<group>"; };
+		CEAA75EE223F3D950028E86B /* PickerDemoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerDemoController.h; sourceTree = "<group>"; };
+		CEAA75EF223F3D950028E86B /* SingleChoiceDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleChoiceDemo.h; sourceTree = "<group>"; };
+		CEAA75F0223F3D950028E86B /* ActionSheetDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetDemo.h; sourceTree = "<group>"; };
+		CEAA75F1223F3D950028E86B /* PickerDemoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerDemoController.m; sourceTree = "<group>"; };
+		CEAA75F3223F3D950028E86B /* GradientAnimationDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientAnimationDemo.h; sourceTree = "<group>"; };
+		CEAA75F4223F3D950028E86B /* SingleChoiceDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleChoiceDemo.m; sourceTree = "<group>"; };
+		CEAA75FA223F3E9F0028E86B /* LGPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPickerView.h; sourceTree = "<group>"; };
+		CEAA75FB223F3E9F0028E86B /* LGPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPickerView.m; sourceTree = "<group>"; };
 		CEBFE423204E743900AEE96D /* HomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeController.m; sourceTree = "<group>"; };
 		CEBFE424204E743900AEE96D /* ListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListController.m; sourceTree = "<group>"; };
 		CEBFE425204E743900AEE96D /* HomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
@@ -136,14 +139,11 @@
 		CEDFD7EF21A502A9000C0D4F /* IndexSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexSectionView.m; sourceTree = "<group>"; };
 		CEDFD7F821A50F6C000C0D4F /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
 		CEDFD7F921A50F6C000C0D4F /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
-		CEE768731EEA5A670093514F /* GradientAnimationDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientAnimationDemo.h; sourceTree = "<group>"; };
-		CEE768741EEA5A670093514F /* GradientAnimationDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientAnimationDemo.m; sourceTree = "<group>"; };
 		CEE768761EEA78620093514F /* LGGradientLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGGradientLabel.h; sourceTree = "<group>"; };
 		CEE768771EEA78620093514F /* LGGradientLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGGradientLabel.m; sourceTree = "<group>"; };
-		CEF78A9C1F3D565400EF0507 /* LGInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGInputView.h; sourceTree = "<group>"; };
-		CEF78A9D1F3D565400EF0507 /* LGInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGInputView.m; sourceTree = "<group>"; };
-		CEF78A9F1F3DBCCC00EF0507 /* InputViewDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputViewDemo.h; sourceTree = "<group>"; };
-		CEF78AA01F3DBCCC00EF0507 /* InputViewDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputViewDemo.m; sourceTree = "<group>"; };
+		CEED1021223F471300F9AE24 /* region.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = region.json; sourceTree = "<group>"; };
+		CEED1023223F4C4000F9AE24 /* AlertViewDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertViewDemo.h; sourceTree = "<group>"; };
+		CEED1024223F4C4000F9AE24 /* AlertViewDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertViewDemo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +229,8 @@
 				CE45DF0C20C5382000F33D4D /* KeyChainStore.m */,
 				CE008BF31EE7CA3C00318D98 /* NSUtil.h */,
 				CE008BF41EE7CA3C00318D98 /* NSUtil.m */,
+				CEAA75E7223F38910028E86B /* LGNotificationManager.h */,
+				CEAA75E8223F38910028E86B /* LGNotificationManager.m */,
 				CED1541021CCB8D80059A9D7 /* LGImageManager.h */,
 				CED1541121CCB8D80059A9D7 /* LGImageManager.m */,
 				CEDFD7F821A50F6C000C0D4F /* LocationManager.h */,
@@ -246,56 +248,22 @@
 				CECFE8DF21A659DB003775A3 /* TextViewCell.m */,
 				CEDFD7EE21A502A9000C0D4F /* IndexSectionView.h */,
 				CEDFD7EF21A502A9000C0D4F /* IndexSectionView.m */,
+				CEAA75FA223F3E9F0028E86B /* LGPickerView.h */,
+				CEAA75FB223F3E9F0028E86B /* LGPickerView.m */,
 				CECFE8E521A65BAF003775A3 /* LGToastView.h */,
 				CECFE8E621A65BAF003775A3 /* LGToastView.m */,
 				CE9266261F22F9100063724B /* LGAlertView.h */,
 				CE9266271F22F9100063724B /* LGAlertView.m */,
-				CE008C111EE7FEB200318D98 /* LGPickerView.h */,
-				CE008C121EE7FEB200318D98 /* LGPickerView.m */,
 				CE008BF81EE7CA7500318D98 /* LGActionSheet.h */,
 				CE008BF91EE7CA7500318D98 /* LGActionSheet.m */,
 				CE008BFA1EE7CA7500318D98 /* LGTextView.h */,
 				CE008BFB1EE7CA7500318D98 /* LGTextView.m */,
 				CEE768761EEA78620093514F /* LGGradientLabel.h */,
 				CEE768771EEA78620093514F /* LGGradientLabel.m */,
-				CEF78A9C1F3D565400EF0507 /* LGInputView.h */,
-				CEF78A9D1F3D565400EF0507 /* LGInputView.m */,
 				CED040FC1F63C99000C8B441 /* LGRollView.h */,
 				CED040FD1F63C99000C8B441 /* LGRollView.m */,
 			);
 			path = LGViews;
-			sourceTree = "<group>";
-		};
-		CE008C081EE7ECC200318D98 /* LGAnimationDemos */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = LGAnimationDemos;
-			sourceTree = "<group>";
-		};
-		CE008C091EE7ECC200318D98 /* LGFunctionDemos */ = {
-			isa = PBXGroup;
-			children = (
-				CEBFE422204E743900AEE96D /* ScrollViews */,
-			);
-			path = LGFunctionDemos;
-			sourceTree = "<group>";
-		};
-		CE008C0A1EE7ECC200318D98 /* LGViewDemos */ = {
-			isa = PBXGroup;
-			children = (
-				CE008C0B1EE7ED5A00318D98 /* PickerDemoController.h */,
-				CE008C0C1EE7ED5A00318D98 /* PickerDemoController.m */,
-				CE008C161EE80E2300318D98 /* ActionSheetDemo.h */,
-				CE008C171EE80E2300318D98 /* ActionSheetDemo.m */,
-				CEF78A9F1F3DBCCC00EF0507 /* InputViewDemo.h */,
-				CEF78AA01F3DBCCC00EF0507 /* InputViewDemo.m */,
-				CE1122761EE9396500C203DF /* SingleChoiceDemo.h */,
-				CE1122771EE9396500C203DF /* SingleChoiceDemo.m */,
-				CEE768731EEA5A670093514F /* GradientAnimationDemo.h */,
-				CEE768741EEA5A670093514F /* GradientAnimationDemo.m */,
-			);
-			path = LGViewDemos;
 			sourceTree = "<group>";
 		};
 		CE6040C41EE5316E0089C945 = {
@@ -323,9 +291,8 @@
 		CE6040CF1EE5316E0089C945 /* LGApplications */ = {
 			isa = PBXGroup;
 			children = (
-				CE008C081EE7ECC200318D98 /* LGAnimationDemos */,
-				CE008C091EE7ECC200318D98 /* LGFunctionDemos */,
-				CE008C0A1EE7ECC200318D98 /* LGViewDemos */,
+				CEAA75EA223F3D950028E86B /* LGViewDemos */,
+				CEBFE422204E743900AEE96D /* ScrollViews */,
 				CE008BE01EE7C70300318D98 /* Main */,
 				CE6040D31EE5316E0089C945 /* AppDelegate.h */,
 				CE6040D41EE5316E0089C945 /* AppDelegate.m */,
@@ -338,8 +305,8 @@
 		CE6040D01EE5316E0089C945 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CEED1021223F471300F9AE24 /* region.json */,
 				CE6040DC1EE5316E0089C945 /* Assets.xcassets */,
-				CE008C141EE800C000318D98 /* district.json */,
 				CE6040DE1EE5316E0089C945 /* LaunchScreen.storyboard */,
 				CE6040E11EE5316E0089C945 /* Info.plist */,
 				CE6040D11EE5316E0089C945 /* main.m */,
@@ -364,6 +331,23 @@
 				CE6040F71EE5316E0089C945 /* Info.plist */,
 			);
 			path = LGApplicationsUITests;
+			sourceTree = "<group>";
+		};
+		CEAA75EA223F3D950028E86B /* LGViewDemos */ = {
+			isa = PBXGroup;
+			children = (
+				CEAA75F0223F3D950028E86B /* ActionSheetDemo.h */,
+				CEAA75EB223F3D950028E86B /* ActionSheetDemo.m */,
+				CEED1023223F4C4000F9AE24 /* AlertViewDemo.h */,
+				CEED1024223F4C4000F9AE24 /* AlertViewDemo.m */,
+				CEAA75F3223F3D950028E86B /* GradientAnimationDemo.h */,
+				CEAA75EC223F3D950028E86B /* GradientAnimationDemo.m */,
+				CEAA75EE223F3D950028E86B /* PickerDemoController.h */,
+				CEAA75F1223F3D950028E86B /* PickerDemoController.m */,
+				CEAA75EF223F3D950028E86B /* SingleChoiceDemo.h */,
+				CEAA75F4223F3D950028E86B /* SingleChoiceDemo.m */,
+			);
+			path = LGViewDemos;
 			sourceTree = "<group>";
 		};
 		CEBFE422204E743900AEE96D /* ScrollViews */ = {
@@ -496,8 +480,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE6040E01EE5316E0089C945 /* LaunchScreen.storyboard in Resources */,
-				CE008C151EE800C000318D98 /* district.json in Resources */,
 				CE6040DD1EE5316E0089C945 /* Assets.xcassets in Resources */,
+				CEED1022223F471300F9AE24 /* region.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,11 +554,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEAA75FC223F3E9F0028E86B /* LGPickerView.m in Sources */,
 				CE008BFD1EE7CA7500318D98 /* LGTextView.m in Sources */,
+				CEED1025223F4C4000F9AE24 /* AlertViewDemo.m in Sources */,
 				CE008BEF1EE7C95600318D98 /* NSString+Extension.m in Sources */,
 				CEBFE428204E743900AEE96D /* ListController.m in Sources */,
-				CE008C0D1EE7ED5A00318D98 /* PickerDemoController.m in Sources */,
 				CEDFD7F021A502A9000C0D4F /* IndexSectionView.m in Sources */,
+				CEAA75F5223F3D950028E86B /* ActionSheetDemo.m in Sources */,
 				CED040FE1F63C99000C8B441 /* LGRollView.m in Sources */,
 				CE008BF01EE7C95600318D98 /* UIButton+Extension.m in Sources */,
 				CE008BF51EE7CA3C00318D98 /* NSUtil.m in Sources */,
@@ -582,26 +568,24 @@
 				CEE768781EEA78620093514F /* LGGradientLabel.m in Sources */,
 				CE008C071EE7DA4500318D98 /* MainController.m in Sources */,
 				CE6040D51EE5316E0089C945 /* AppDelegate.m in Sources */,
+				CEAA75E9223F38910028E86B /* LGNotificationManager.m in Sources */,
 				CE008BFC1EE7CA7500318D98 /* LGActionSheet.m in Sources */,
-				CE008C181EE80E2300318D98 /* ActionSheetDemo.m in Sources */,
 				CE9266221F22F6520063724B /* NSDictionary+Extension.m in Sources */,
 				CE9266281F22F9100063724B /* LGAlertView.m in Sources */,
 				CE008C101EE7F64A00318D98 /* BaseController.m in Sources */,
+				CEAA75F8223F3D950028E86B /* PickerDemoController.m in Sources */,
 				CE008BF11EE7C95600318D98 /* UIView+Extension.m in Sources */,
-				CEF78A9E1F3D565400EF0507 /* LGInputView.m in Sources */,
 				CECFE8E321A659DC003775A3 /* TextViewCell.m in Sources */,
 				CEBFE427204E743900AEE96D /* HomeController.m in Sources */,
-				CE1122781EE9396500C203DF /* SingleChoiceDemo.m in Sources */,
-				CEF78AA11F3DBCCC00EF0507 /* InputViewDemo.m in Sources */,
 				CE008BE31EE7C76000318D98 /* RootNavigationController.m in Sources */,
 				CE008C011EE7CBD700318D98 /* UIImage+Extension.m in Sources */,
+				CEAA75F6223F3D950028E86B /* GradientAnimationDemo.m in Sources */,
 				CECFE8E721A65BAF003775A3 /* LGToastView.m in Sources */,
 				CE6040D21EE5316E0089C945 /* main.m in Sources */,
-				CE008C131EE7FEB200318D98 /* LGPickerView.m in Sources */,
 				CED1541221CCB8D80059A9D7 /* LGImageManager.m in Sources */,
-				CEE768751EEA5A670093514F /* GradientAnimationDemo.m in Sources */,
 				CECFE8E421A659DC003775A3 /* CommonCell.m in Sources */,
 				CE45DF0E20C5382000F33D4D /* KeyChainStore.m in Sources */,
+				CEAA75F9223F3D950028E86B /* SingleChoiceDemo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -746,12 +730,13 @@
 				DEVELOPMENT_TEAM = YV9A4TRPTT;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/ligang/Desktop/LGApplications/LGApplications/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/LGApplications/PrefixHeader.pch";
 				INFOPLIST_FILE = LGApplications/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cloudshixi-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
 			name = Debug;
 		};
@@ -763,12 +748,13 @@
 				DEVELOPMENT_TEAM = YV9A4TRPTT;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/ligang/Desktop/LGApplications/LGApplications/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/LGApplications/PrefixHeader.pch";
 				INFOPLIST_FILE = LGApplications/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cloudshixi-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
 			name = Release;
 		};

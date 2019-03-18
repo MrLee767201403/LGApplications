@@ -170,10 +170,10 @@
     // 选中样式
     cell.selectionStyle = style;
     
-    // 隐藏每个分区最后一个cell的分割线
-    UIView *line = cell.contentView.subviews.lastObject;
-    line.hidden = indexPath.row == [tableView numberOfRowsInSection:indexPath.section]-1;
-    
+//    // 隐藏每个分区最后一个cell的分割线
+//    UIView *line = cell.contentView.subviews.lastObject;
+//    line.hidden = indexPath.row == [tableView numberOfRowsInSection:indexPath.section]-1;
+
     
     // 设置cell文字
     cell.textLabel.font = font;
