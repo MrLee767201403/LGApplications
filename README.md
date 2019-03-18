@@ -21,6 +21,9 @@ LGApplications/Util/UIDefines.h :   常用的宏
 
 2.LGPickerView                  :   滑动选择器,支持自定义选项,日期,地区三种样式,自定义选项只需要传进去options数组即可
 
+![image](https://github.com/MrLee767201403/LGApplications/blob/master/Gif/pickerView.png)
+
+
 3.SingleChoiceTableView         :   用tableView实现多个题目的单项选择,只提供一个思路,毕竟具体项目需要不同
 
 4.LGTextView                    :   带placeholder的textView
@@ -29,15 +32,16 @@ LGApplications/Util/UIDefines.h :   常用的宏
 
 6.LGAlertView                   :   自定义的一个AlertView,默认显示取消和确定两个按钮,可以分别添加事间, 可以设置只显示一个确定按钮
 
-'LGAlertView *alert = [[LGAlertView alloc] initWithContent:@"这是两个按钮的弹窗"];
+`LGAlertView *alert = [[LGAlertView alloc] initWithContent:@"这是两个按钮的弹窗"];
 alert.yesHandle = ^{
-[LGToastView showToastWithSuccess:@"点击了确定"];
+        [LGToastView showToastWithSuccess:@"点击了确定"];
 };
 alert.noHandle = ^{
-[LGToastView showToastWithSuccess:@"点击了取消"];
+        [LGToastView showToastWithSuccess:@"点击了取消"];
 };
-[alert show];'
+[alert show];`
 
+![image](https://github.com/MrLee767201403/LGApplications/blob/master/Gif/alertView.png)
 
 8.LGRollView                    :   自动循环滚动的广告条
 
@@ -64,6 +68,8 @@ alert.noHandle = ^{
 13.IndexSectionView
 
 自定义tableView 右侧索引 
+![image](https://github.com/MrLee767201403/LGApplications/blob/master/Gif/indexView.jpg)
+
 
 14.LGToastView
 
