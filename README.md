@@ -43,9 +43,7 @@ alert.noHandle = ^{
 [alert show];
 ```
 
-![image](https://github.com/MrLee767201403/LGApplications/blob/master/Gif/alertView.png/zoom=50%)
-
-<img src="https://github.com/MrLee767201403/LGApplications/blob/master/Gif/alertView.png" style="zoom:50%" />
+![image](https://github.com/MrLee767201403/LGApplications/blob/master/Gif/alertView.png)
 
 8.LGRollView                    :   自动循环滚动的广告条
 
@@ -72,7 +70,7 @@ alert.noHandle = ^{
 13.IndexSectionView
 
 自定义tableView 右侧索引 
-![image](https://github.com/MrLee767201403/LGApplications/blob/master/Gif/indexView.jpg)
+![image](https://github.com/MrLee767201403/LGApplications/blob/master/Gif/indexView.png)
 
 
 14.LGToastView
