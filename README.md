@@ -32,16 +32,20 @@ LGApplications/Util/UIDefines.h :   常用的宏
 
 6.LGAlertView                   :   自定义的一个AlertView,默认显示取消和确定两个按钮,可以分别添加事间, 可以设置只显示一个确定按钮
 
-`LGAlertView *alert = [[LGAlertView alloc] initWithContent:@"这是两个按钮的弹窗"];
+```
+LGAlertView *alert = [[LGAlertView alloc] initWithContent:@"这是两个按钮的弹窗"];
 alert.yesHandle = ^{
         [LGToastView showToastWithSuccess:@"点击了确定"];
 };
 alert.noHandle = ^{
         [LGToastView showToastWithSuccess:@"点击了取消"];
 };
-[alert show];`
+[alert show];
+```
 
-![image](https://github.com/MrLee767201403/LGApplications/blob/master/Gif/alertView.png)
+![image](https://github.com/MrLee767201403/LGApplications/blob/master/Gif/alertView.png/zoom=50%)
+
+<img src="https://github.com/MrLee767201403/LGApplications/blob/master/Gif/alertView.png" style="zoom:50%" />
 
 8.LGRollView                    :   自动循环滚动的广告条
 
