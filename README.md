@@ -9,7 +9,7 @@ LGApplications/Util/LGViews     :   自定义View
 
 LGApplications/Util/Category    :   里面都是项目中常用的,几乎每个项目必备
 
-LGApplications/Util/LGUtil      :   一些常用的公有方法
+LGApplications/Util/LGUtil      :   一些常用的公有方法 工具类
 
 LGApplications/Util/UIDefines.h :   常用的宏
 
@@ -17,20 +17,26 @@ LGApplications/Util/UIDefines.h :   常用的宏
 
 申明:     项目内容仅供参考,使用过程中带来任何bug,概不负责
 
-1.LGActionSheet                 :   类似微信的那个底部弹窗,使用简单方便
+### 1.LGActionSheet                 
+类似微信的那个底部弹窗,使用简单方便
 
-2.LGPickerView                  :   滑动选择器,支持自定义选项,日期,地区三种样式,自定义选项只需要传进去options数组即可
+### 2.LGPickerView                 
+滑动选择器,支持自定义选项,日期,地区三种样式,自定义选项只需要传进去options数组即可
 
 ![image](https://github.com/MrLee767201403/LGApplications/blob/master/Gif/pickerView.png)
 
 
-3.SingleChoiceTableView         :   用tableView实现多个题目的单项选择,只提供一个思路,毕竟具体项目需要不同
+### 3.SingleChoiceTableView         
+用tableView实现多个题目的单项选择,只提供一个思路,毕竟具体项目需要不同
 
-4.LGTextView                    :   带placeholder的textView
+### 4.LGTextView                   
+带placeholder的textView
 
-5.LGGradientLabel               :   渐变文字Label
+### 5.LGGradientLabel               
+渐变文字Label
 
-6.LGAlertView                   :   自定义的一个AlertView,默认显示取消和确定两个按钮,可以分别添加事间, 可以设置只显示一个确定按钮
+### 6.LGAlertView                   
+自定义的一个AlertView,默认显示取消和确定两个按钮,可以分别添加事间, 可以设置只显示一个确定按钮
 
 ```
 LGAlertView *alert = [[LGAlertView alloc] initWithContent:@"这是两个按钮的弹窗"];
@@ -45,17 +51,20 @@ alert.noHandle = ^{
 
 ![image](https://github.com/MrLee767201403/LGApplications/blob/master/Gif/alertView.png)
 
-8.LGRollView                    :   自动循环滚动的广告条
+### 8.LGRollView                    
+自动循环滚动的广告条
 
-9.ScrollView/TableView嵌套
+### 9.ScrollView/TableView嵌套
 
 ![image](https://github.com/MrLee767201403/LGApplications/blob/master/Gif/scrollViews.gif)
 
-10.CommonCell
+### 10.CommonCell
+通用的 Cell 可以添加头像 title  点击事件
 
 ![image](https://github.com/MrLee767201403/LGApplications/blob/master/Gif/CommonCell.png)
 
-11.TextViewCell
+### 11.TextViewCell
+通用的 textCell 可以添加头像 title  输入文本 支持多行
 
 ![image](https://github.com/MrLee767201403/LGApplications/blob/master/Gif/TextCell未输入.png)
 
@@ -63,16 +72,93 @@ alert.noHandle = ^{
 
 ![image](https://github.com/MrLee767201403/LGApplications/blob/master/Gif/TextCell输入多行文字.png)
 
-12.LocationManager
+### 12.LocationManager
 
 获取当前位置并解析出地址
 
-13.IndexSectionView
+### 13.IndexSectionView
 
 自定义tableView 右侧索引 
+
 ![image](https://github.com/MrLee767201403/LGApplications/blob/master/Gif/indexView.png)
 
 
-14.LGToastView
+### 14.LGToastView
 
 类似MBProgressHUD消息弹窗 2秒后自动消失
+```
++ (instancetype)showToastWithError:(NSString *)error;
++ (instancetype)showToastWithSuccess:(NSString *)success;
++ (instancetype)showToastWithError:(NSString *)error afterDelay:(NSTimeInterval)delay;
++ (instancetype)showToastWithSuccess:(NSString *)success afterDelay:(NSTimeInterval)delay;
+```
+
+### 15.LGImageManager
+图片管理器 
+- 检测相册相机权限
+- 获取相册相机权限
+- 获取相册所有图片资源 , 根据图片资源获取图片 (支持获取原图, 指定大小图片)
+- 保存图片
+```
++ (PHAuthorizationStatus)authorizationStatus;  // 相册权限
++ (AVAuthorizationStatus)cameraAuthorizationStatus;  // 相机权限
++ (void)requestAuthorizationWithType:(UIImagePickerControllerSourceType)type allowed:(void (^)(BOOL allowed))result; // 请求权限
+
+
+
+/*
+取出的都是 PHAsset 可以直接将 PHAsset 传到要显示的地方
+然后通过 requestImageForAsset: 获取单个图片
+如果直接获取所有图片,会很慢 而且容易造成内存激增
+*/
+
+#pragma mark - 相机胶卷内所有图片
++ (NSArray *)getAllAssetInCameraRollWithAscending:(BOOL)ascending;
+
+#pragma mark - 根据条件获取所有图片
+/**  根据条件获取所有图片资源 PHAsset对象*/
++ (NSArray *)getAllAssetInPhotoAlbumWithAscending:(BOOL)ascending allowSelectVideo:(BOOL)allowSelectVideo allowSelectImage:(BOOL)allowSelectImage allowSelectGif:(BOOL)allowSelectGif allowSelectLivePhoto:(BOOL)allowSelectLivePhoto limitCount:(NSInteger)limit;
+
+
+
+#pragma mark - 获取asset对应的原图
+/**  获取某张图片的原图*/
++ (void)requestOriginalImageForAsset:(PHAsset *)asset completion:(ImageResult)completion;
+
+#pragma mark - 获取asset对应的默认屏幕宽高的图片
+/**  获取默认屏幕宽高的图片*/
++ (void)requestDefaultImageForAsset:(PHAsset *)asset completion:(ImageResult)completion;
+
+#pragma mark - 获取asset对应的图片
++ (PHImageRequestID)requestImageForAsset:(PHAsset *)asset size:(CGSize)size completion:(ImageResult)completion;
+
+#pragma mark - 获取asset对应的LivePhoto
++ (void)requestLivePhotoForAsset:(PHAsset *)asset completion:(void (^)(PHLivePhoto *photo, NSDictionary *info))completion;
+
+#pragma mark - 获取asset对应的视频
++ (void)requestVideoForAsset:(PHAsset *)asset completion:(void (^)(AVPlayerItem *item, NSDictionary *info))completion;
+
+
+
+#pragma mark - 保存照片
+/**  Save photo 保存照片*/
+- (void)savePhotoWithImage:(UIImage *)image completion:(void (^)(NSError *error))completion;
+- (void)savePhotoWithImage:(UIImage *)image location:(CLLocation *)location completion:(void (^)(NSError *error))completion;
+
+/**  裁剪圆形图片*/
++ (UIImage *)roundClipImage:(UIImage *)image;
+
+@end
+```
+
+
+### 16.LGNotificationManager
+本地通知   默认周一到周五每天早上九点半 发送签到通知 可以根据自己需求修改 若要开启通知 调用`resetCheckinNotifications`即可
+
+```
+/** 设置签到通知*/
+- (void)resetCheckinNotifications;  // 每次九点半以前签到成功的时候调用
+- (void)cancelAllNotification;
+- (void)cancelNotificationWithIdentifier:(NSString *)identifier;
+- (void)removeAllDeliveredNotifications __IOS_AVAILABLE(10.0);
+```
