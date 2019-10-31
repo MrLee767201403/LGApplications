@@ -20,6 +20,15 @@
 
 @implementation HomeController
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.hideNavigationBar = YES;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -238,11 +247,11 @@
         _navigationBar = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kNavBarHeight)];
         _navigationBar.alpha = 0;
         [_navigationBar setBackgroundColor:kColorMainTheme forState:UIControlStateNormal];
-        [_navigationBar setTitle:@"你好啊" forState:UIControlStateNormal];
+        [_navigationBar setTitle:@"" forState:UIControlStateNormal];
         [_navigationBar setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 
         UIButton *back = [[UIButton alloc] initWithFrame:CGRectMake(15, kNavBarHeight-44, 30, 44)];
-        back.titleLabel.font = kFontNormal;
+        back.titleLabel.font = kFontWithSize(14);
         [back setTitle:@"返回" forState:UIControlStateNormal];
         [back setTitleColor:kColorWhite forState:UIControlStateNormal];
         [back addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
@@ -253,5 +262,12 @@
 
 - (void)back{
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)dealloc{
+
+    for (ListController *VC in self.childViewControllers) {
+        [VC.tableView removeObserver:self forKeyPath:@"contentOffset"];
+    }
 }
 @end

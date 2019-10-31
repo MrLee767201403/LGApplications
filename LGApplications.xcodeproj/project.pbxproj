@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		68EBE1FA105508E5645AACBF /* libPods-LGApplications.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A068290D8756EF054993DE1 /* libPods-LGApplications.a */; };
-		CE008BE31EE7C76000318D98 /* RootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008BE21EE7C76000318D98 /* RootNavigationController.m */; };
 		CE008BEF1EE7C95600318D98 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008BE91EE7C95600318D98 /* NSString+Extension.m */; };
 		CE008BF01EE7C95600318D98 /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008BEB1EE7C95600318D98 /* UIButton+Extension.m */; };
 		CE008BF11EE7C95600318D98 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008BED1EE7C95600318D98 /* UIView+Extension.m */; };
@@ -17,7 +16,22 @@
 		CE008BFD1EE7CA7500318D98 /* LGTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008BFB1EE7CA7500318D98 /* LGTextView.m */; };
 		CE008C011EE7CBD700318D98 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008C001EE7CBD700318D98 /* UIImage+Extension.m */; };
 		CE008C071EE7DA4500318D98 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008C061EE7DA4500318D98 /* MainController.m */; };
-		CE008C101EE7F64A00318D98 /* BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008C0F1EE7F64A00318D98 /* BaseController.m */; };
+		CE347074236A8332004AE2FB /* LGHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = CE34705E236A832E004AE2FB /* LGHttpRequest.m */; };
+		CE347075236A8332004AE2FB /* LGRegionPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE34705F236A832E004AE2FB /* LGRegionPickerView.m */; };
+		CE347076236A8332004AE2FB /* EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE347061236A832E004AE2FB /* EmptyView.m */; };
+		CE347077236A8332004AE2FB /* LGCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CE347062236A832E004AE2FB /* LGCollectionViewFlowLayout.m */; };
+		CE347079236A8332004AE2FB /* LGToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE34706A236A8330004AE2FB /* LGToastView.m */; };
+		CE34707A236A8332004AE2FB /* LGHttpResult.m in Sources */ = {isa = PBXBuildFile; fileRef = CE34706D236A8330004AE2FB /* LGHttpResult.m */; };
+		CE34707B236A8332004AE2FB /* LGImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE34706E236A8331004AE2FB /* LGImagePickerController.m */; };
+		CE34707C236A8332004AE2FB /* LGRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE34706F236A8331004AE2FB /* LGRefreshView.m */; };
+		CE34707D236A8332004AE2FB /* LGSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CE347070236A8331004AE2FB /* LGSearchBar.m */; };
+		CE34707E236A8332004AE2FB /* LGDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE347072236A8331004AE2FB /* LGDatePickerView.m */; };
+		CE34707F236A8332004AE2FB /* LGImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE347073236A8331004AE2FB /* LGImageManager.m */; };
+		CE347088236A8414004AE2FB /* BaseScrollController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE347080236A8413004AE2FB /* BaseScrollController.m */; };
+		CE347089236A8414004AE2FB /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE347081236A8413004AE2FB /* BaseNavigationController.m */; };
+		CE34708A236A8414004AE2FB /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE347083236A8413004AE2FB /* BaseTableViewController.m */; };
+		CE34708B236A8414004AE2FB /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE347085236A8414004AE2FB /* BaseViewController.m */; };
+		CE347091236A8896004AE2FB /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = CE34708F236A8896004AE2FB /* UIBarButtonItem+Extension.m */; };
 		CE45DF0E20C5382000F33D4D /* KeyChainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = CE45DF0C20C5382000F33D4D /* KeyChainStore.m */; };
 		CE6040D21EE5316E0089C945 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6040D11EE5316E0089C945 /* main.m */; };
 		CE6040D51EE5316E0089C945 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6040D41EE5316E0089C945 /* AppDelegate.m */; };
@@ -35,15 +49,14 @@
 		CEAA75FC223F3E9F0028E86B /* LGPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAA75FB223F3E9F0028E86B /* LGPickerView.m */; };
 		CEBFE427204E743900AEE96D /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBFE423204E743900AEE96D /* HomeController.m */; };
 		CEBFE428204E743900AEE96D /* ListController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBFE424204E743900AEE96D /* ListController.m */; };
+		CECC1BB4234F1D990062E7CA /* LGRangeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = CECC1BB2234F1D990062E7CA /* LGRangeSlider.m */; };
+		CECC1BB5234F1D990062E7CA /* LGSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = CECC1BB3234F1D990062E7CA /* LGSwitch.m */; };
 		CECFE8E321A659DC003775A3 /* TextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFE8DF21A659DB003775A3 /* TextViewCell.m */; };
 		CECFE8E421A659DC003775A3 /* CommonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFE8E121A659DB003775A3 /* CommonCell.m */; };
-		CECFE8E721A65BAF003775A3 /* LGToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFE8E621A65BAF003775A3 /* LGToastView.m */; };
 		CED040FE1F63C99000C8B441 /* LGRollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CED040FD1F63C99000C8B441 /* LGRollView.m */; };
-		CED1541221CCB8D80059A9D7 /* LGImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CED1541121CCB8D80059A9D7 /* LGImageManager.m */; };
 		CEDFD7F021A502A9000C0D4F /* IndexSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDFD7EF21A502A9000C0D4F /* IndexSectionView.m */; };
 		CEDFD7FA21A50F6C000C0D4F /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDFD7F921A50F6C000C0D4F /* LocationManager.m */; };
 		CEE768781EEA78620093514F /* LGGradientLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE768771EEA78620093514F /* LGGradientLabel.m */; };
-		CEED1022223F471300F9AE24 /* region.json in Resources */ = {isa = PBXBuildFile; fileRef = CEED1021223F471300F9AE24 /* region.json */; };
 		CEED1025223F4C4000F9AE24 /* AlertViewDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = CEED1024223F4C4000F9AE24 /* AlertViewDemo.m */; };
 /* End PBXBuildFile section */
 
@@ -68,8 +81,6 @@
 		1A068290D8756EF054993DE1 /* libPods-LGApplications.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LGApplications.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A90E3C202A6496187D9C64F4 /* Pods-LGApplications.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LGApplications.release.xcconfig"; path = "Pods/Target Support Files/Pods-LGApplications/Pods-LGApplications.release.xcconfig"; sourceTree = "<group>"; };
 		BE8FEF4ADE114198BFAF7886 /* Pods-LGApplications.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LGApplications.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LGApplications/Pods-LGApplications.debug.xcconfig"; sourceTree = "<group>"; };
-		CE008BE11EE7C76000318D98 /* RootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootNavigationController.h; sourceTree = "<group>"; };
-		CE008BE21EE7C76000318D98 /* RootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootNavigationController.m; sourceTree = "<group>"; };
 		CE008BE81EE7C95600318D98 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
 		CE008BE91EE7C95600318D98 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
 		CE008BEA1EE7C95600318D98 /* UIButton+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extension.h"; sourceTree = "<group>"; };
@@ -88,8 +99,38 @@
 		CE008C041EE7D75700318D98 /* UIDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDefines.h; sourceTree = "<group>"; };
 		CE008C051EE7DA4500318D98 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
 		CE008C061EE7DA4500318D98 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
-		CE008C0E1EE7F64A00318D98 /* BaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseController.h; sourceTree = "<group>"; };
-		CE008C0F1EE7F64A00318D98 /* BaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseController.m; sourceTree = "<group>"; };
+		CE34705C236A832E004AE2FB /* LGDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGDatePickerView.h; sourceTree = "<group>"; };
+		CE34705D236A832E004AE2FB /* LGCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		CE34705E236A832E004AE2FB /* LGHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGHttpRequest.m; sourceTree = "<group>"; };
+		CE34705F236A832E004AE2FB /* LGRegionPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGRegionPickerView.m; sourceTree = "<group>"; };
+		CE347060236A832E004AE2FB /* LGSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGSearchBar.h; sourceTree = "<group>"; };
+		CE347061236A832E004AE2FB /* EmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyView.m; sourceTree = "<group>"; };
+		CE347062236A832E004AE2FB /* LGCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		CE347063236A832E004AE2FB /* LGToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGToastView.h; sourceTree = "<group>"; };
+		CE347064236A832F004AE2FB /* EmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyView.h; sourceTree = "<group>"; };
+		CE347066236A832F004AE2FB /* LGImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGImageManager.h; sourceTree = "<group>"; };
+		CE347067236A832F004AE2FB /* LGHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGHttpRequest.h; sourceTree = "<group>"; };
+		CE347069236A832F004AE2FB /* LGRegionPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGRegionPickerView.h; sourceTree = "<group>"; };
+		CE34706A236A8330004AE2FB /* LGToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGToastView.m; sourceTree = "<group>"; };
+		CE34706B236A8330004AE2FB /* LGHttpResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGHttpResult.h; sourceTree = "<group>"; };
+		CE34706C236A8330004AE2FB /* LGImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGImagePickerController.h; sourceTree = "<group>"; };
+		CE34706D236A8330004AE2FB /* LGHttpResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGHttpResult.m; sourceTree = "<group>"; };
+		CE34706E236A8331004AE2FB /* LGImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGImagePickerController.m; sourceTree = "<group>"; };
+		CE34706F236A8331004AE2FB /* LGRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGRefreshView.m; sourceTree = "<group>"; };
+		CE347070236A8331004AE2FB /* LGSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGSearchBar.m; sourceTree = "<group>"; };
+		CE347071236A8331004AE2FB /* LGRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGRefreshView.h; sourceTree = "<group>"; };
+		CE347072236A8331004AE2FB /* LGDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGDatePickerView.m; sourceTree = "<group>"; };
+		CE347073236A8331004AE2FB /* LGImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGImageManager.m; sourceTree = "<group>"; };
+		CE347080236A8413004AE2FB /* BaseScrollController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseScrollController.m; sourceTree = "<group>"; };
+		CE347081236A8413004AE2FB /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		CE347082236A8413004AE2FB /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
+		CE347083236A8413004AE2FB /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
+		CE347084236A8413004AE2FB /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
+		CE347085236A8414004AE2FB /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		CE347086236A8414004AE2FB /* BaseScrollController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseScrollController.h; sourceTree = "<group>"; };
+		CE347087236A8414004AE2FB /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		CE34708F236A8896004AE2FB /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
+		CE347090236A8896004AE2FB /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
 		CE45DF0C20C5382000F33D4D /* KeyChainStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyChainStore.m; sourceTree = "<group>"; };
 		CE45DF0D20C5382000F33D4D /* KeyChainStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyChainStore.h; sourceTree = "<group>"; };
 		CE6040CD1EE5316E0089C945 /* LGApplications.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LGApplications.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,23 +166,22 @@
 		CEBFE424204E743900AEE96D /* ListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListController.m; sourceTree = "<group>"; };
 		CEBFE425204E743900AEE96D /* HomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
 		CEBFE426204E743900AEE96D /* ListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListController.h; sourceTree = "<group>"; };
+		CECC1BB0234F1D980062E7CA /* LGRangeSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGRangeSlider.h; sourceTree = "<group>"; };
+		CECC1BB1234F1D980062E7CA /* LGSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGSwitch.h; sourceTree = "<group>"; };
+		CECC1BB2234F1D990062E7CA /* LGRangeSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGRangeSlider.m; sourceTree = "<group>"; };
+		CECC1BB3234F1D990062E7CA /* LGSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGSwitch.m; sourceTree = "<group>"; };
 		CECFE8DF21A659DB003775A3 /* TextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewCell.m; sourceTree = "<group>"; };
 		CECFE8E021A659DB003775A3 /* CommonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonCell.h; sourceTree = "<group>"; };
 		CECFE8E121A659DB003775A3 /* CommonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonCell.m; sourceTree = "<group>"; };
 		CECFE8E221A659DC003775A3 /* TextViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewCell.h; sourceTree = "<group>"; };
-		CECFE8E521A65BAF003775A3 /* LGToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGToastView.h; sourceTree = "<group>"; };
-		CECFE8E621A65BAF003775A3 /* LGToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGToastView.m; sourceTree = "<group>"; };
 		CED040FC1F63C99000C8B441 /* LGRollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGRollView.h; sourceTree = "<group>"; };
 		CED040FD1F63C99000C8B441 /* LGRollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGRollView.m; sourceTree = "<group>"; };
-		CED1541021CCB8D80059A9D7 /* LGImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGImageManager.h; sourceTree = "<group>"; };
-		CED1541121CCB8D80059A9D7 /* LGImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGImageManager.m; sourceTree = "<group>"; };
 		CEDFD7EE21A502A9000C0D4F /* IndexSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexSectionView.h; sourceTree = "<group>"; };
 		CEDFD7EF21A502A9000C0D4F /* IndexSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexSectionView.m; sourceTree = "<group>"; };
 		CEDFD7F821A50F6C000C0D4F /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
 		CEDFD7F921A50F6C000C0D4F /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
 		CEE768761EEA78620093514F /* LGGradientLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGGradientLabel.h; sourceTree = "<group>"; };
 		CEE768771EEA78620093514F /* LGGradientLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGGradientLabel.m; sourceTree = "<group>"; };
-		CEED1021223F471300F9AE24 /* region.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = region.json; sourceTree = "<group>"; };
 		CEED1023223F4C4000F9AE24 /* AlertViewDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertViewDemo.h; sourceTree = "<group>"; };
 		CEED1024223F4C4000F9AE24 /* AlertViewDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertViewDemo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -184,25 +224,10 @@
 		CE008BE01EE7C70300318D98 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				CE008BE11EE7C76000318D98 /* RootNavigationController.h */,
-				CE008BE21EE7C76000318D98 /* RootNavigationController.m */,
-				CE008C0E1EE7F64A00318D98 /* BaseController.h */,
-				CE008C0F1EE7F64A00318D98 /* BaseController.m */,
 				CE008C051EE7DA4500318D98 /* MainController.h */,
 				CE008C061EE7DA4500318D98 /* MainController.m */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		CE008BE41EE7C8F200318D98 /* Util */ = {
-			isa = PBXGroup;
-			children = (
-				CE008C041EE7D75700318D98 /* UIDefines.h */,
-				CE008BF71EE7CA7500318D98 /* LGViews */,
-				CE008BF21EE7CA1E00318D98 /* LGUtil */,
-				CE008BE51EE7C95600318D98 /* Category */,
-			);
-			path = Util;
 			sourceTree = "<group>";
 		};
 		CE008BE51EE7C95600318D98 /* Category */ = {
@@ -210,6 +235,8 @@
 			children = (
 				CE9266201F22F6520063724B /* NSDictionary+Extension.h */,
 				CE9266211F22F6520063724B /* NSDictionary+Extension.m */,
+				CE347090236A8896004AE2FB /* UIBarButtonItem+Extension.h */,
+				CE34708F236A8896004AE2FB /* UIBarButtonItem+Extension.m */,
 				CE008BE81EE7C95600318D98 /* NSString+Extension.h */,
 				CE008BE91EE7C95600318D98 /* NSString+Extension.m */,
 				CE008BEA1EE7C95600318D98 /* UIButton+Extension.h */,
@@ -222,24 +249,18 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
-		CE008BF21EE7CA1E00318D98 /* LGUtil */ = {
+		CE34705B236A8191004AE2FB /* LGUtil */ = {
 			isa = PBXGroup;
 			children = (
-				CE45DF0D20C5382000F33D4D /* KeyChainStore.h */,
-				CE45DF0C20C5382000F33D4D /* KeyChainStore.m */,
-				CE008BF31EE7CA3C00318D98 /* NSUtil.h */,
-				CE008BF41EE7CA3C00318D98 /* NSUtil.m */,
-				CEAA75E7223F38910028E86B /* LGNotificationManager.h */,
-				CEAA75E8223F38910028E86B /* LGNotificationManager.m */,
-				CED1541021CCB8D80059A9D7 /* LGImageManager.h */,
-				CED1541121CCB8D80059A9D7 /* LGImageManager.m */,
-				CEDFD7F821A50F6C000C0D4F /* LocationManager.h */,
-				CEDFD7F921A50F6C000C0D4F /* LocationManager.m */,
+				CE34708E236A8533004AE2FB /* BaseClasses */,
+				CE34708D236A8507004AE2FB /* LGTool */,
+				CE34708C236A84AE004AE2FB /* LGView */,
+				CE008BE51EE7C95600318D98 /* Category */,
 			);
 			path = LGUtil;
 			sourceTree = "<group>";
 		};
-		CE008BF71EE7CA7500318D98 /* LGViews */ = {
+		CE34708C236A84AE004AE2FB /* LGView */ = {
 			isa = PBXGroup;
 			children = (
 				CECFE8E021A659DB003775A3 /* CommonCell.h */,
@@ -250,8 +271,24 @@
 				CEDFD7EF21A502A9000C0D4F /* IndexSectionView.m */,
 				CEAA75FA223F3E9F0028E86B /* LGPickerView.h */,
 				CEAA75FB223F3E9F0028E86B /* LGPickerView.m */,
-				CECFE8E521A65BAF003775A3 /* LGToastView.h */,
-				CECFE8E621A65BAF003775A3 /* LGToastView.m */,
+				CE347064236A832F004AE2FB /* EmptyView.h */,
+				CE347061236A832E004AE2FB /* EmptyView.m */,
+				CE34705D236A832E004AE2FB /* LGCollectionViewFlowLayout.h */,
+				CE347062236A832E004AE2FB /* LGCollectionViewFlowLayout.m */,
+				CE34705C236A832E004AE2FB /* LGDatePickerView.h */,
+				CE347072236A8331004AE2FB /* LGDatePickerView.m */,
+				CE347071236A8331004AE2FB /* LGRefreshView.h */,
+				CE34706F236A8331004AE2FB /* LGRefreshView.m */,
+				CE347069236A832F004AE2FB /* LGRegionPickerView.h */,
+				CE34705F236A832E004AE2FB /* LGRegionPickerView.m */,
+				CE347060236A832E004AE2FB /* LGSearchBar.h */,
+				CE347070236A8331004AE2FB /* LGSearchBar.m */,
+				CE347063236A832E004AE2FB /* LGToastView.h */,
+				CE34706A236A8330004AE2FB /* LGToastView.m */,
+				CECC1BB0234F1D980062E7CA /* LGRangeSlider.h */,
+				CECC1BB2234F1D990062E7CA /* LGRangeSlider.m */,
+				CECC1BB1234F1D980062E7CA /* LGSwitch.h */,
+				CECC1BB3234F1D990062E7CA /* LGSwitch.m */,
 				CE9266261F22F9100063724B /* LGAlertView.h */,
 				CE9266271F22F9100063724B /* LGAlertView.m */,
 				CE008BF81EE7CA7500318D98 /* LGActionSheet.h */,
@@ -263,7 +300,46 @@
 				CED040FC1F63C99000C8B441 /* LGRollView.h */,
 				CED040FD1F63C99000C8B441 /* LGRollView.m */,
 			);
-			path = LGViews;
+			path = LGView;
+			sourceTree = "<group>";
+		};
+		CE34708D236A8507004AE2FB /* LGTool */ = {
+			isa = PBXGroup;
+			children = (
+				CE008C041EE7D75700318D98 /* UIDefines.h */,
+				CE008BF31EE7CA3C00318D98 /* NSUtil.h */,
+				CE008BF41EE7CA3C00318D98 /* NSUtil.m */,
+				CE34706B236A8330004AE2FB /* LGHttpResult.h */,
+				CE34706D236A8330004AE2FB /* LGHttpResult.m */,
+				CE347066236A832F004AE2FB /* LGImageManager.h */,
+				CE347073236A8331004AE2FB /* LGImageManager.m */,
+				CE34706C236A8330004AE2FB /* LGImagePickerController.h */,
+				CE34706E236A8331004AE2FB /* LGImagePickerController.m */,
+				CE347067236A832F004AE2FB /* LGHttpRequest.h */,
+				CE34705E236A832E004AE2FB /* LGHttpRequest.m */,
+				CE45DF0D20C5382000F33D4D /* KeyChainStore.h */,
+				CE45DF0C20C5382000F33D4D /* KeyChainStore.m */,
+				CEAA75E7223F38910028E86B /* LGNotificationManager.h */,
+				CEAA75E8223F38910028E86B /* LGNotificationManager.m */,
+				CEDFD7F821A50F6C000C0D4F /* LocationManager.h */,
+				CEDFD7F921A50F6C000C0D4F /* LocationManager.m */,
+			);
+			path = LGTool;
+			sourceTree = "<group>";
+		};
+		CE34708E236A8533004AE2FB /* BaseClasses */ = {
+			isa = PBXGroup;
+			children = (
+				CE347082236A8413004AE2FB /* BaseNavigationController.h */,
+				CE347081236A8413004AE2FB /* BaseNavigationController.m */,
+				CE347086236A8414004AE2FB /* BaseScrollController.h */,
+				CE347080236A8413004AE2FB /* BaseScrollController.m */,
+				CE347084236A8413004AE2FB /* BaseTableViewController.h */,
+				CE347083236A8413004AE2FB /* BaseTableViewController.m */,
+				CE347087236A8414004AE2FB /* BaseViewController.h */,
+				CE347085236A8414004AE2FB /* BaseViewController.m */,
+			);
+			path = BaseClasses;
 			sourceTree = "<group>";
 		};
 		CE6040C41EE5316E0089C945 = {
@@ -291,12 +367,12 @@
 		CE6040CF1EE5316E0089C945 /* LGApplications */ = {
 			isa = PBXGroup;
 			children = (
+				CE34705B236A8191004AE2FB /* LGUtil */,
 				CEAA75EA223F3D950028E86B /* LGViewDemos */,
 				CEBFE422204E743900AEE96D /* ScrollViews */,
 				CE008BE01EE7C70300318D98 /* Main */,
 				CE6040D31EE5316E0089C945 /* AppDelegate.h */,
 				CE6040D41EE5316E0089C945 /* AppDelegate.m */,
-				CE008BE41EE7C8F200318D98 /* Util */,
 				CE6040D01EE5316E0089C945 /* Supporting Files */,
 			);
 			path = LGApplications;
@@ -305,7 +381,6 @@
 		CE6040D01EE5316E0089C945 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CEED1021223F471300F9AE24 /* region.json */,
 				CE6040DC1EE5316E0089C945 /* Assets.xcassets */,
 				CE6040DE1EE5316E0089C945 /* LaunchScreen.storyboard */,
 				CE6040E11EE5316E0089C945 /* Info.plist */,
@@ -380,7 +455,6 @@
 				CE6040C91EE5316E0089C945 /* Sources */,
 				CE6040CA1EE5316E0089C945 /* Frameworks */,
 				CE6040CB1EE5316E0089C945 /* Resources */,
-				2D3B0B242F1350D3B87F5BC3 /* [CP] Embed Pods Frameworks */,
 				DD03C13DA55B959EA754579D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -459,6 +533,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -481,7 +556,6 @@
 			files = (
 				CE6040E01EE5316E0089C945 /* LaunchScreen.storyboard in Resources */,
 				CE6040DD1EE5316E0089C945 /* Assets.xcassets in Resources */,
-				CEED1022223F471300F9AE24 /* region.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,34 +576,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2D3B0B242F1350D3B87F5BC3 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LGApplications/Pods-LGApplications-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		DD03C13DA55B959EA754579D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LGApplications/Pods-LGApplications-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LGApplications/Pods-LGApplications-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LGApplications/Pods-LGApplications-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DFE8B7D6B271358D2364F6C0 /* [CP] Check Pods Manifest.lock */ = {
@@ -538,13 +600,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LGApplications-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -560,32 +625,46 @@
 				CE008BEF1EE7C95600318D98 /* NSString+Extension.m in Sources */,
 				CEBFE428204E743900AEE96D /* ListController.m in Sources */,
 				CEDFD7F021A502A9000C0D4F /* IndexSectionView.m in Sources */,
+				CE347074236A8332004AE2FB /* LGHttpRequest.m in Sources */,
+				CE347079236A8332004AE2FB /* LGToastView.m in Sources */,
 				CEAA75F5223F3D950028E86B /* ActionSheetDemo.m in Sources */,
 				CED040FE1F63C99000C8B441 /* LGRollView.m in Sources */,
+				CE34707C236A8332004AE2FB /* LGRefreshView.m in Sources */,
+				CE34707A236A8332004AE2FB /* LGHttpResult.m in Sources */,
+				CE347089236A8414004AE2FB /* BaseNavigationController.m in Sources */,
 				CE008BF01EE7C95600318D98 /* UIButton+Extension.m in Sources */,
 				CE008BF51EE7CA3C00318D98 /* NSUtil.m in Sources */,
 				CEDFD7FA21A50F6C000C0D4F /* LocationManager.m in Sources */,
 				CEE768781EEA78620093514F /* LGGradientLabel.m in Sources */,
+				CECC1BB4234F1D990062E7CA /* LGRangeSlider.m in Sources */,
 				CE008C071EE7DA4500318D98 /* MainController.m in Sources */,
+				CE34708A236A8414004AE2FB /* BaseTableViewController.m in Sources */,
+				CECC1BB5234F1D990062E7CA /* LGSwitch.m in Sources */,
+				CE34707F236A8332004AE2FB /* LGImageManager.m in Sources */,
 				CE6040D51EE5316E0089C945 /* AppDelegate.m in Sources */,
 				CEAA75E9223F38910028E86B /* LGNotificationManager.m in Sources */,
 				CE008BFC1EE7CA7500318D98 /* LGActionSheet.m in Sources */,
+				CE34707E236A8332004AE2FB /* LGDatePickerView.m in Sources */,
 				CE9266221F22F6520063724B /* NSDictionary+Extension.m in Sources */,
+				CE347076236A8332004AE2FB /* EmptyView.m in Sources */,
+				CE34707D236A8332004AE2FB /* LGSearchBar.m in Sources */,
 				CE9266281F22F9100063724B /* LGAlertView.m in Sources */,
-				CE008C101EE7F64A00318D98 /* BaseController.m in Sources */,
 				CEAA75F8223F3D950028E86B /* PickerDemoController.m in Sources */,
 				CE008BF11EE7C95600318D98 /* UIView+Extension.m in Sources */,
 				CECFE8E321A659DC003775A3 /* TextViewCell.m in Sources */,
 				CEBFE427204E743900AEE96D /* HomeController.m in Sources */,
-				CE008BE31EE7C76000318D98 /* RootNavigationController.m in Sources */,
 				CE008C011EE7CBD700318D98 /* UIImage+Extension.m in Sources */,
 				CEAA75F6223F3D950028E86B /* GradientAnimationDemo.m in Sources */,
-				CECFE8E721A65BAF003775A3 /* LGToastView.m in Sources */,
+				CE347091236A8896004AE2FB /* UIBarButtonItem+Extension.m in Sources */,
 				CE6040D21EE5316E0089C945 /* main.m in Sources */,
-				CED1541221CCB8D80059A9D7 /* LGImageManager.m in Sources */,
+				CE347075236A8332004AE2FB /* LGRegionPickerView.m in Sources */,
+				CE34707B236A8332004AE2FB /* LGImagePickerController.m in Sources */,
+				CE347077236A8332004AE2FB /* LGCollectionViewFlowLayout.m in Sources */,
 				CECFE8E421A659DC003775A3 /* CommonCell.m in Sources */,
 				CE45DF0E20C5382000F33D4D /* KeyChainStore.m in Sources */,
 				CEAA75F9223F3D950028E86B /* SingleChoiceDemo.m in Sources */,
+				CE347088236A8414004AE2FB /* BaseScrollController.m in Sources */,
+				CE34708B236A8414004AE2FB /* BaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

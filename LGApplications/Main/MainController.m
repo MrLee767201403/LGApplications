@@ -131,7 +131,7 @@
     UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0,self.view.width - 15, 25)];
     bgView.backgroundColor = kColorRGBAlpha(243, 243, 243, 0.8);
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, self.view.width - 15, 25)];
-    label.font = kFontMiddle;
+    label.font = kFontWithSize(14);
     label.textColor = kColorWithFloat(0x8d8c92);
     if (section == 0) {
         label.text = @"自定义控件";

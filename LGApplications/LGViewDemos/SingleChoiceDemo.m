@@ -96,7 +96,7 @@
     headerView.backgroundColor = kColorBackground;
     
     UILabel *titleLabel= [[UILabel alloc] initWithFrame:CGRectMake(15, 0, kScreenWidth-15, 40)];
-    titleLabel.font = kFontLagre;
+    titleLabel.font = kFontWithSize(16);
     titleLabel.text = @"根据问题选择正确的答案";
     titleLabel.textColor = kColorWithFloat(0x131117);
     
@@ -112,7 +112,7 @@
     UIButton *commitButton = [[UIButton alloc] initWithFrame:CGRectMake(35, 35/2.0, kScreenWidth-70, 45)];
     commitButton.layer.cornerRadius = 5.0;
     commitButton.layer.masksToBounds = YES;
-    commitButton.titleLabel.font = kFontLagreMost;
+    commitButton.titleLabel.font = kFontWithSize(18);
     [commitButton setTitle:@"提 交" forState:UIControlStateNormal];
     [commitButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [commitButton setBackgroundColor:kColorMainTheme forState:UIControlStateNormal];
@@ -246,7 +246,7 @@
         string = question.answer_4;
     }
     
-    CGFloat height = [string boundingRectWithSize:CGSizeMake(kScreenWidth-60, MAXFLOAT) options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:kFontMiddle} context:nil].size.height;
+    CGFloat height = [string boundingRectWithSize:CGSizeMake(kScreenWidth-60, MAXFLOAT) options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:kFontWithSize(14)} context:nil].size.height;
     
     return height + 10;
 }
@@ -344,7 +344,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     QuestionModel *question = self.questions[section];
     NSString *detail = [NSString stringWithFormat:@"Q%ld: %@",section+1,question.detail];
-    CGFloat height = [detail boundingRectWithSize:CGSizeMake(kScreenWidth-30, MAXFLOAT) options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:kFontMiddle} context:nil].size.height;
+    CGFloat height = [detail boundingRectWithSize:CGSizeMake(kScreenWidth-30, MAXFLOAT) options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:kFontWithSize(14)} context:nil].size.height;
     return height+15;
 }
 
@@ -352,11 +352,11 @@
     QuestionModel *question = self.questions[section];
     NSString *detail = [NSString stringWithFormat:@"Q%ld: %@",section+1,question.detail];
     
-    CGFloat height = [detail boundingRectWithSize:CGSizeMake(kScreenWidth-30, MAXFLOAT) options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:kFontMiddle} context:nil].size.height;
+    CGFloat height = [detail boundingRectWithSize:CGSizeMake(kScreenWidth-30, MAXFLOAT) options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:kFontWithSize(14)} context:nil].size.height;
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, height+15)];
     headerView.backgroundColor = [UIColor whiteColor];
     UILabel *detailLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 5, kScreenWidth-30, headerView.height-5)];
-    detailLabel.font = kFontMiddle;
+    detailLabel.font = kFontWithSize(14);
     detailLabel.text = detail;
     detailLabel.textColor = kColorMainTheme;
     
@@ -543,7 +543,7 @@
 - (void)setUpSubViews{
     
     _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 5, kScreenWidth-40, 0)];
-    _titleLabel.font = kFontMiddle;
+    _titleLabel.font = kFontWithSize(14);
     _titleLabel.textColor = kColorWithFloat(0x131117);
     _titleLabel.numberOfLines = 0;
     

@@ -6,11 +6,11 @@
 //  Copyright © 2019 李刚. All rights reserved.
 //
 
-#import "BaseController.h"
+#import "BaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AlertViewDemo : BaseController
+@interface AlertViewDemo : BaseViewController
 
 @end
 

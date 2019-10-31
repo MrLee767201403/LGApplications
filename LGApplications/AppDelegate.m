@@ -25,7 +25,7 @@
     
     // 设置根控制器
     MainController *mainVC = [[MainController alloc] init];
-    RootNavigationController *rootVC = [[RootNavigationController alloc] initWithRootViewController:mainVC];
+    BaseNavigationController *rootVC = [[BaseNavigationController alloc] initWithRootViewController:mainVC];
     self.window.rootViewController = rootVC;
     return YES;
 }

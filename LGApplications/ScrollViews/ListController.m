@@ -14,12 +14,18 @@
 
 @implementation ListController
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.hideNavigationBar = YES;
+    }
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     // 添加tableView
-    self.navigationController.navigationBar.hidden = YES;
-
     
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
     self.tableView.delegate = self;
@@ -52,4 +58,5 @@
     cell.textLabel.text = [NSString stringWithFormat:@"闲来无事卖个萌 %ld",indexPath.row];
     return cell;
 }
+
 @end

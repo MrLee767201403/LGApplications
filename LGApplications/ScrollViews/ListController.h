@@ -6,9 +6,9 @@
 //  Copyright © 2017年 Mr.Lee. All rights reserved.
 //
 
-#import "BaseController.h"
+#import "BaseViewController.h"
 
-@interface ListController : BaseController
+@interface ListController : BaseViewController
 @property (nonatomic, strong) UITableView *tableView;
 
 @end

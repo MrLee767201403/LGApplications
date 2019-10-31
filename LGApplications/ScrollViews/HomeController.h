@@ -6,8 +6,8 @@
 //  Copyright © 2017年 Mr.Lee. All rights reserved.
 //
 
-#import "BaseController.h"
+#import "BaseViewController.h"
 
-@interface HomeController : BaseController
+@interface HomeController : BaseViewController
 
 @end

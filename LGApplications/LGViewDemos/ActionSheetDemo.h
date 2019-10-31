@@ -6,8 +6,8 @@
 //  Copyright © 2017年 李刚. All rights reserved.
 //
 
-#import "BaseController.h"
+#import "BaseViewController.h"
 
-@interface ActionSheetDemo : BaseController
+@interface ActionSheetDemo : BaseViewController
 
 @end
