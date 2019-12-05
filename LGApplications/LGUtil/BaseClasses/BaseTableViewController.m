@@ -224,6 +224,7 @@
     }
 
     [self showEmpetyView:self.dataArray.count==0];
+    [self showErrorView:NO];
 
     [self.tableView reloadData];
     self.refreshFooter.hidden = YES;
@@ -238,7 +239,7 @@
 }
 
 - (void)requestDidFailure:(LGHttpResult *)result{
-
+    [self showEmpetyView:NO];
     [self showErrorView:self.dataArray.count == 0];
 
     self.refreshFooter.hidden = YES;
@@ -310,8 +311,6 @@ static NSString *dataModelKey = @"dataModelKey";
 
 @implementation DataModel
 
-
-
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key {
 
     // [Example] change property id to productID
@@ -331,12 +330,38 @@ static NSString *dataModelKey = @"dataModelKey";
         [super setValue:@"" forKey:key];
     }
     // 对象
-    else if([value isKindOfClass:NSString.class] || [value isKindOfClass:NSArray.class] || [value isKindOfClass:NSDictionary.class]){
+    else if([value isKindOfClass:NSString.class]){
         [super setValue:value forKey:key];
     }
     // Number 转 字符串
     else if([value respondsToSelector:@selector(stringValue)]){
         [super setValue:[value stringValue] forKey:key];
+    }
+    else if ([value isKindOfClass:NSArray.class]){
+
+        NSArray *list = (NSArray *)value;
+        NSMutableArray *modelList = [NSMutableArray array];
+        NSString *className = [[self objectClassInArray] valueForKey:key];
+        Class modelClass = NSClassFromString(className);
+
+        if (className.length && [modelClass isSubclassOfClass:DataModel.class]) {
+            for (int i = 0; i<[list count]; i++) {
+                DataModel *dataModel = [[modelClass alloc] initWithDictionary:list[i]];
+                [modelList addObject:dataModel];
+            }
+            [super setValue:modelList forKey:key];
+        }else{
+            [super setValue:value forKey:key];
+        }
+    }else if ([value isKindOfClass:NSDictionary.class]){
+        NSString *className = [[self objectClassInDictionary] valueForKey:key];
+        Class modelClass = NSClassFromString(className);
+        if (className.length && [modelClass isSubclassOfClass:DataModel.class]) {
+            DataModel *dataModel = [[modelClass alloc] initWithDictionary:value];
+            [super setValue:dataModel forKey:key];
+        }else{
+            [super setValue:value forKey:key];
+        }
     }
     else{
         [super setValue:[value description] forKey:key];
@@ -352,5 +377,13 @@ static NSString *dataModelKey = @"dataModelKey";
         }
     }
     return self;
+}
+
+#pragma mark   -  子类实现
+- (NSDictionary *)objectClassInArray{
+    return @{};
+}
+- (NSDictionary *)objectClassInDictionary{
+    return @{};
 }
 @end

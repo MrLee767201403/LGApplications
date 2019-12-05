@@ -66,7 +66,11 @@ NS_ASSUME_NONNULL_BEGIN
 @interface DataModel : NSObject
 /**  除了字典和数组外 其他的类型都会转出NSString*/
 - (instancetype)initWithDictionary:(nullable NSDictionary *)dict;
-@end
+/**  键 对应的模型类名  {@"list":@"JobModel"}*/
+- (NSDictionary *)objectClassInArray;
 
+/**  键 对应的模型类名 {@"user":@"UserModel"}*/
+- (NSDictionary *)objectClassInDictionary;
+@end
 NS_ASSUME_NONNULL_END
 

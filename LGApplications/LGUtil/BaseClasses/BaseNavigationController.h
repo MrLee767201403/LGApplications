@@ -12,3 +12,11 @@
 @interface BaseNavigationController : UINavigationController
 
 @end
+
+@interface UINavigationController (Extension)
+/**  pop到指定的控制器*/
+- (void)popToViewControllerWithClassName:(NSString *)className animated:(BOOL)animated;
+
+/**  pop多次 count：次数*/
+- (void)popViewControllerWithCount:(NSInteger)count animated:(BOOL)animated;
+@end

@@ -59,15 +59,41 @@
 }
 
 
-//根视图禁用右划返回
+// 根视图禁用右划返回
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
-    //输入sn页和添加结算卡页 禁止返回
     BaseViewController *VC = self.childViewControllers[self.childViewControllers.count -1];
 
-    if (VC && [VC isMemberOfClass:[BaseViewController class]]){
-        return VC.popGestureEnabled;
+    if (self.childViewControllers.count <= 1) {
+        return NO; // 修复偶尔PUSH页面卡死的问题
     }
-    return self.childViewControllers.count == 1 ? NO : YES;
+    else if (VC && [VC isMemberOfClass:[BaseViewController class]]){
+        return VC.popGestureEnabled;
+    }else{
+         return YES;
+    }
+}
+@end
+
+
+
+@implementation UINavigationController (Extension)
+- (void)popToViewControllerWithClassName:(NSString *)className animated:(BOOL)animated{
+
+    for (UIViewController *VC in self.childViewControllers) {
+        if ([VC isKindOfClass:NSClassFromString(className)]) {
+            [self popToViewController:VC animated:animated];
+            return;
+        }
+    }
+
+    [self popToRootViewControllerAnimated:animated];
 }
 
+- (void)popViewControllerWithCount:(NSInteger)count animated:(BOOL)animated{
+    count = MAX(count, 1);
+    NSInteger totalCount  = self.childViewControllers.count;
+    NSInteger index = MAX(totalCount-count-1, 0);
+    UIViewController *VC = self.childViewControllers[index];
+    [self popToViewController:VC animated:animated];
+}
 @end

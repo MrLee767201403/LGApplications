@@ -19,10 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, self.view.height)];
+    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kViewHeight)];
     _scrollView.delegate = self;
     _scrollView.contentInset = UIEdgeInsetsMake(0, 0, kBottomBarHeight, 0);
-    _scrollView.contentSize = CGSizeMake(kScreenWidth, self.view.height-kBottomBarHeight);
+    _scrollView.contentSize = CGSizeMake(kScreenWidth, kContentHeight);
     _scrollView.alwaysBounceVertical = YES;
 
     [self.view addSubview:_scrollView];
