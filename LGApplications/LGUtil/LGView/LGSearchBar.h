@@ -18,4 +18,20 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithSearchIcon:(UIImage *)image;
 @end
 
+
+@class LGCustomSearchBar;
+@protocol LGSearchBarDelegate <UITextFieldDelegate>
+
+- (void)customSearchBar:(LGCustomSearchBar *)searchBar textDidChange:(NSString *)searchText;
+@end
+
+@interface LGCustomSearchBar : UITextField
+
+@property (nonatomic, strong) UIColor *placeholderColor;
+@property (nonatomic, strong) UIImage *icon;
+@property (nonatomic, strong) UIImageView *iconView;
+@property (nonatomic, weak) id<LGSearchBarDelegate> searchDelegate;
+@property (nonatomic, assign) CGFloat navicationOffset; // 修复导航栏frame
+
+@end
 NS_ASSUME_NONNULL_END

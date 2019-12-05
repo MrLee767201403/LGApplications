@@ -172,7 +172,7 @@ static dispatch_once_t onceToken;
 /**  获取某张图片的原图*/
 + (void)requestOriginalImageForAsset:(PHAsset *)asset completion:(void (^)(UIImage *image, NSDictionary *info))completion
 {
-    [self requestImageForAsset:asset size:PHImageManagerMaximumSize resizeMode:PHImageRequestOptionsResizeModeExact completion:completion];
+    [self requestImageForAsset:asset size:PHImageManagerMaximumSize resizeMode:PHImageRequestOptionsResizeModeFast completion:completion];
 }
 
 #pragma mark - 获取asset对应的默认屏幕宽高的图片
@@ -201,15 +201,11 @@ static dispatch_once_t onceToken;
 
     option.resizeMode = resizeMode;//控制照片尺寸
     //    option.deliveryMode = PHImageRequestOptionsDeliveryModeOpportunistic;//控制照片质量
-    option.networkAccessAllowed = YES;
+    option.networkAccessAllowed = CGSizeEqualToSize(size, PHImageManagerMaximumSize);
 
-    option.progressHandler = ^(double progress, NSError * _Nullable error, BOOL * _Nonnull stop, NSDictionary * _Nullable info) {
-        if (progress < 1) {
-            [LGToastView showLoading:@""];
-        }else{
-            [LGToastView hideToast];
-        }
-    };
+    if (option.networkAccessAllowed) {
+        [LGToastView showLoading:@"正在加载"];
+    }
     /*
      info字典提供请求状态信息:
      PHImageResultIsInCloudKey：图像是否必须从iCloud请求
@@ -219,11 +215,12 @@ static dispatch_once_t onceToken;
      */
 
     return [[PHCachingImageManager defaultManager] requestImageForAsset:asset targetSize:size contentMode:PHImageContentModeAspectFill options:option resultHandler:^(UIImage * _Nullable image, NSDictionary * _Nullable info) {
-        BOOL downloadFinined = ![[info objectForKey:PHImageCancelledKey] boolValue] && ![info objectForKey:PHImageErrorKey];
+        //BOOL downloadFinined = ![[info objectForKey:PHImageCancelledKey] boolValue] && ![info objectForKey:PHImageErrorKey];
         //不要该判断，即如果该图片在iCloud上时候，会先显示一张模糊的预览图，待加载完毕后会显示高清图
         // && ![[info objectForKey:PHImageResultIsDegradedKey] boolValue]
         if (image && completion) {
             completion(image, info);
+            [LGToastView hideToast];
         }
     }];
 }
