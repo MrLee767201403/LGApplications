@@ -9,7 +9,7 @@
 
 #import "BaseTableViewController.h"
 
-@interface BaseTableViewController ()
+@interface BaseTableViewController ()<NSObject>
 @property (nonatomic, strong) LGHttpRequest *request;
 @property (nonatomic, strong) NSString *nextPage;
 @property (nonatomic, strong) NSString *lastRequestTime;
@@ -36,7 +36,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self baseTableVCSetUpSubviews];
-    
+
 }
 
 - (void)baseTableVCSetUpSubviews{
@@ -91,10 +91,15 @@
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.reuseIdentifier forIndexPath:indexPath];
     cell.indexPath = indexPath;
+    cell.cellDelegate = self;
     if (indexPath.row < self.dataArray.count) {
         cell.dataModel = self.dataArray[indexPath.row];
     }
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (LGHttpRequest *)request{
@@ -239,6 +244,7 @@
 }
 
 - (void)requestDidFailure:(LGHttpResult *)result{
+
     [self showEmpetyView:NO];
     [self showErrorView:self.dataArray.count == 0];
 
@@ -284,9 +290,11 @@
 
 @dynamic indexPath;
 @dynamic dataModel;
+@dynamic cellDelegate;
 
 static NSString *indexPathKey = @"indexPathKey";
 static NSString *dataModelKey = @"dataModelKey";
+static NSString *cellDelegateKey = @"cellDelegateKey";
 
 - (void)setDataModel:(DataModel *)dataModel{
     objc_setAssociatedObject(self, &dataModelKey, dataModel, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
@@ -297,6 +305,10 @@ static NSString *dataModelKey = @"dataModelKey";
     objc_setAssociatedObject(self, &indexPathKey, indexPath, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
+- (void)setCellDelegate:(id<NSObject>)cellDelegate{
+    objc_setAssociatedObject(self, &cellDelegateKey, cellDelegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
 - (DataModel *)dataModel{
     return objc_getAssociatedObject(self, &dataModelKey);
 }
@@ -305,6 +317,9 @@ static NSString *dataModelKey = @"dataModelKey";
     return objc_getAssociatedObject(self, &indexPathKey);
 }
 
+- (id<NSObject>)cellDelegate{
+    return objc_getAssociatedObject(self, &cellDelegateKey);
+}
 
 @end
 
@@ -387,3 +402,4 @@ static NSString *dataModelKey = @"dataModelKey";
     return @{};
 }
 @end
+

@@ -26,10 +26,6 @@
     _scrollView.alwaysBounceVertical = YES;
 
     [self.view addSubview:_scrollView];
-
-    if (self.navigationController.childViewControllers.count>1) {
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:@"back" target:self action:@selector(back)];
-    }
 }
 
 - (void)didReceiveMemoryWarning {

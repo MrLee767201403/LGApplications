@@ -67,12 +67,6 @@
     // 拿到系统为我们计算的布局
     UICollectionViewLayoutAttributes *oldAttributes = [super layoutAttributesForItemAtIndexPath:indexPath];
 
-
-    // 原样返回
-    if (indexPath.section == 1) {
-        return oldAttributes;
-    }
-
     // 创建一个我们期望的布局
     UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
 
@@ -81,8 +75,10 @@
     CGFloat itemY = oldAttributes.frame.origin.y;   // Y值直接用系统算的
     CGSize itemSize = oldAttributes.size;           // 大小值直接用系统算(通过代理返回的大小)
 
+    BOOL line = oldAttributes.frame.origin.y == self.lastFrame.origin.y;
+
     // 不换行 && (indexPath.row=0时  self.lastFrame 还未赋值)  调整X值
-    if (oldAttributes.frame.origin.x != itemX && indexPath.row != 0) {
+    if (oldAttributes.frame.origin.x != itemX && indexPath.row != 0 && line) {
         itemX =  self.lastFrame.origin.x + self.lastFrame.size.width + self.minimumLineSpacing;
     }
     // 赋值

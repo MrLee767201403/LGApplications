@@ -59,8 +59,9 @@
     }else{
         self.frame = view.frame;
     }
-    self.imageView.centerY = (self.height-300)/2.0;
+    self.imageView.centerY = (self.height-200)/2.0;
     self.imageView.centerX = self.centerX;
+    self.imageView.top = MAX(self.imageView.top, 0);
     self.textLabel.top = self.imageView.bottom+10;
     self.backgroundColor = view.backgroundColor;
 

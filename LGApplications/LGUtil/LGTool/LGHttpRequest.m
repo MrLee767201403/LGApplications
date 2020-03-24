@@ -21,6 +21,7 @@
         _params = [self commonParameters];
         _xauth = NO;
         _cache = NO;
+        _hideToastOnSuccess = YES;
         _method = LGHttpMethedGet;
     }
     return self;
@@ -57,7 +58,7 @@
 
         // 只有请求成功 才走成功回调
         if (result.code == kLGHttpResultCodeSeccess) {
-            [LGToastView hideToast];
+            if(self.hideToastOnSuccess) [LGToastView hideToast];
             if (success) success(result);
         }else{
             [self didReceiveErrorResult:result failure:failure];
@@ -86,7 +87,7 @@
         if (self.cache) [self cacheRequestResult:responseObject];
 
         if (result.code == kLGHttpResultCodeSeccess) {
-            [LGToastView hideToast];
+            if(self.hideToastOnSuccess) [LGToastView hideToast];
             if (success) success(result);
         }else{
             [self didReceiveErrorResult:result failure:failure];
@@ -136,7 +137,7 @@
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         LGHttpResult *result = [[LGHttpResult alloc] initWithResponse:responseObject];
         if (result.code == kLGHttpResultCodeSeccess) {
-            [LGToastView hideToast];
+            if(self.hideToastOnSuccess) [LGToastView hideToast];
             if (success) success(result);
         }else{
             [self didReceiveErrorResult:result failure:failure];
@@ -205,10 +206,9 @@
 
     [allParams setValue:@"iOS" forKey:@"client"];
     [allParams setValue:[NSUtil getUUID] forKey:@"uuid"];
-    [allParams setValue:[NSUtil getAppVersion] forKey:@"client_version"];      // app版本
+    [allParams setValue:[NSUtil getAppVersion] forKey:@"clientVersion"];      // app版本
     [allParams setValue:[UserManager shareManager].user.userId forKey:@"userId"];
-    [allParams setValue:[UserManager shareManager].user.token forKey:@"token"];
-    [allParams setValue:[UserManager shareManager].user.companyId forKey:@"companyId"];
+    [allParams setValue:@(kCurrentVersionCode) forKey:@"appVersion"];
 
     return allParams;
 }
@@ -232,9 +232,11 @@
     @try {
         id responseObject = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
         LGHttpResult *result = [[LGHttpResult alloc] initWithResponse:responseObject];
+        if(self.hideToastOnSuccess) [LGToastView hideToast];
         if(success) success(result);
     } @catch (NSException *exception) {
         LGLog(@"获取缓存失败: \n%@",exception);
+        [LGToastView hideToast];
         LGHttpResult *result = [[LGHttpResult alloc] initWithError:error];
         if(failure) failure(result);
     }

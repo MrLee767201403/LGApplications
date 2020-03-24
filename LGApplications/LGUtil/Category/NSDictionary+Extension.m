@@ -82,6 +82,18 @@
 
     return dic;
 }
+
+- (NSString *)JSONString{
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self options:NSJSONWritingPrettyPrinted error:&error];
+
+    if (!jsonData) {
+        NSLog(@"%@",error);
+        return @"";
+    }else{
+       return [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
+    }
+}
 #if DEBUG
 
 - (NSString *)descriptionWithLocale:(id)locale indent:(NSUInteger)level
@@ -162,6 +174,29 @@
 @end
 
 @implementation NSArray (Extension)
+
+- (NSString *)JSONString {
+    NSError *error;
+    NSData *data = [NSJSONSerialization dataWithJSONObject:self options:NSJSONWritingPrettyPrinted error:&error];
+    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+}
+
+- (NSString *)toString{
+
+    if (self.count == 0) return @"";
+
+    NSString *string  = @"";
+    for (int i = 0; i<self.count; i++) {
+        string = [NSString stringWithFormat:@"%@%@,",string,self[i]];
+
+        // 去掉多余的逗号
+        if (i == self.count - 1) {
+            string = [string substringToIndex:string.length-1];
+        }
+    }
+    return string;
+}
+
 #if DEBUG
 - (NSString *)descriptionWithLocale:(id)locale indent:(NSUInteger)level
 {

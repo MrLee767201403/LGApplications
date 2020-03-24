@@ -1,6 +1,5 @@
 //
 //  LGHttpRequest.h
-//  FollowerTracker
 //
 //  Created by 李刚 on 2019/5/7.
 //  Copyright © 2019 ligang. All rights reserved.
@@ -18,8 +17,10 @@ static NSString * _Nonnull const  LGHttpMethedGet          = @"GET";
 
 @class AFHTTPSessionManager;
 @interface LGHttpRequest : NSObject
-@property (nonatomic, assign) BOOL xauth; // 是否需要签名(默认 YES)
+@property (nonatomic, assign) BOOL xauth; // 是否需要签名(默认 NO)
 @property (nonatomic, assign) BOOL cache; // 是否需要缓存(默认 NO)
+@property (nonatomic, assign) BOOL hideToastOnSuccess; // 成功后是否直接隐藏toast(默认 YES)
+
 @property (nonatomic, strong) NSMutableDictionary *params;
 @property (nonatomic, strong) AFHTTPSessionManager *sessionManager;
 @property (nonatomic, strong) NSString *method; // 默认GET

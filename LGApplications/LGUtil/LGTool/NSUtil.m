@@ -638,4 +638,65 @@
     htmlString = [[NSString alloc] initWithData:htmlData encoding: NSUTF8StringEncoding];
     return htmlString;
 }
+
+
+/**  将View转成图片*/
++ (UIImage *)getImageWithView:(UIView *)view{
+    view.backgroundColor = kColorWhite;
+
+    UIImage *image = nil;
+
+    if ([view isKindOfClass:UIScrollView.class]) {
+        UIScrollView *scrollView = (UIScrollView *)view;
+
+        // 记录scrollView 的偏移 和 frame
+        CGPoint savedContentOffset = scrollView.contentOffset;
+        CGRect savedFrame = scrollView.frame;
+
+        // 让scrollView显示全部内容
+        scrollView.contentOffset = CGPointZero;
+        scrollView.frame = CGRectMake(0, 0, scrollView.contentSize.width, scrollView.contentSize.height);
+        scrollView.showsVerticalScrollIndicator = NO;
+        scrollView.showsHorizontalScrollIndicator = NO;
+
+        // 画图
+        UIGraphicsBeginImageContextWithOptions(scrollView.contentSize, YES, UIScreen.mainScreen.scale);
+        [scrollView.layer renderInContext:UIGraphicsGetCurrentContext()];
+        image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+
+        // 恢复scrollView 的偏移 和 frame
+        scrollView.contentOffset = savedContentOffset;
+        scrollView.frame = savedFrame;
+        scrollView.showsVerticalScrollIndicator = YES;
+
+    }else{
+        UIGraphicsBeginImageContextWithOptions(view.size, YES, UIScreen.mainScreen.scale);
+        [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+        image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+    }
+    return image;
+}
+
+/**  将View转出PDF*/
++ (NSString *)getPDFWithView:(UIView *)view fileName:(NSString *)name{
+
+    UIImage *image = [self getImageWithView:view];
+
+    NSString *pdfPath = [NSUtil getDocumentFilePath:NSStringFormat(@"%@.pdf",name)];
+    CGFloat imageW = image.size.width;
+    CGFloat imageH = image.size.height;
+    // CGRectZero 表示默认尺寸，参数可修改，设置自己需要的尺寸
+    UIGraphicsBeginPDFContextToFile(pdfPath, CGRectMake(0, 0, imageW, imageH), NULL);
+    CGRect  pdfBounds = UIGraphicsGetPDFContextBounds();
+    CGFloat pdfWidth  = pdfBounds.size.width;
+    CGFloat pdfHeight = pdfBounds.size.height;
+
+    // 绘制PDF
+    UIGraphicsBeginPDFPage();
+    [image drawInRect:CGRectMake((pdfWidth - imageW)/2.0, (pdfHeight - imageH)/2.0, imageW, imageH)];
+    UIGraphicsEndPDFContext();
+    return pdfPath;
+}
 @end

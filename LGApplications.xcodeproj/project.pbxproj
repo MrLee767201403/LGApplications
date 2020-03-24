@@ -16,6 +16,7 @@
 		CE008BFD1EE7CA7500318D98 /* LGTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008BFB1EE7CA7500318D98 /* LGTextView.m */; };
 		CE008C011EE7CBD700318D98 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008C001EE7CBD700318D98 /* UIImage+Extension.m */; };
 		CE008C071EE7DA4500318D98 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE008C061EE7DA4500318D98 /* MainController.m */; };
+		CE1598A523C44FA50072F26F /* H5ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1598A423C44FA50072F26F /* H5ViewController.m */; };
 		CE347074236A8332004AE2FB /* LGHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = CE34705E236A832E004AE2FB /* LGHttpRequest.m */; };
 		CE347075236A8332004AE2FB /* LGRegionPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE34705F236A832E004AE2FB /* LGRegionPickerView.m */; };
 		CE347076236A8332004AE2FB /* EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE347061236A832E004AE2FB /* EmptyView.m */; };
@@ -115,6 +116,8 @@
 		CE008C041EE7D75700318D98 /* UIDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDefines.h; sourceTree = "<group>"; };
 		CE008C051EE7DA4500318D98 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
 		CE008C061EE7DA4500318D98 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
+		CE1598A323C44FA50072F26F /* H5ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H5ViewController.h; sourceTree = "<group>"; };
+		CE1598A423C44FA50072F26F /* H5ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H5ViewController.m; sourceTree = "<group>"; };
 		CE34705C236A832E004AE2FB /* LGDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGDatePickerView.h; sourceTree = "<group>"; };
 		CE34705D236A832E004AE2FB /* LGCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		CE34705E236A832E004AE2FB /* LGHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGHttpRequest.m; sourceTree = "<group>"; };
@@ -371,6 +374,8 @@
 				CE347083236A8413004AE2FB /* BaseTableViewController.m */,
 				CE347087236A8414004AE2FB /* BaseViewController.h */,
 				CE347085236A8414004AE2FB /* BaseViewController.m */,
+				CE1598A323C44FA50072F26F /* H5ViewController.h */,
+				CE1598A423C44FA50072F26F /* H5ViewController.m */,
 			);
 			path = BaseClasses;
 			sourceTree = "<group>";
@@ -699,6 +704,7 @@
 				CEDFD7F021A502A9000C0D4F /* IndexSectionView.m in Sources */,
 				CE347074236A8332004AE2FB /* LGHttpRequest.m in Sources */,
 				CE347079236A8332004AE2FB /* LGToastView.m in Sources */,
+				CE1598A523C44FA50072F26F /* H5ViewController.m in Sources */,
 				CEAA75F5223F3D950028E86B /* ActionSheetDemo.m in Sources */,
 				CED040FE1F63C99000C8B441 /* LGRollView.m in Sources */,
 				CE34707C236A8332004AE2FB /* LGRefreshView.m in Sources */,

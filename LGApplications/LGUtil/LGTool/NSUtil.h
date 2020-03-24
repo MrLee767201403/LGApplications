@@ -148,4 +148,11 @@ typedef void(^ActionBlock)(void);
 #pragma mark   -  HTML to String
 + (NSAttributedString *)htmlToAttribute:(NSString *)html;
 + (NSString *)attributeToHtml:(NSAttributedString *)attributeString;
+
+/**  将View转出图片*/
++ (UIImage *)getImageWithView:(UIView *)view;
+
+/**  将View转出PDF*/
++ (NSString *)getPDFWithView:(UIView *)view fileName:(NSString *)name;
+
 @end

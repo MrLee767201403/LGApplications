@@ -214,15 +214,26 @@ static dispatch_once_t onceToken;
      PHImageErrorKey：如果没有图像，字典内的错误信息
      */
 
-    return [[PHCachingImageManager defaultManager] requestImageForAsset:asset targetSize:size contentMode:PHImageContentModeAspectFill options:option resultHandler:^(UIImage * _Nullable image, NSDictionary * _Nullable info) {
-        //BOOL downloadFinined = ![[info objectForKey:PHImageCancelledKey] boolValue] && ![info objectForKey:PHImageErrorKey];
-        //不要该判断，即如果该图片在iCloud上时候，会先显示一张模糊的预览图，待加载完毕后会显示高清图
-        // && ![[info objectForKey:PHImageResultIsDegradedKey] boolValue]
-        if (image && completion) {
-            completion(image, info);
+    if (@available(iOS 13, *)) {
+        return [[PHImageManager defaultManager] requestImageDataAndOrientationForAsset:asset options:option resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, CGImagePropertyOrientation orientation, NSDictionary * _Nullable info) {
+            UIImage *image = [UIImage imageWithData:imageData];
             [LGToastView hideToast];
-        }
-    }];
+            if (image && completion) {
+                completion(image, info);
+            }
+        }];
+    } else {
+
+        return [[PHCachingImageManager defaultManager] requestImageForAsset:asset targetSize:size contentMode:PHImageContentModeAspectFill options:option resultHandler:^(UIImage * _Nullable image, NSDictionary * _Nullable info) {
+            //不要该判断，即如果该图片在iCloud上时候，会先显示一张模糊的预览图，待加载完毕后会显示高清图
+            // && ![[info objectForKey:PHImageResultIsDegradedKey] boolValue]
+            [LGToastView hideToast];
+
+            if (image && completion) {
+                completion(image, info);
+            }
+        }];
+    }
 }
 
 

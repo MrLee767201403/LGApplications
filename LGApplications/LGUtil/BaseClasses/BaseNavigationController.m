@@ -9,32 +9,42 @@
 
 #import "BaseNavigationController.h"
 
+
 @interface BaseNavigationController ()<UINavigationControllerDelegate, UIGestureRecognizerDelegate>
 
 @end
 
 @implementation BaseNavigationController
+
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if(self) {
+        NSLog(@"ViewController init: %@", NSStringFromClass([self class]));
+        self.popGestureEnabled = YES;
+        self.presentationFullScreen = YES;
+        self.interactivePopGestureRecognizer.delegate = self;
+        self.delegate = self;
+
+        UINavigationBar *navBar = [UINavigationBar appearance];
+        NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
+        textAttrs[NSForegroundColorAttributeName] = kColorDark;
+        textAttrs[NSFontAttributeName] = kFontNavigation;
+        [navBar setTitleTextAttributes:textAttrs];
+        navBar.barTintColor = kColorWhite;
+        navBar.translucent = NO;
+        navBar.tintColor = kColorDark;
+        self.navigationBarHidden = NO;
+    }
+
+    return self;
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    //默认开启系统右划返回
-    self.interactivePopGestureRecognizer.enabled = YES;
-    self.interactivePopGestureRecognizer.delegate = self;
-    self.delegate = self;
-    
-
-    UINavigationBar *navBar = [UINavigationBar appearance];
-    NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
-    textAttrs[NSForegroundColorAttributeName] = kColorDark;
-    textAttrs[NSFontAttributeName] = kFontNavigation;
-    [navBar setTitleTextAttributes:textAttrs];
-    navBar.barTintColor = kColorWhite;
-    navBar.translucent = NO;
-    navBar.tintColor = kColorDark;
 }
 
-#pragma mark   -  状态栏
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleDefault;
 }
@@ -67,16 +77,18 @@
         return NO; // 修复偶尔PUSH页面卡死的问题
     }
     else if (VC && [VC isMemberOfClass:[BaseViewController class]]){
-        return VC.popGestureEnabled;
+        return VC.popGestureEnabled && self.popGestureEnabled;
     }else{
          return YES;
     }
 }
+
 @end
 
 
 
 @implementation UINavigationController (Extension)
+
 - (void)popToViewControllerWithClassName:(NSString *)className animated:(BOOL)animated{
 
     for (UIViewController *VC in self.childViewControllers) {
@@ -85,7 +97,6 @@
             return;
         }
     }
-
     [self popToRootViewControllerAnimated:animated];
 }
 

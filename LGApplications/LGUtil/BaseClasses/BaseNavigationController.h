@@ -10,6 +10,8 @@
 #import <UIKit/UIKit.h>
 
 @interface BaseNavigationController : UINavigationController
+@property (nonatomic, assign) BOOL popGestureEnabled;
+@property (nonatomic, assign) BOOL presentationFullScreen; // 默认全屏弹起控制器
 
 @end
 

@@ -24,7 +24,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) Class modelClass; // model必须是DataModel的子类 必须重写其initWithDictionary:方法
 @property (nonatomic, strong) Class cellClass; // cell的model必须是DataModel的子类 必须重写其initWithDictionary:方法
 
-
 /**  @require 注册cell的类型*/
 - (void)registerReuseCell:(Class)cellClass; // cell的model必须是DataModel的子类 必须重写其initWithDictionary:方法
 
@@ -61,6 +60,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UITableViewCell (Extension)
 @property (nonatomic, strong, nullable) NSIndexPath *indexPath; //cell做删除操作时indexPath 会变
 @property (nonatomic, strong, nullable) DataModel *dataModel;
+@property (nonatomic, weak) id<NSObject> cellDelegate;
 @end
 
 @interface DataModel : NSObject

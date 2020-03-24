@@ -15,11 +15,13 @@
 - (float)floatForKey:(NSString*)key;
 - (double)doubleForKey:(NSString*)key;
 - (NSDictionary *)removeNull;
+- (NSString *)JSONString;
 @end
 
 
 @interface NSArray (Extension)
-
+- (NSString *)JSONString;
+- (NSString *)toString;  // 逗号分隔的字符串
 @end
 
 
