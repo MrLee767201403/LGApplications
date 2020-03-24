@@ -23,7 +23,7 @@ static NSString *kFontNamePingFangSCLight = @"PingFangSC-Light";
 
 
 #define kFontWithSize(F)        kFontWithName(kFontNamePingFangSCRegular, (F))
-#define kFontNavigation         kFontWithName(kFontNamePingFangSCSemibold, 12)
+#define kFontNavigation         kFontWithName(kFontNamePingFangSCSemibold, 18)
 
 #define Image(name)                 [UIImage imageNamed:name]
 #define NSStringFormat(format,...)  [NSString stringWithFormat:format,##__VA_ARGS__]

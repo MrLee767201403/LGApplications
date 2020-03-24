@@ -162,3 +162,60 @@ alert.noHandle = ^{
 - (void)cancelNotificationWithIdentifier:(NSString *)identifier;
 - (void)removeAllDeliveredNotifications __IOS_AVAILABLE(10.0);
 ```
+
+### 17.LGRangeSlider
+双向滑竿 用于选择范围 详见 `SliderDemo`
+```oc
+@interface LGRangeSlider : UIControl
+@property (nonatomic, strong) UIColor *tintColor;  //
+@property (nonatomic, strong) UIColor *trackColor;
+
+@property (nonatomic, strong) UIImageView *minView; // 左边的滑动点
+@property (nonatomic, strong) UIImageView *maxView; // 右边的滑动点
+
+/**  最小值 默认16*/
+@property (nonatomic, assign) NSInteger minValue;
+
+/**  最大值 默认99*/
+@property (nonatomic, assign) NSInteger maxValue;
+
+/**  选中最小值 默认18*/
+@property (nonatomic, assign) NSInteger selectedMinValue;
+
+/**  选中最大值 默认26*/
+@property (nonatomic, assign) NSInteger selectedMaxValue;
+
+@end
+```
+
+
+### 17.LGSwitch  
+自定义开关 可以随意设置大小
+```
+/** 开关开启状态的顶部滑块颜色 默认是白色 */
+@property (nonatomic, strong) UIColor *onTintColor;
+/** 开关开启状态的底部背景颜色 默认是红色 */
+@property (nonatomic, strong) UIColor *onBackgroundColor;
+/** 开关关闭状态的顶部滑块颜色 默认是白色 */
+@property (nonatomic, strong) UIColor *offTintColor;
+/** 开关关闭状态的底部背景颜色 默认是灰色 */
+@property (nonatomic, strong) UIColor *offBackgroundColor;
+/** 开关的风格颜色 边框颜色 默认是白色 */
+@property(nonatomic, strong) UIColor *tintColor;
+/** 查看开关打开状态, 默认为关闭 */
+@property (nonatomic, getter=isOn) BOOL on;
+
+/** 设置开关状态, animated : 是否有动画 不响应事件，只有点击的时候才会响应 */
+- (void)setOn:(BOOL)newOn animated:(BOOL)animated;
+
+/** delegate */
+@property (nonatomic, weak) id <LGSwitchDelegate> delegate;
+```
+开关状态变化的代理
+```
+- (void)switchValueChange:(LGSwitch *)mineSwitch on:(BOOL)on;
+```
+
+
+### LGInputView
+可以自动跟随键盘，并且可以自动换行的输入框，当达到最大高度时，变成内容可滑动，详见 `InputViewDemo`

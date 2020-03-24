@@ -6,7 +6,7 @@
 //
 
 // cell 高度
-#define kCellHeigth 44.0
+#define kCellHeigth 50.0
 #import "LGActionSheet.h"
 
 @interface LGActionSheet ()<UITableViewDelegate,UITableViewDataSource>
@@ -54,6 +54,7 @@
         _tableView.dataSource = self;
         _tableView.scrollEnabled = NO;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableView.backgroundColor = kColorBackground;
         [self addSubview:_tableView];
         
         // tableView 应该显示的位置
@@ -168,10 +169,9 @@
     // 选中样式
     cell.selectionStyle = style;
     
-//    // 隐藏每个分区最后一个cell的分割线
-//    UIView *line = cell.contentView.subviews.lastObject;
-//    line.hidden = indexPath.row == [tableView numberOfRowsInSection:indexPath.section]-1;
-
+    // 隐藏取消分割线
+    UIView *line = cell.contentView.subviews.lastObject;
+    line.hidden = indexPath.row == [tableView numberOfRowsInSection:indexPath.section]-1;
     
     // 设置cell文字
     cell.textLabel.font = font;
@@ -186,6 +186,14 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     if (section == 0) return 0.0;
     return 5.0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    if (section == 0) {
+        return nil;
+    }else{
+        return [UIView new];
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -220,7 +228,7 @@
 
 #pragma mark - get methed
 - (CGFloat)tableHeight{
-     _tableHeight = (self.actionTitle ? (self.subTitles.count + 2) : (self.subTitles.count + 1)) *kCellHeigth + 5.0;
+     _tableHeight = (self.actionTitle ? (self.subTitles.count + 2) : (self.subTitles.count + 1)) *kCellHeigth+5;
     return _tableHeight;
 }
 

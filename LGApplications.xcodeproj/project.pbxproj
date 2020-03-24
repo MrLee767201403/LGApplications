@@ -50,6 +50,11 @@
 		CE3470B1236A901E004AE2FB /* HUD_warn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3470A1236A901E004AE2FB /* HUD_warn@2x.png */; };
 		CE3470B2236A901E004AE2FB /* onlyCity.json in Resources */ = {isa = PBXBuildFile; fileRef = CE3470A2236A901E004AE2FB /* onlyCity.json */; };
 		CE45DF0E20C5382000F33D4D /* KeyChainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = CE45DF0C20C5382000F33D4D /* KeyChainStore.m */; };
+		CE58C80E2429F17C00E4FB83 /* slider@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE58C80C2429F17C00E4FB83 /* slider@3x.png */; };
+		CE58C80F2429F17C00E4FB83 /* slider@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE58C80D2429F17C00E4FB83 /* slider@2x.png */; };
+		CE58C8122429F8AC00E4FB83 /* SliderDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = CE58C8112429F8AC00E4FB83 /* SliderDemo.m */; };
+		CE58C815242A014D00E4FB83 /* LGInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE58C814242A014D00E4FB83 /* LGInputView.m */; };
+		CE58C818242A017300E4FB83 /* InputViewDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = CE58C817242A017300E4FB83 /* InputViewDemo.m */; };
 		CE6040D21EE5316E0089C945 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6040D11EE5316E0089C945 /* main.m */; };
 		CE6040D51EE5316E0089C945 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6040D41EE5316E0089C945 /* AppDelegate.m */; };
 		CE6040DD1EE5316E0089C945 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6040DC1EE5316E0089C945 /* Assets.xcassets */; };
@@ -168,6 +173,14 @@
 		CE3470A2236A901E004AE2FB /* onlyCity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = onlyCity.json; sourceTree = "<group>"; };
 		CE45DF0C20C5382000F33D4D /* KeyChainStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyChainStore.m; sourceTree = "<group>"; };
 		CE45DF0D20C5382000F33D4D /* KeyChainStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyChainStore.h; sourceTree = "<group>"; };
+		CE58C80C2429F17C00E4FB83 /* slider@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider@3x.png"; sourceTree = "<group>"; };
+		CE58C80D2429F17C00E4FB83 /* slider@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider@2x.png"; sourceTree = "<group>"; };
+		CE58C8102429F8AC00E4FB83 /* SliderDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SliderDemo.h; sourceTree = "<group>"; };
+		CE58C8112429F8AC00E4FB83 /* SliderDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SliderDemo.m; sourceTree = "<group>"; };
+		CE58C813242A014D00E4FB83 /* LGInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGInputView.h; sourceTree = "<group>"; };
+		CE58C814242A014D00E4FB83 /* LGInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGInputView.m; sourceTree = "<group>"; };
+		CE58C816242A017300E4FB83 /* InputViewDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputViewDemo.h; sourceTree = "<group>"; };
+		CE58C817242A017300E4FB83 /* InputViewDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputViewDemo.m; sourceTree = "<group>"; };
 		CE6040CD1EE5316E0089C945 /* LGApplications.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LGApplications.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6040D11EE5316E0089C945 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CE6040D31EE5316E0089C945 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -323,6 +336,8 @@
 				CE34706A236A8330004AE2FB /* LGToastView.m */,
 				CECC1BB0234F1D980062E7CA /* LGRangeSlider.h */,
 				CECC1BB2234F1D990062E7CA /* LGRangeSlider.m */,
+				CE58C813242A014D00E4FB83 /* LGInputView.h */,
+				CE58C814242A014D00E4FB83 /* LGInputView.m */,
 				CECC1BB1234F1D980062E7CA /* LGSwitch.h */,
 				CECC1BB3234F1D990062E7CA /* LGSwitch.m */,
 				CE9266261F22F9100063724B /* LGAlertView.h */,
@@ -383,6 +398,8 @@
 		CE347092236A901E004AE2FB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				CE58C80D2429F17C00E4FB83 /* slider@2x.png */,
+				CE58C80C2429F17C00E4FB83 /* slider@3x.png */,
 				CE347097236A901E004AE2FB /* city.json */,
 				CE347096236A901E004AE2FB /* degree.plist */,
 				CE34709D236A901E004AE2FB /* HUD_error@2x.png */,
@@ -482,6 +499,10 @@
 				CEAA75F1223F3D950028E86B /* PickerDemoController.m */,
 				CEAA75EF223F3D950028E86B /* SingleChoiceDemo.h */,
 				CEAA75F4223F3D950028E86B /* SingleChoiceDemo.m */,
+				CE58C8102429F8AC00E4FB83 /* SliderDemo.h */,
+				CE58C8112429F8AC00E4FB83 /* SliderDemo.m */,
+				CE58C816242A017300E4FB83 /* InputViewDemo.h */,
+				CE58C817242A017300E4FB83 /* InputViewDemo.m */,
 			);
 			path = LGViewDemos;
 			sourceTree = "<group>";
@@ -627,10 +648,12 @@
 				CE6040E01EE5316E0089C945 /* LaunchScreen.storyboard in Resources */,
 				CE3470B2236A901E004AE2FB /* onlyCity.json in Resources */,
 				CE3470A8236A901E004AE2FB /* toast_error@3x.png in Resources */,
+				CE58C80E2429F17C00E4FB83 /* slider@3x.png in Resources */,
 				CE3470A7236A901E004AE2FB /* city.json in Resources */,
 				CE3470A6236A901E004AE2FB /* degree.plist in Resources */,
 				CE3470AB236A901E004AE2FB /* HUD_info@3x.png in Resources */,
 				CE6040DD1EE5316E0089C945 /* Assets.xcassets in Resources */,
+				CE58C80F2429F17C00E4FB83 /* slider@2x.png in Resources */,
 				CE3470AD236A901E004AE2FB /* HUD_error@2x.png in Resources */,
 				CE3470AF236A901E004AE2FB /* HUD_warn@3x.png in Resources */,
 			);
@@ -704,9 +727,11 @@
 				CEDFD7F021A502A9000C0D4F /* IndexSectionView.m in Sources */,
 				CE347074236A8332004AE2FB /* LGHttpRequest.m in Sources */,
 				CE347079236A8332004AE2FB /* LGToastView.m in Sources */,
+				CE58C815242A014D00E4FB83 /* LGInputView.m in Sources */,
 				CE1598A523C44FA50072F26F /* H5ViewController.m in Sources */,
 				CEAA75F5223F3D950028E86B /* ActionSheetDemo.m in Sources */,
 				CED040FE1F63C99000C8B441 /* LGRollView.m in Sources */,
+				CE58C818242A017300E4FB83 /* InputViewDemo.m in Sources */,
 				CE34707C236A8332004AE2FB /* LGRefreshView.m in Sources */,
 				CE34707A236A8332004AE2FB /* LGHttpResult.m in Sources */,
 				CE347089236A8414004AE2FB /* BaseNavigationController.m in Sources */,
@@ -743,6 +768,7 @@
 				CEAA75F9223F3D950028E86B /* SingleChoiceDemo.m in Sources */,
 				CE347088236A8414004AE2FB /* BaseScrollController.m in Sources */,
 				CE34708B236A8414004AE2FB /* BaseViewController.m in Sources */,
+				CE58C8122429F8AC00E4FB83 /* SliderDemo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

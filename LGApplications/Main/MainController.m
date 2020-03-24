@@ -182,7 +182,7 @@
     
     if (VCClass) {
         UIViewController *VC = [[VCClass alloc] init];
-        
+        VC.title = [dic stringForKey:@"title"];
         if (VC && [VC isKindOfClass:[UIViewController class]]) {
             [self.navigationController pushViewController:VC animated:YES];
         }
@@ -201,6 +201,8 @@
         _viewArray = @[@{@"ClassName":@"ActionSheetDemo",@"title":@"ActionSheet"},
                        @{@"ClassName":@"AlertViewDemo",@"title":@"LGAlertView"},
                        @{@"ClassName":@"PickerDemoController",@"title":@"PickerView"},
+                       @{@"ClassName":@"InputViewDemo",@"title":@"LGInputView"},
+                       @{@"ClassName":@"SliderDemo",@"title":@"LGRangeSlider"},
                        @{@"ClassName":@"SingleChoiceDemo",@"title":@"SingleChoiceTableView"}];
     }
     

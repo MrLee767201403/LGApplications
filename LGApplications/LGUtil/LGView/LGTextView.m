@@ -87,7 +87,7 @@
 {
     [super layoutSubviews];
     
-    _placeholderLabel.y = 7.5;
+    _placeholderLabel.y = 6;
     _placeholderLabel.x = 5;
      _placeholderLabel.width = self.width - 2 *  _placeholderLabel.x;
     // 根据文字计算label的高度

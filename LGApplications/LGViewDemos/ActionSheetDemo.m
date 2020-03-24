@@ -37,11 +37,7 @@
 
 
 - (void)actionSheet:(LGActionSheet *)actionSheet clickedAtIndex:(NSInteger)buttonIndex{
-    
-    NSString *title = [NSString stringWithFormat:@"%@:%@",actionSheet.actionTitle,actionSheet.subTitles[buttonIndex]] ;
-    
-    [self.button setTitle:title forState:UIControlStateNormal];
-    
+    [self.button setTitle:actionSheet.subTitles[buttonIndex] forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning {

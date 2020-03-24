@@ -40,8 +40,8 @@
     if (self.navigationController &&controllers.count>1 && self.hideNavigationBar == NO) {
         if ((controllers[0] != self)) {
             // 设置根据TintColor渲染图片
-            UIImage *image = [[UIImage imageNamed:@"back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-            self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+//            UIImage *image = [[UIImage imageNamed:@"back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+            self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:Image(@"back") style:UIBarButtonItemStylePlain target:self action:@selector(back)];
         }
         else{
             self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" target:self action:@selector(back)];
