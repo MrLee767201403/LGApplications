@@ -50,6 +50,7 @@
         [self.params setValuesForKeysWithDictionary:signParams];
     }
 
+    NSURLSession *session = self.sessionManager.session;
     LGLog(@"LGHttpRequest:\nURL:\n%@\nparams\n%@",url,self.params);
     NSURLSessionDataTask *dataTask = [self.sessionManager GET:url parameters:self.params progress:^(NSProgress * _Nonnull downloadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -63,12 +64,14 @@
         }else{
             [self didReceiveErrorResult:result failure:failure];
         }
+
+        [session finishTasksAndInvalidate];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [self didReceiveError:error failure: failure];
+        [session finishTasksAndInvalidate];
     }];
 
     [dataTask resume];
-
 }
 
 #pragma mark   -  POST
@@ -80,6 +83,7 @@
     }
 
     LGLog(@"LGHttpRequest:\nURL:\n%@\nparams\n%@",url,self.params);
+    NSURLSession *session = self.sessionManager.session;
 
     NSURLSessionDataTask *dataTask = [self.sessionManager POST:url parameters:self.params progress:^(NSProgress * _Nonnull uploadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -92,9 +96,10 @@
         }else{
             [self didReceiveErrorResult:result failure:failure];
         }
-
+        [session finishTasksAndInvalidate];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [self didReceiveError:error failure: failure];
+        [session finishTasksAndInvalidate];
     }];
 
     [dataTask resume];
@@ -115,6 +120,8 @@
         NSDictionary *signParams = [self xauth:url method:@"POST" params:self.params];
         [self.params setValuesForKeysWithDictionary:signParams];
     }
+
+    NSURLSession *session = self.sessionManager.session;
 
     LGLog(@"LGHttpRequest:\nURL:\n%@\nparams\n%@",url,self.params);
     NSURLSessionDataTask *dataTask = [self.sessionManager POST:url parameters:self.params constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
@@ -142,9 +149,11 @@
         }else{
             [self didReceiveErrorResult:result failure:failure];
         }
+        [session finishTasksAndInvalidate];
 
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [self didReceiveError:error failure:failure];
+        [session finishTasksAndInvalidate];
     }];
 
     [dataTask resume];
